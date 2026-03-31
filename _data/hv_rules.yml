@@ -143,3 +143,116 @@
       jp: "Fu (富)"
     - hv: "Phương"
       jp: "Hō (方)"
+
+- id: 9
+  hv_pattern: "-m cuối"
+  onyomi: "-n"
+  description: "Âm mũi cuối -m trong HV chuyển thành -n trong On'yomi. Tiếng Nhật không phân biệt -m/-n ở vị trí cuối — cả hai đều thành ン (n)."
+  coda_patterns:
+    - from: "m"
+      to: "n"
+  examples:
+    - hv: "Âm"
+      jp: "On (音)"
+    - hv: "Kim"
+      jp: "Kin (金)"
+    - hv: "Tâm"
+      jp: "Shin (心)"
+    - hv: "Lâm"
+      jp: "Rin (林)"
+
+- id: 10
+  hv_pattern: "-p cuối"
+  onyomi: "-u/-ū"
+  description: "Âm tắc cuối -p trong HV biến mất, thay bằng trường âm -u hoặc -ū trong On'yomi. Đây là do tiếng Nhật không cho phép âm tắc cuối -p."
+  coda_patterns:
+    - from: "p"
+      to: "u"
+  examples:
+    - hv: "Nhập"
+      jp: "Nyū (入)"
+    - hv: "Thập"
+      jp: "Jū (十)"
+    - hv: "Pháp"
+      jp: "Hō (法)"
+
+- id: 11
+  hv_pattern: "Ng- đầu"
+  onyomi: "G-"
+  description: "Phụ âm Ng- (ngạc mũi) trong HV tương ứng G- trong On'yomi. Tiếng Nhật đơn giản hóa âm mũi ngạc thành g- thuần."
+  onset_patterns:
+    - from: "ng"
+      to: "g"
+  examples:
+    - hv: "Ngọ"
+      jp: "Go (午)"
+    - hv: "Ngân"
+      jp: "Gin (銀)"
+    - hv: "Ngoại"
+      jp: "Gai (外)"
+    - hv: "Nguyên"
+      jp: "Gen (元)"
+
+- id: 12
+  hv_pattern: "Kh- đầu"
+  onyomi: "K-"
+  description: "Phụ âm bật hơi Kh- trong HV tương ứng K- trong On'yomi. Tiếng Nhật không phân biệt âm bật hơi / không bật hơi nên Kh- → K-."
+  onset_patterns:
+    - from: "kh"
+      to: "k"
+  examples:
+    - hv: "Khí"
+      jp: "Ki (気)"
+    - hv: "Không"
+      jp: "Kū (空)"
+    - hv: "Khách"
+      jp: "Kyaku (客)"
+
+- id: 13
+  hv_pattern: "L- đầu"
+  onyomi: "R-"
+  description: "Phụ âm L- trong HV tương ứng R- trong On'yomi. Tiếng Nhật dùng ら行 (ra-gyō) cho cả L và R vì không phân biệt hai âm này."
+  onset_patterns:
+    - from: "l"
+      to: "r"
+  examples:
+    - hv: "Lý"
+      jp: "Ri (理)"
+    - hv: "Lưu"
+      jp: "Ryū (留)"
+    - hv: "Lữ"
+      jp: "Ryo (旅)"
+    - hv: "Lực"
+      jp: "Ryoku (力)"
+
+- id: 14
+  hv_pattern: "Qu- đầu"
+  onyomi: "K-"
+  description: "Phụ âm Qu- trong HV (từ Hán ngữ cổ) tương ứng K- trong On'yomi. Thành phần -u- bán nguyên âm thường mất đi hoặc hòa vào nguyên âm sau."
+  onset_patterns:
+    - from: "qu"
+      to: "k"
+  examples:
+    - hv: "Quan"
+      jp: "Kan (関)"
+    - hv: "Quốc"
+      jp: "Koku (国)"
+    - hv: "Quang"
+      jp: "Kō (光)"
+
+- id: 15
+  hv_pattern: "B- đầu"
+  onyomi: "H-/B-"
+  description: "Phụ âm B- trong HV có thể tương ứng H- hoặc B- trong On'yomi. Ban đầu đều là H- (Bản→Hon), nhưng một số giữ B- (Bệnh→Byō). Xu hướng: trước nguyên âm -a/-o thường là H-, trước -e/-y thường giữ B-."
+  onset_patterns:
+    - from: "b"
+      to: "h"
+  examples:
+    - hv: "Bản"
+      jp: "Hon (本)"
+    - hv: "Bách"
+      jp: "Hyaku (百)"
+    - hv: "Bệnh"
+      jp: "Byō (病)"
+    - hv: "Bán"
+      jp: "Han (半)"

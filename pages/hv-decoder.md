@@ -6,7 +6,7 @@ permalink: /pages/hv-decoder/
 
 # Bộ Giải Mã Hán-Việt → On'yomi
 
-<p>60–70% từ vựng N5 là Hán-Nhật. Dùng bộ giải mã để <strong>dự đoán On'yomi từ âm Hán-Việt</strong> — tra cứu từ điển trước, nếu không có thì áp dụng 8 quy tắc.</p>
+<p>60–70% từ vựng N5 là Hán-Nhật. Dùng bộ giải mã để <strong>dự đoán On'yomi từ âm Hán-Việt</strong> — tra cứu từ điển trước, nếu không có thì áp dụng 15 quy tắc.</p>
 
 <div id="hv-decoder-tool">
   <div style="margin:1.5rem 0;">
@@ -20,7 +20,7 @@ permalink: /pages/hv-decoder/
   <div id="hv-result" style="display:none;padding:1rem;background:var(--light-blue);border-radius:var(--radius);margin-bottom:1.5rem;font-family:'Bookerly',Georgia,serif;"></div>
 </div>
 
-## 8 Quy Tắc Ánh Xạ
+## 15 Quy Tắc Ánh Xạ
 
 {% for rule in site.data.hv_rules %}
 <div class="grammar-box box">

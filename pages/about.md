@@ -22,18 +22,23 @@ Cuốn sách này **không** dạy bạn học tiếng Nhật theo cách truyề
 
 ## So sánh phương pháp
 
-| Khía cạnh | Phương pháp truyền thống | Phương pháp Toán học |
-|-----------|------------------------|---------------------|
-| Từ vựng | Học thuộc từng từ một | Mapping rules từ âm Hán-Việt |
-| Ngữ pháp | Học thuộc mẫu câu | Pattern = Hàm số + Biến số |
-| Chữ viết | Viết lại không hệ thống | Nhận dạng form + stroke logic |
-| Giao tiếp | 3–6 tháng | **8 tuần** |
+<table class="kana-table">
+<thead>
+<tr><th>Khía cạnh</th><th>Phương pháp truyền thống</th><th>Phương pháp Toán học</th></tr>
+</thead>
+<tbody>
+<tr><td>Từ vựng</td><td>Học thuộc từng từ một</td><td>Mapping rules từ âm Hán-Việt</td></tr>
+<tr><td>Ngữ pháp</td><td>Học thuộc mẫu câu</td><td>Pattern = Hàm số + Biến số</td></tr>
+<tr><td>Chữ viết</td><td>Viết lại không hệ thống</td><td>Nhận dạng form + stroke logic</td></tr>
+<tr><td>Giao tiếp</td><td>3–6 tháng</td><td><strong>8 tuần</strong></td></tr>
+</tbody>
+</table>
 
 ## Lợi thế Hán-Việt
 
 60–70% từ vựng N5 là Hán-Nhật. Người Việt có âm Hán-Việt → decode phần lớn từ vựng mà không cần học thuộc.
 
-**8 quy tắc ánh xạ:**
+**15 quy tắc ánh xạ:**
 
 {% for rule in site.data.hv_rules %}
 **{{ rule.id }}. {{ rule.hv_pattern }} → {{ rule.onyomi }}**
@@ -63,11 +68,16 @@ Cuốn sách này **không** dạy bạn học tiếng Nhật theo cách truyề
 <div class="box-content">
 <p style="text-align:center;font-weight:700;font-size:1.1rem;">1 giờ / ngày × 56 ngày = 56 giờ tổng</p>
 
-| Hoạt động | Thời gian | Mô tả |
-|-----------|----------|-------|
-| Đọc lý thuyết | 20 phút | Hiểu cấu trúc, không học thuộc |
-| Bài tập trong sách | 20 phút | Điền ngay, không để qua hôm sau |
-| Luyện tập tình huống | 20 phút | Nói to, tạo phản xạ |
+<table class="kana-table">
+<thead>
+<tr><th>Hoạt động</th><th>Thời gian</th><th>Mô tả</th></tr>
+</thead>
+<tbody>
+<tr><td>Đọc lý thuyết</td><td>20 phút</td><td>Hiểu cấu trúc, không học thuộc</td></tr>
+<tr><td>Bài tập trong sách</td><td>20 phút</td><td>Điền ngay, không để qua hôm sau</td></tr>
+<tr><td>Luyện tập tình huống</td><td>20 phút</td><td>Nói to, tạo phản xạ</td></tr>
+</tbody>
+</table>
 
 </div>
 </div>

@@ -66,7 +66,7 @@ level: N5
 | `chapters.yml` | Chapter definitions: id, title, short_title, level, phase, week, milestone, lessons count |
 | `levels.yml` | JLPT levels (N5–N1): id, title, description, active boolean |
 | `kana.yml` | Katakana & Hiragana characters: char, romaji, row, strokes, note; dakuten variants |
-| `hv_rules.yml` | 8 Hán-Việt → On'yomi mapping rules with examples |
+| `hv_rules.yml` | 15 Hán-Việt → On'yomi mapping rules with examples |
 | `vocabulary.yml` | Loanwords (jp, romaji, en, vi) and numbers (num, jp, romaji) |
 | `flashcard_decks.yml` | 6 vocabulary flashcard decks (loanwords, numbers, particles, verbs, nouns, hanviet) |
 

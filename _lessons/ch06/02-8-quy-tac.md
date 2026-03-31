@@ -1,6 +1,6 @@
 ---
 layout: lesson
-title: "8 Quy Tắc Ánh Xạ Âm"
+title: "15 Quy Tắc Ánh Xạ Âm"
 chapter: 6
 lesson: 2
 total_lessons_in_chapter: 3
@@ -13,9 +13,9 @@ tags: [han-viet, kanji, phase-2]
 level: N5
 ---
 
-## 8 Quy Tắc Chuyển Đổi Hán-Việt → On'yomi
+## 15 Quy Tắc Chuyển Đổi Hán-Việt → On'yomi
 
-Không cần học thuộc — chỉ cần nhớ **8 quy tắc** dưới đây, bạn có thể predict cách đọc On'yomi từ âm Hán-Việt.
+Không cần học thuộc — chỉ cần nhớ **15 quy tắc** dưới đây, bạn có thể predict cách đọc On'yomi từ âm Hán-Việt.
 
 ## Rules 1–4: Phụ Âm & Vần Cuối
 
@@ -95,21 +95,100 @@ Không cần học thuộc — chỉ cần nhớ **8 quy tắc** dưới đây, 
 </tbody>
 </table>
 
+## Rules 9–12: Phụ Âm Đầu Bổ Sung
+
+<table class="kana-table">
+<thead>
+<tr>
+<th>Rule</th>
+<th>HV Pattern</th>
+<th>→ On'yomi</th>
+<th>Ví dụ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>9</strong></td>
+<td>-m cuối</td>
+<td>-n</td>
+<td>Â<strong>m</strong> → O<strong>n</strong> (音), Ki<strong>m</strong> → Ki<strong>n</strong> (金), Tâ<strong>m</strong> → Shi<strong>n</strong> (心)</td>
+</tr>
+<tr>
+<td><strong>10</strong></td>
+<td>-p cuối</td>
+<td>-u / -ū</td>
+<td>Nhậ<strong>p</strong> → Ny<strong>ū</strong> (入), Thậ<strong>p</strong> → J<strong>ū</strong> (十), Phá<strong>p</strong> → H<strong>ō</strong> (法)</td>
+</tr>
+<tr>
+<td><strong>11</strong></td>
+<td>Ng- đầu</td>
+<td>G-</td>
+<td><strong>Ng</strong>ọ → <strong>G</strong>o (午), <strong>Ng</strong>ân → <strong>G</strong>in (銀), <strong>Ng</strong>oại → <strong>G</strong>ai (外)</td>
+</tr>
+<tr>
+<td><strong>12</strong></td>
+<td>Kh- đầu</td>
+<td>K-</td>
+<td><strong>Kh</strong>í → <strong>K</strong>i (気), <strong>Kh</strong>ông → <strong>K</strong>ū (空), <strong>Kh</strong>ách → <strong>K</strong>yaku (客)</td>
+</tr>
+</tbody>
+</table>
+
+## Rules 13–15: L-, Qu-, B-
+
+<table class="kana-table">
+<thead>
+<tr>
+<th>Rule</th>
+<th>HV Pattern</th>
+<th>→ On'yomi</th>
+<th>Ví dụ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>13</strong></td>
+<td>L- đầu</td>
+<td>R-</td>
+<td><strong>L</strong>ý → <strong>R</strong>i (理), <strong>L</strong>ưu → <strong>R</strong>yū (留), <strong>L</strong>ực → <strong>R</strong>yoku (力)</td>
+</tr>
+<tr>
+<td><strong>14</strong></td>
+<td>Qu- đầu</td>
+<td>K-</td>
+<td><strong>Qu</strong>an → <strong>K</strong>an (関), <strong>Qu</strong>ốc → <strong>K</strong>oku (国), <strong>Qu</strong>ang → <strong>K</strong>ō (光)</td>
+</tr>
+<tr>
+<td><strong>15</strong></td>
+<td>B- đầu</td>
+<td>H- / B-</td>
+<td><strong>B</strong>ản → <strong>H</strong>on (本), <strong>B</strong>ách → <strong>H</strong>yaku (百), <strong>B</strong>ệnh → <strong>B</strong>yō (病)</td>
+</tr>
+</tbody>
+</table>
+
 ## Áp Dụng Thực Tế
 
 <div class="grammar-box box">
 <div class="box-title">Ví dụ giải mã từ vựng</div>
 <div class="box-content" markdown="1">
 
-Hãy thử decode các từ sau bằng 8 rules:
+Hãy thử decode các từ sau bằng 15 rules:
 
-| Hán-Việt | Rules áp dụng | → On'yomi | Kanji |
-|----------|--------------|-----------|-------|
-| **Đại** học | Rule 5 (Đ→D), Rule 2 (-c→-ku) | Dai-gaku | <span class="jp">大学</span> |
-| **Nhân** khẩu | Rule 6 (Nh→Jin) | Jin-kō | <span class="jp">人口</span> |
-| **Quốc** tế | Rule 2 (-c→-ku) | Koku-sai | <span class="jp">国際</span> |
-| **Đông** kinh | Rule 4 (-ng→-ō), Rule 7 (-n→-n) | Tō-kyō | <span class="jp">東京</span> |
-| **Phong** thổ | Rule 8 (Ph→F), Rule 4 (-ng→-ū) | Fū-do | <span class="jp">風土</span> |
+<table class="kana-table">
+<thead>
+<tr><th>Hán-Việt</th><th>Rules áp dụng</th><th>→ On'yomi</th><th>Kanji</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Đại</strong> học</td><td>Rule 5 (Đ→D), Rule 2 (-c→-ku)</td><td>Dai-gaku</td><td><span class="jp">大学</span></td></tr>
+<tr><td><strong>Nhân</strong> khẩu</td><td>Rule 6 (Nh→Jin)</td><td>Jin-kō</td><td><span class="jp">人口</span></td></tr>
+<tr><td><strong>Đông</strong> kinh</td><td>Rule 4 (-ng→-ō), Rule 7 (-n→-n)</td><td>Tō-kyō</td><td><span class="jp">東京</span></td></tr>
+<tr><td><strong>Phong</strong> thổ</td><td>Rule 8 (Ph→F), Rule 4 (-ng→-ū)</td><td>Fū-do</td><td><span class="jp">風土</span></td></tr>
+<tr><td><strong>Ngân</strong> hàng</td><td>Rule 11 (Ng→G), Rule 9 (-m→-n)</td><td>Gin-kō</td><td><span class="jp">銀行</span></td></tr>
+<tr><td><strong>Lữ</strong> hành</td><td>Rule 13 (L→R)</td><td>Ryo-kō</td><td><span class="jp">旅行</span></td></tr>
+<tr><td><strong>Bản</strong> địa</td><td>Rule 15 (B→H), Rule 5 (Đ→D)</td><td>Hon-chi</td><td><span class="jp">本地</span></td></tr>
+</tbody>
+</table>
 
 </div>
 </div>
