@@ -17,7 +17,7 @@ permalink: /pages/hv-decoder/
       <button class="btn btn-primary" onclick="decodeHV()">Giải mã</button>
     </div>
   </div>
-  <div id="hv-result" style="display:none;padding:1rem;background:var(--light-blue);border-radius:var(--radius);margin-bottom:1.5rem;font-family:monospace;"></div>
+  <div id="hv-result" style="display:none;padding:1rem;background:var(--light-blue);border-radius:var(--radius);margin-bottom:1.5rem;font-family:'Bookerly',Georgia,serif;"></div>
 </div>
 
 ## 8 Quy Tắc Ánh Xạ
@@ -64,15 +64,22 @@ function decodeHV() {
 
   var html = '';
 
+  // Build combined kanji string
+  var combinedKanji = '';
+  for (var c = 0; c < result.syllables.length; c++) {
+    combinedKanji += result.syllables[c].kanji || '?';
+  }
+
   // Header line with combined reading
   if (result.combined) {
     var display = LJHVDecoder.toMacron(result.combined);
     html += '<div style="font-size:1.2rem;font-weight:700;margin-bottom:0.75rem;">';
-    html += 'Kết quả: ' + escapeHtml(result.input) + ' → ' + escapeHtml(display);
+    html += 'Kết quả: ' + escapeHtml(result.input) + ' → <span class="jp">' + escapeHtml(combinedKanji) + '</span> ' + escapeHtml(display);
     html += '</div>';
   } else {
     html += '<div style="font-size:1.2rem;font-weight:700;margin-bottom:0.75rem;">';
     html += 'Phân tích: ' + escapeHtml(result.input);
+    if (combinedKanji.indexOf('?') === -1) html += ' → <span class="jp">' + escapeHtml(combinedKanji) + '</span>';
     html += '</div>';
   }
 
@@ -85,8 +92,7 @@ function decodeHV() {
     if (syl.source === 'dictionary') {
       var reading = LJHVDecoder.toMacron(syl.onyomi);
       html += '<strong>' + escapeHtml(syl.original) + '</strong>';
-      html += ' → ' + escapeHtml(reading);
-      html += ' (' + escapeHtml(syl.kanji) + ')';
+      html += ' → <span class="jp" style="font-size:1.1em;">' + escapeHtml(syl.kanji) + '</span> ' + escapeHtml(reading);
       html += ' — <span style="color:green;">&#10003; tra cứu chính xác</span>';
 
       // Show alternatives if multiple dict matches
@@ -94,8 +100,9 @@ function decodeHV() {
         html += '<br><span style="font-size:0.85rem;color:#666;">  Cũng có: ';
         for (var j = 1; j < syl.dictMatches.length && j < 4; j++) {
           if (j > 1) html += ', ';
+          html += '<span class="jp">' + escapeHtml(syl.dictMatches[j].kanji) + '</span> ';
           html += LJHVDecoder.toMacron(syl.dictMatches[j].onyomi);
-          html += ' (' + escapeHtml(syl.dictMatches[j].kanji) + ' — ' + escapeHtml(syl.dictMatches[j].meaning) + ')';
+          html += ' (' + escapeHtml(syl.dictMatches[j].meaning) + ')';
         }
         html += '</span>';
       }
