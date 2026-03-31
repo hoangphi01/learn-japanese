@@ -18,12 +18,8 @@
   applyTheme(saved);
 
   toggle.addEventListener('change', function () {
-    var next = toggle.checked ? 'modern' : '';
+    var next = toggle.checked ? 'modern' : 'pixel';
     applyTheme(next);
-    if (next) {
-      localStorage.setItem('lj_theme', next);
-    } else {
-      localStorage.removeItem('lj_theme');
-    }
+    localStorage.setItem('lj_theme', next);
   });
 })();
