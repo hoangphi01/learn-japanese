@@ -88,7 +88,7 @@ Also available: `quiz-question.html` (params: correct, question, options, explan
 - Custom properties defined in `:root` of `style.css`
 - Responsive: sidebar collapses at 1024px, mobile dock appears
 - **Chapter accent colors**: `lesson.html` sets `data-chapter` on `<article>`, CSS targets `.lesson-page[data-chapter="N"]` to color badge and header border per chapter
-- **`.kana-table`**: Global table class in `style.css` for kana/vocabulary tables (navy header, zebra rows)
+- **`.kana-table`**: Global table class in `style.css` for kana/vocabulary tables (navy header, zebra rows). **All tables must use `class="kana-table"`** — Markdown tables render without styling. Use HTML `<table class="kana-table">` for proper borders/colors in both themes.
 
 ### JavaScript Modules
 
@@ -101,6 +101,7 @@ All use IIFE pattern. No frameworks.
 | `progress.js` | `LJProgress` | Lesson completion & quiz score tracking |
 | `quiz.js` | `LJQuiz` | Quiz answer checking & scoring |
 | `flashcard.js` | `LJFlashcard` | Deck shuffle, flip, known-marking |
+| `hv-decoder.js` | `LJHVDecoder` | HV→On'yomi dictionary lookup + rule prediction |
 | `welcome.js` | `LJWelcome` | Onboarding modal & level selection |
 
 ### localStorage Keys

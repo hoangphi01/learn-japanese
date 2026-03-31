@@ -6,18 +6,18 @@ permalink: /pages/hv-decoder/
 
 # Bộ Giải Mã Hán-Việt → On'yomi
 
-<p>60–70% từ vựng N5 là Hán-Nhật. Dùng 8 quy tắc dưới đây để <strong>đoán On'yomi từ âm Hán-Việt</strong>.</p>
+<p>60–70% từ vựng N5 là Hán-Nhật. Dùng bộ giải mã để <strong>dự đoán On'yomi từ âm Hán-Việt</strong> — tra cứu từ điển trước, nếu không có thì áp dụng 8 quy tắc.</p>
 
 <div id="hv-decoder-tool">
   <div style="margin:1.5rem 0;">
     <label for="hv-input" style="font-weight:600;display:block;margin-bottom:0.5rem;">Nhập từ Hán-Việt:</label>
     <div style="display:flex;gap:0.5rem;">
-      <input type="text" id="hv-input" placeholder="Ví dụ: Tâm, Đại, Phong..."
+      <input type="text" id="hv-input" placeholder="Ví dụ: tiểu học, đại học, nhật bản..."
              style="flex:1;padding:0.6rem 1rem;border:2px solid var(--navy-blue);border-radius:var(--radius-sm);font-size:1rem;font-family:inherit;">
       <button class="btn btn-primary" onclick="decodeHV()">Giải mã</button>
     </div>
   </div>
-  <div id="hv-result" style="display:none;padding:1rem;background:var(--light-blue);border-radius:var(--radius);margin-bottom:1.5rem;"></div>
+  <div id="hv-result" style="display:none;padding:1rem;background:var(--light-blue);border-radius:var(--radius);margin-bottom:1.5rem;font-family:monospace;"></div>
 </div>
 
 ## 8 Quy Tắc Ánh Xạ
@@ -26,6 +26,8 @@ permalink: /pages/hv-decoder/
 <div class="grammar-box box">
 <div class="box-title">Quy tắc {{ rule.id }}: {{ rule.hv_pattern }} → {{ rule.onyomi }}</div>
 <div class="box-content" markdown="1">
+
+{{ rule.description }}
 
 | Hán-Việt | On'yomi (Nhật) |
 |----------|---------------|
@@ -49,36 +51,98 @@ permalink: /pages/hv-decoder/
 </div>
 
 <script>
+// Initialize decoder with data from Jekyll
+LJHVDecoder.init({{ site.data.hv_kanji | jsonify }}, {{ site.data.hv_rules | jsonify }});
+
 function decodeHV() {
   var input = document.getElementById('hv-input').value.trim();
-  var result = document.getElementById('hv-result');
-  if (!input) { result.style.display = 'none'; return; }
+  var resultEl = document.getElementById('hv-result');
+  if (!input) { resultEl.style.display = 'none'; return; }
 
-  var rules = [
-    { pattern: /^t/i, match: 'T- đầu', predict: 'S-/Z- (Ví dụ: Tâm→Shin, Sinh→Sei)' },
-    { pattern: /[cC][hH]?$/i, match: '-c/-ch cuối', predict: '-ku/-ki (Ví dụ: Học→Gaku)' },
-    { pattern: /t$/i, match: '-t cuối', predict: '-tsu/-chi (Ví dụ: Nhất→Ichi)' },
-    { pattern: /(ng|nh)$/i, match: '-ng/-nh cuối', predict: 'Trường âm -ō/-ū (Ví dụ: Đường→Dō)' },
-    { pattern: /^[đĐ]/i, match: 'Đ- đầu', predict: 'D- (Ví dụ: Đại→Dai)' },
-    { pattern: /^[Nn]h/i, match: 'Nh- đầu', predict: 'Ni-/Jin- (Ví dụ: Nhân→Jin)' },
-    { pattern: /n$/i, match: '-n cuối', predict: '-n giữ nguyên (Ví dụ: Quan→Kan)' },
-    { pattern: /^[Pp]h/i, match: 'Ph- đầu', predict: 'H-/F- (Ví dụ: Phong→Fū)' }
-  ];
+  var result = LJHVDecoder.decode(input);
+  if (!result) { resultEl.style.display = 'none'; return; }
 
-  var matches = [];
-  for (var i = 0; i < rules.length; i++) {
-    if (rules[i].pattern.test(input)) {
-      matches.push('<strong>Quy tắc ' + (i+1) + ':</strong> ' + rules[i].match + ' → ' + rules[i].predict);
+  var html = '';
+
+  // Header line with combined reading
+  if (result.combined) {
+    var display = LJHVDecoder.toMacron(result.combined);
+    html += '<div style="font-size:1.2rem;font-weight:700;margin-bottom:0.75rem;">';
+    html += 'Kết quả: ' + escapeHtml(result.input) + ' → ' + escapeHtml(display);
+    html += '</div>';
+  } else {
+    html += '<div style="font-size:1.2rem;font-weight:700;margin-bottom:0.75rem;">';
+    html += 'Phân tích: ' + escapeHtml(result.input);
+    html += '</div>';
+  }
+
+  // Per-syllable breakdown
+  html += '<div style="padding-left:1rem;">';
+  for (var i = 0; i < result.syllables.length; i++) {
+    var syl = result.syllables[i];
+    html += '<div style="margin-bottom:0.4rem;">';
+
+    if (syl.source === 'dictionary') {
+      var reading = LJHVDecoder.toMacron(syl.onyomi);
+      html += '<strong>' + escapeHtml(syl.original) + '</strong>';
+      html += ' → ' + escapeHtml(reading);
+      html += ' (' + escapeHtml(syl.kanji) + ')';
+      html += ' — <span style="color:green;">&#10003; tra cứu chính xác</span>';
+
+      // Show alternatives if multiple dict matches
+      if (syl.dictMatches.length > 1) {
+        html += '<br><span style="font-size:0.85rem;color:#666;">  Cũng có: ';
+        for (var j = 1; j < syl.dictMatches.length && j < 4; j++) {
+          if (j > 1) html += ', ';
+          html += LJHVDecoder.toMacron(syl.dictMatches[j].onyomi);
+          html += ' (' + escapeHtml(syl.dictMatches[j].kanji) + ' — ' + escapeHtml(syl.dictMatches[j].meaning) + ')';
+        }
+        html += '</span>';
+      }
+    } else if (syl.source === 'rules') {
+      html += '<strong>' + escapeHtml(syl.original) + '</strong>';
+      html += ' → <em>(dự đoán theo quy tắc)</em>';
+      html += ' — <span style="color:orange;">&#9679; dựa trên quy tắc</span>';
+      html += '<br><span style="font-size:0.85rem;color:#666;">  Quy tắc phù hợp: ';
+      for (var k = 0; k < syl.ruleMatches.length; k++) {
+        if (k > 0) html += ', ';
+        html += 'QT' + syl.ruleMatches[k].ruleId + ' (' + escapeHtml(syl.ruleMatches[k].rule.hv_pattern) + ')';
+      }
+      html += '</span>';
+    } else {
+      html += '<strong>' + escapeHtml(syl.original) + '</strong>';
+      html += ' → <em>(không tìm thấy)</em>';
+      html += ' — <span style="color:red;">&#10007; chưa có dữ liệu</span>';
+    }
+
+    html += '</div>';
+  }
+  html += '</div>';
+
+  // Confidence indicator
+  html += '<div style="margin-top:0.75rem;padding-top:0.5rem;border-top:1px solid rgba(0,0,0,0.1);font-size:0.85rem;">';
+  if (result.allResolved) {
+    html += '<span style="color:green;">&#10003;</span> Độ tin cậy: <strong>cao</strong> — tất cả âm tiết đều có trong từ điển';
+  } else {
+    var dictCount = result.syllables.filter(function(s) { return s.source === 'dictionary'; }).length;
+    var ruleCount = result.syllables.filter(function(s) { return s.source === 'rules'; }).length;
+    if (dictCount > 0 || ruleCount > 0) {
+      html += '<span style="color:orange;">&#9679;</span> Độ tin cậy: <strong>trung bình</strong> — ';
+      html += dictCount + '/' + result.syllables.length + ' tra cứu được';
+    } else {
+      html += '<span style="color:red;">&#10007;</span> Độ tin cậy: <strong>thấp</strong> — không tìm thấy dữ liệu phù hợp';
     }
   }
+  html += '</div>';
 
-  if (matches.length > 0) {
-    result.innerHTML = '<p><strong>Phân tích "' + input + '":</strong></p><ul>' +
-      matches.map(function(m) { return '<li>' + m + '</li>'; }).join('') + '</ul>';
-  } else {
-    result.innerHTML = '<p>Không tìm thấy quy tắc phù hợp cho "' + input + '". Hãy thử các từ như: Tâm, Đại, Phong, Học, Nhật...</p>';
-  }
-  result.style.display = 'block';
+  resultEl.innerHTML = html;
+  resultEl.style.display = 'block';
+}
+
+function escapeHtml(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 }
 
 document.getElementById('hv-input').addEventListener('keypress', function(e) {

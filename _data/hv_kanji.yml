@@ -1,0 +1,642 @@
+# Hán-Việt → On'yomi Dictionary
+# ~120 common HV syllables covering N5 kanji
+# Each entry: hv (lowercase, no tone), onyomi, kanji, meaning (Vietnamese)
+
+# ── A ──
+- hv: "an"
+  onyomi: "an"
+  kanji: "安"
+  meaning: "yên"
+
+# ── B ──
+- hv: "ba"
+  onyomi: "ha"
+  kanji: "八"
+  meaning: "tám"
+
+- hv: "bach"
+  onyomi: "hyaku"
+  kanji: "百"
+  meaning: "trăm"
+
+- hv: "ban"
+  onyomi: "han"
+  kanji: "半"
+  meaning: "nửa"
+
+- hv: "ban"
+  onyomi: "ban"
+  kanji: "万"
+  meaning: "vạn"
+
+- hv: "bat"
+  onyomi: "hatsu"
+  kanji: "八"
+  meaning: "tám"
+
+- hv: "bac"
+  onyomi: "hoku"
+  kanji: "北"
+  meaning: "bắc"
+
+# ── C ──
+- hv: "cau"
+  onyomi: "kyuu"
+  kanji: "九"
+  meaning: "chín"
+
+- hv: "co"
+  onyomi: "ko"
+  kanji: "古"
+  meaning: "cổ"
+
+- hv: "cu"
+  onyomi: "kyuu"
+  kanji: "九"
+  meaning: "chín"
+
+# ── D ──
+- hv: "dai"
+  onyomi: "dai"
+  kanji: "大"
+  meaning: "lớn"
+
+- hv: "dien"
+  onyomi: "den"
+  kanji: "電"
+  meaning: "điện"
+
+- hv: "doc"
+  onyomi: "doku"
+  kanji: "読"
+  meaning: "đọc"
+
+- hv: "dong"
+  onyomi: "tou"
+  kanji: "東"
+  meaning: "đông"
+
+- hv: "duong"
+  onyomi: "dou"
+  kanji: "道"
+  meaning: "đường"
+
+# ── G ──
+- hv: "gian"
+  onyomi: "kan"
+  kanji: "間"
+  meaning: "gian"
+
+- hv: "giao"
+  onyomi: "kou"
+  kanji: "校"
+  meaning: "trường"
+
+# ── H ──
+- hv: "ha"
+  onyomi: "ka"
+  kanji: "下"
+  meaning: "dưới"
+
+- hv: "hau"
+  onyomi: "kou"
+  kanji: "後"
+  meaning: "sau"
+
+- hv: "hoa"
+  onyomi: "ka"
+  kanji: "花"
+  meaning: "hoa"
+
+- hv: "hoc"
+  onyomi: "gaku"
+  kanji: "学"
+  meaning: "học"
+
+- hv: "hoi"
+  onyomi: "kai"
+  kanji: "会"
+  meaning: "hội"
+
+- hv: "hoa"
+  onyomi: "wa"
+  kanji: "話"
+  meaning: "nói"
+
+# ── K ──
+- hv: "kim"
+  onyomi: "kin"
+  kanji: "金"
+  meaning: "vàng"
+
+- hv: "kinh"
+  onyomi: "kyou"
+  kanji: "京"
+  meaning: "kinh đô"
+
+- hv: "khi"
+  onyomi: "ki"
+  kanji: "気"
+  meaning: "khí"
+
+- hv: "khong"
+  onyomi: "kuu"
+  kanji: "空"
+  meaning: "trống"
+
+# ── L ──
+- hv: "lai"
+  onyomi: "rai"
+  kanji: "来"
+  meaning: "đến"
+
+- hv: "luc"
+  onyomi: "roku"
+  kanji: "六"
+  meaning: "sáu"
+
+# ── M ──
+- hv: "mai"
+  onyomi: "mai"
+  kanji: "毎"
+  meaning: "mỗi"
+
+- hv: "man"
+  onyomi: "man"
+  kanji: "万"
+  meaning: "vạn"
+
+- hv: "menh"
+  onyomi: "mei"
+  kanji: "名"
+  meaning: "tên"
+
+- hv: "moc"
+  onyomi: "moku"
+  kanji: "木"
+  meaning: "gỗ"
+
+- hv: "mon"
+  onyomi: "mon"
+  kanji: "門"
+  meaning: "cổng"
+
+- hv: "muc"
+  onyomi: "moku"
+  kanji: "目"
+  meaning: "mắt"
+
+# ── N ──
+- hv: "nam"
+  onyomi: "nan"
+  kanji: "南"
+  meaning: "nam"
+
+- hv: "nam"
+  onyomi: "nan"
+  kanji: "男"
+  meaning: "nam giới"
+
+- hv: "ngu"
+  onyomi: "go"
+  kanji: "語"
+  meaning: "ngữ"
+
+- hv: "nhan"
+  onyomi: "jin"
+  kanji: "人"
+  meaning: "người"
+
+- hv: "nhat"
+  onyomi: "nichi"
+  kanji: "日"
+  meaning: "ngày"
+
+- hv: "nhap"
+  onyomi: "nyuu"
+  kanji: "入"
+  meaning: "vào"
+
+- hv: "nhi"
+  onyomi: "ni"
+  kanji: "二"
+  meaning: "hai"
+
+- hv: "nhien"
+  onyomi: "nen"
+  kanji: "年"
+  meaning: "năm"
+
+- hv: "nu"
+  onyomi: "jo"
+  kanji: "女"
+  meaning: "nữ"
+
+# ── O ──
+- hv: "oc"
+  onyomi: "oku"
+  kanji: "億"
+  meaning: "ức"
+
+# ── P ──
+- hv: "phap"
+  onyomi: "hou"
+  kanji: "法"
+  meaning: "pháp"
+
+- hv: "phat"
+  onyomi: "butsu"
+  kanji: "仏"
+  meaning: "phật"
+
+- hv: "phong"
+  onyomi: "fuu"
+  kanji: "風"
+  meaning: "gió"
+
+- hv: "phu"
+  onyomi: "fu"
+  kanji: "富"
+  meaning: "giàu"
+
+- hv: "phuong"
+  onyomi: "hou"
+  kanji: "方"
+  meaning: "phương"
+
+# ── Q ──
+- hv: "quan"
+  onyomi: "kan"
+  kanji: "関"
+  meaning: "quan hệ"
+
+- hv: "quoc"
+  onyomi: "koku"
+  kanji: "国"
+  meaning: "nước"
+
+# ── S ──
+- hv: "san"
+  onyomi: "san"
+  kanji: "山"
+  meaning: "núi"
+
+- hv: "sat"
+  onyomi: "satsu"
+  kanji: "殺"
+  meaning: "giết"
+
+- hv: "sinh"
+  onyomi: "sei"
+  kanji: "生"
+  meaning: "sinh"
+
+- hv: "son"
+  onyomi: "san"
+  kanji: "山"
+  meaning: "núi"
+
+- hv: "su"
+  onyomi: "shi"
+  kanji: "四"
+  meaning: "bốn"
+
+# ── T ──
+- hv: "ta"
+  onyomi: "sa"
+  kanji: "左"
+  meaning: "trái"
+
+- hv: "tai"
+  onyomi: "sai"
+  kanji: "西"
+  meaning: "tây"
+
+- hv: "tam"
+  onyomi: "shin"
+  kanji: "心"
+  meaning: "tâm"
+
+- hv: "tam"
+  onyomi: "san"
+  kanji: "三"
+  meaning: "ba"
+
+- hv: "tan"
+  onyomi: "shin"
+  kanji: "新"
+  meaning: "mới"
+
+- hv: "tay"
+  onyomi: "sai"
+  kanji: "西"
+  meaning: "tây"
+
+- hv: "thai"
+  onyomi: "tai"
+  kanji: "大"
+  meaning: "thái"
+
+- hv: "thanh"
+  onyomi: "sei"
+  kanji: "青"
+  meaning: "xanh"
+
+- hv: "the"
+  onyomi: "se"
+  kanji: "世"
+  meaning: "thế"
+
+- hv: "thien"
+  onyomi: "sen"
+  kanji: "千"
+  meaning: "nghìn"
+
+- hv: "thien"
+  onyomi: "ten"
+  kanji: "天"
+  meaning: "trời"
+
+- hv: "tho"
+  onyomi: "do"
+  kanji: "土"
+  meaning: "thổ"
+
+- hv: "thoi"
+  onyomi: "ji"
+  kanji: "時"
+  meaning: "thời"
+
+- hv: "thuong"
+  onyomi: "shou"
+  kanji: "上"
+  meaning: "trên"
+
+- hv: "thuong"
+  onyomi: "shou"
+  kanji: "商"
+  meaning: "thương mại"
+
+- hv: "thuy"
+  onyomi: "sui"
+  kanji: "水"
+  meaning: "nước"
+
+- hv: "tien"
+  onyomi: "sen"
+  kanji: "先"
+  meaning: "trước"
+
+- hv: "tien"
+  onyomi: "sen"
+  kanji: "銭"
+  meaning: "tiền"
+
+- hv: "tieu"
+  onyomi: "shou"
+  kanji: "小"
+  meaning: "nhỏ"
+
+- hv: "trung"
+  onyomi: "chuu"
+  kanji: "中"
+  meaning: "giữa"
+
+- hv: "truong"
+  onyomi: "chou"
+  kanji: "長"
+  meaning: "dài"
+
+- hv: "tu"
+  onyomi: "shi"
+  kanji: "死"
+  meaning: "chết"
+
+# ── U ──
+- hv: "uu"
+  onyomi: "yuu"
+  kanji: "友"
+  meaning: "bạn"
+
+# ── V ──
+- hv: "van"
+  onyomi: "bun"
+  kanji: "文"
+  meaning: "văn"
+
+- hv: "vien"
+  onyomi: "en"
+  kanji: "円"
+  meaning: "tròn/yên"
+
+# ── X ──
+- hv: "xa"
+  onyomi: "sha"
+  kanji: "車"
+  meaning: "xe"
+
+- hv: "xuat"
+  onyomi: "shutsu"
+  kanji: "出"
+  meaning: "xuất"
+
+# ── Additional N5 kanji ──
+- hv: "am"
+  onyomi: "on"
+  kanji: "音"
+  meaning: "âm"
+
+- hv: "binh"
+  onyomi: "hei"
+  kanji: "平"
+  meaning: "bình"
+
+- hv: "bon"
+  onyomi: "hon"
+  kanji: "本"
+  meaning: "gốc"
+
+- hv: "cong"
+  onyomi: "kou"
+  kanji: "工"
+  meaning: "công"
+
+- hv: "da"
+  onyomi: "ta"
+  kanji: "多"
+  meaning: "nhiều"
+
+- hv: "doanh"
+  onyomi: "ei"
+  kanji: "営"
+  meaning: "kinh doanh"
+
+- hv: "duoc"
+  onyomi: "yaku"
+  kanji: "薬"
+  meaning: "thuốc"
+
+- hv: "gia"
+  onyomi: "ka"
+  kanji: "家"
+  meaning: "nhà"
+
+- hv: "hoa"
+  onyomi: "ka"
+  kanji: "火"
+  meaning: "lửa"
+
+- hv: "huyet"
+  onyomi: "ketsu"
+  kanji: "血"
+  meaning: "huyết"
+
+- hv: "lam"
+  onyomi: "ran"
+  kanji: "藍"
+  meaning: "xanh lam"
+
+- hv: "lien"
+  onyomi: "ren"
+  kanji: "連"
+  meaning: "liên"
+
+- hv: "luat"
+  onyomi: "ritsu"
+  kanji: "律"
+  meaning: "luật"
+
+- hv: "minh"
+  onyomi: "mei"
+  kanji: "明"
+  meaning: "sáng"
+
+- hv: "moi"
+  onyomi: "mai"
+  kanji: "毎"
+  meaning: "mỗi"
+
+- hv: "nguyet"
+  onyomi: "getsu"
+  kanji: "月"
+  meaning: "trăng"
+
+- hv: "nhat"
+  onyomi: "ichi"
+  kanji: "一"
+  meaning: "một"
+
+- hv: "ngu"
+  onyomi: "go"
+  kanji: "五"
+  meaning: "năm"
+
+- hv: "nhac"
+  onyomi: "gaku"
+  kanji: "楽"
+  meaning: "nhạc"
+
+- hv: "nien"
+  onyomi: "nen"
+  kanji: "年"
+  meaning: "năm"
+
+- hv: "phuc"
+  onyomi: "fuku"
+  kanji: "服"
+  meaning: "quần áo"
+
+- hv: "su"
+  onyomi: "ji"
+  kanji: "事"
+  meaning: "việc"
+
+- hv: "tam"
+  onyomi: "san"
+  kanji: "三"
+  meaning: "ba"
+
+- hv: "that"
+  onyomi: "shitsu"
+  kanji: "室"
+  meaning: "phòng"
+
+- hv: "that"
+  onyomi: "shichi"
+  kanji: "七"
+  meaning: "bảy"
+
+- hv: "thap"
+  onyomi: "juu"
+  kanji: "十"
+  meaning: "mười"
+
+- hv: "thuc"
+  onyomi: "shoku"
+  kanji: "食"
+  meaning: "ăn"
+
+- hv: "thuoc"
+  onyomi: "yaku"
+  kanji: "薬"
+  meaning: "thuốc"
+
+- hv: "trang"
+  onyomi: "sou"
+  kanji: "装"
+  meaning: "trang phục"
+
+- hv: "truyen"
+  onyomi: "den"
+  kanji: "伝"
+  meaning: "truyền"
+
+- hv: "vu"
+  onyomi: "bu"
+  kanji: "武"
+  meaning: "vũ"
+
+- hv: "vu"
+  onyomi: "u"
+  kanji: "雨"
+  meaning: "mưa"
+
+- hv: "vat"
+  onyomi: "butsu"
+  kanji: "物"
+  meaning: "vật"
+
+- hv: "vien"
+  onyomi: "in"
+  kanji: "院"
+  meaning: "viện"
+
+- hv: "vinh"
+  onyomi: "ei"
+  kanji: "栄"
+  meaning: "vinh"
+
+- hv: "xa"
+  onyomi: "en"
+  kanji: "遠"
+  meaning: "xa"
+
+- hv: "xuong"
+  onyomi: "kotsu"
+  kanji: "骨"
+  meaning: "xương"
+
+- hv: "y"
+  onyomi: "i"
+  kanji: "医"
+  meaning: "y"
+
+- hv: "nhat"
+  onyomi: "nichi"
+  kanji: "日"
+  meaning: "nhật"
+
+- hv: "ban"
+  onyomi: "hon"
+  kanji: "本"
+  meaning: "bản"

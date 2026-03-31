@@ -77,6 +77,19 @@ Cuốn sách này **không** dạy bạn học tiếng Nhật theo cách truyề
 <em>Ganbatte kudasai — Chúc bạn cố gắng hết mình.</em>
 </p>
 
+---
+
+## Nhật ký cập nhật
+
+<table class="kana-table">
+<thead>
+<tr><th>Ngày</th><th>Cập nhật</th></tr>
+</thead>
+<tbody>
+<tr><td>31/03/2026</td><td>Ra mắt NihonGo! — 18 bài học (Ch1–6), Flashcard Katakana &amp; Hiragana, HV Decoder với từ điển ~120 mục, Welcome screen, PWA, Modern theme, Google Analytics, Sidebar với bộ lọc cấp độ</td></tr>
+</tbody>
+</table>
+
 <div style="text-align:center;margin-top:2.5rem;">
 <img src="{{ '/assets/images/collab-logo.png' | relative_url }}" alt="hoangphi01 x Claude" style="max-width:220px;height:auto;opacity:0.7;">
 </div>

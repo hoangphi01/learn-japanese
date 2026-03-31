@@ -1,17 +1,31 @@
 - id: 1
-  hv_pattern: "T- đầu"
-  onyomi: "S-/Z-"
+  hv_pattern: "T- đầu → S-, Th- đầu → Sh-/S-"
+  onyomi: "S-/Sh-"
+  description: "Phụ âm T- trong HV thường thành S- trong On'yomi. Riêng Th- (âm bật hơi) thành Sh- hoặc S-. Không lẫn Z- vì Z- không productive."
+  onset_patterns:
+    - from: "t"
+      to: "s"
+    - from: "th"
+      to: "sh"
   examples:
     - hv: "Tâm"
       jp: "Shin (心)"
-    - hv: "Sinh"
-      jp: "Sei (生)"
     - hv: "Tử"
       jp: "Shi (死)"
+    - hv: "Thủy"
+      jp: "Sui (水)"
+    - hv: "Thượng"
+      jp: "Shō (上)"
 
 - id: 2
   hv_pattern: "-c/-ch cuối"
   onyomi: "-ku/-ki"
+  description: "Âm tắc cuối -c hoặc -ch trong HV tương ứng -ku hoặc -ki trong On'yomi. Sau nguyên âm đơn thường là -ku, sau -i thường là -ki."
+  coda_patterns:
+    - from: "c"
+      to: "ku"
+    - from: "ch"
+      to: "ki"
   examples:
     - hv: "Học"
       jp: "Gaku (学)"
@@ -19,10 +33,16 @@
       jp: "Koku (国)"
     - hv: "Mục"
       jp: "Moku (目)"
+    - hv: "Nhạc"
+      jp: "Gaku (楽)"
 
 - id: 3
   hv_pattern: "-t cuối"
   onyomi: "-tsu/-chi"
+  description: "Âm tắc cuối -t trong HV thành -tsu hoặc -chi. Sau -i thường thành -chi (Nhất→Ichi), các trường hợp khác thường là -tsu (Phật→Butsu)."
+  coda_patterns:
+    - from: "t"
+      to: "tsu"
   examples:
     - hv: "Nhất"
       jp: "Ichi (一)"
@@ -30,10 +50,24 @@
       jp: "Butsu (仏)"
     - hv: "Nhật"
       jp: "Nichi (日)"
+    - hv: "Xuất"
+      jp: "Shutsu (出)"
 
 - id: 4
-  hv_pattern: "-ng/-nh cuối"
-  onyomi: "Trường âm -ō/-ū"
+  hv_pattern: "-ng/-nh cuối → trường âm"
+  onyomi: "-ō/-ū/-ei"
+  description: "Âm cuối -ng hoặc -nh biến mất, thay bằng trường âm. Quy luật phụ thuộc nguyên âm trước: -ong/-ông→-ō, -ung/-ưng→-ū, -anh/-inh→-ei, -ang→-ō. Ví dụ: Kinh→Kei/Kyō (âm cuối -nh, nguyên âm -i)."
+  coda_patterns:
+    - from: "ong"
+      to: "ou"
+    - from: "ung"
+      to: "uu"
+    - from: "anh"
+      to: "ei"
+    - from: "inh"
+      to: "ei"
+    - from: "ang"
+      to: "ou"
   examples:
     - hv: "Đường"
       jp: "Dō (道)"
@@ -41,10 +75,18 @@
       jp: "Kū (空)"
     - hv: "Trung"
       jp: "Chū (中)"
+    - hv: "Kinh"
+      jp: "Kyō (京)"
+    - hv: "Thanh"
+      jp: "Sei (青)"
 
 - id: 5
   hv_pattern: "Đ- đầu"
   onyomi: "D-"
+  description: "Phụ âm Đ- trong HV tương ứng D- trong On'yomi. Đây là ánh xạ rất đều đặn."
+  onset_patterns:
+    - from: "d"
+      to: "d"
   examples:
     - hv: "Đại"
       jp: "Dai (大)"
@@ -56,6 +98,10 @@
 - id: 6
   hv_pattern: "Nh- đầu"
   onyomi: "Ni-/Jin-"
+  description: "Nh- đầu trong HV thường thành Ni- hoặc Jin-/Nin- trong On'yomi. Trước nguyên âm -â/-a thường thành Jin, trước -ậ/-ập thành Nyū."
+  onset_patterns:
+    - from: "nh"
+      to: "ni"
   examples:
     - hv: "Nhân"
       jp: "Jin (人)"
@@ -67,17 +113,27 @@
 - id: 7
   hv_pattern: "-n cuối"
   onyomi: "-n giữ nguyên"
+  description: "Âm mũi cuối -n trong HV giữ nguyên thành -n trong On'yomi. Lưu ý: chỉ áp dụng cho -n, KHÔNG áp dụng cho -nh hay -ng (xem Quy tắc 4)."
+  coda_patterns:
+    - from: "n"
+      to: "n"
   examples:
     - hv: "Quan"
       jp: "Kan (関)"
-    - hv: "Kinh"
-      jp: "Kyō (京)"
     - hv: "Sơn"
       jp: "San (山)"
+    - hv: "Nhân"
+      jp: "Jin (人)"
+    - hv: "Bản"
+      jp: "Hon (本)"
 
 - id: 8
   hv_pattern: "Ph- đầu"
   onyomi: "H-/F-"
+  description: "Ph- đầu trong HV tương ứng H- hoặc F- trong On'yomi. Trước -u thường giữ F- (Phú→Fu, Phong→Fū), các trường hợp khác thường thành H- (Pháp→Hō)."
+  onset_patterns:
+    - from: "ph"
+      to: "h"
   examples:
     - hv: "Phong"
       jp: "Fū (風)"
@@ -85,3 +141,5 @@
       jp: "Hō (法)"
     - hv: "Phú"
       jp: "Fu (富)"
+    - hv: "Phương"
+      jp: "Hō (方)"
