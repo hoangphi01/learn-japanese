@@ -121,3 +121,13 @@ Particles trong tiếng Nhật giống **toán tử** trong lập trình: chúng
 
 </div>
 </div>
+
+## Luyện tập nhanh
+
+Nối mỗi particle với chức năng đúng:
+
+{% include matching-quiz.html pairs="は (wa):Chủ đề câu,を (wo):Tân ngữ trực tiếp,が (ga):Chủ ngữ ngữ pháp,で (de):Địa điểm hành động,に (ni):Điểm đến / thời gian,も (mo):Cũng (also),か (ka):Dấu hỏi cuối câu" %}
+
+Điền particle đúng vào chỗ trống:
+
+{% include fill-blank.html before="コンビニ" blank="で" after="買います。(Mua ở cửa hàng)" hint="Nơi hành động xảy ra → particle nào?" %}

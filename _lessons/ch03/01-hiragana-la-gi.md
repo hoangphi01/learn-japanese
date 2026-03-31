@@ -66,3 +66,29 @@ Katakana có nét **thẳng, góc cạnh**. Hiragana có nét **cong, mềm mạ
 <p>Lịch sử: Nhật Bản mượn chữ Hán (Kanji) từ Trung Quốc. Hiragana và Katakana được phát triển từ các ký tự Hán giản lược. Mỗi hệ chữ phục vụ mục đích khác nhau, và sự kết hợp giúp <strong>đọc nhanh hơn</strong> vì dễ phân biệt ranh giới từ.</p>
 </div>
 </div>
+
+## Luyện tập nhanh
+
+<div class="quiz-question" data-correct="hiragana">
+  <p class="question-text">Trợ từ <span class="jp-char">は、を、に</span> được viết bằng hệ chữ nào?</p>
+  <div class="question-options">
+    <button class="option-btn" data-value="katakana" onclick="LJQuiz.checkAnswer(this, 'hiragana')">Katakana</button>
+    <button class="option-btn" data-value="hiragana" onclick="LJQuiz.checkAnswer(this, 'hiragana')">Hiragana</button>
+    <button class="option-btn" data-value="kanji" onclick="LJQuiz.checkAnswer(this, 'hiragana')">Kanji</button>
+  </div>
+  <div class="question-explanation" style="display:none;">
+    Tất cả trợ từ (particles) và đuôi ngữ pháp đều viết bằng <strong>Hiragana</strong> — đây là "keo dán" của câu tiếng Nhật.
+  </div>
+</div>
+
+<div class="quiz-question" data-correct="kata">
+  <p class="question-text">Từ <span class="jp-char">コーヒー</span> (coffee) được viết bằng hệ chữ nào?</p>
+  <div class="question-options">
+    <button class="option-btn" data-value="hira" onclick="LJQuiz.checkAnswer(this, 'kata')">Hiragana — vì là từ thông dụng</button>
+    <button class="option-btn" data-value="kata" onclick="LJQuiz.checkAnswer(this, 'kata')">Katakana — vì là từ mượn ngoại lai</button>
+    <button class="option-btn" data-value="kanji" onclick="LJQuiz.checkAnswer(this, 'kata')">Kanji — vì là danh từ</button>
+  </div>
+  <div class="question-explanation" style="display:none;">
+    "Coffee" là từ mượn từ tiếng Anh → viết bằng <strong>Katakana</strong>. Quy tắc: từ ngoại lai = Katakana.
+  </div>
+</div>

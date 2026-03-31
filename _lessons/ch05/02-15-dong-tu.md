@@ -86,3 +86,7 @@ Với 15 động từ này + 7 particles từ Chương 4, bạn có thể tạo 
 | [Thứ]<span class="ptag">を</span> + 食べます | <span class="jp">寿司を食べます</span> | Ăn sushi |
 | [Xe]<span class="ptag">に</span> + 乗ります | <span class="jp">電車に乗ります</span> | Lên tàu điện |
 | [Thứ]<span class="ptag">を</span> + 見せてください | <span class="jp">切符を見せてください</span> | Xin cho xem vé |
+
+## Luyện tập nhanh
+
+{% include matching-quiz.html pairs="行く (iku):đi,食べる (taberu):ăn,飲む (nomu):uống,見る (miru):nhìn/xem,買う (kau):mua" %}

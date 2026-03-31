@@ -108,3 +108,9 @@ Thêm 2 nét chấm nhỏ (゛) để biến phụ âm **vô thanh** → **hữu
 Dakuten (゛): K→G, S→Z, T→D, H→B<br>
 Handakuten (゜): H→P
 </div>
+
+## Luyện tập nhanh
+
+Nối mỗi ký tự gốc với dạng Dakuten/Handakuten đúng:
+
+{% include matching-quiz.html pairs="カ (ka):ガ (ga),サ (sa):ザ (za),タ (ta):ダ (da),ハ (ha):バ (ba),ハ (ha→pa):パ (pa)" %}

@@ -185,6 +185,38 @@
   pointer-events: none;
 }
 
+.match-item.incorrect {
+  border-color: var(--japan-red);
+  background: var(--light-red);
+}
+
+.fill-blank .blank-feedback {
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: none;
+}
+
+.fill-blank .blank-hint {
+  font-size: 0.85rem;
+  color: var(--med-gray);
+  display: none;
+}
+
+.fill-blank .check-blank-btn,
+.fill-blank .hint-btn {
+  border: 2px solid var(--navy-blue);
+  background: white;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-family: inherit;
+}
+
+.fill-blank .check-blank-btn:hover,
+.fill-blank .hint-btn:hover {
+  background: var(--light-blue);
+}
+
 @media (max-width: 768px) {
   .matching-quiz {
     grid-template-columns: 1fr;
@@ -227,4 +259,11 @@
 [data-theme="modern"] .fill-blank input {
   border-bottom-width: 2px;
   transition: border-color 0.2s ease;
+}
+
+[data-theme="modern"] .fill-blank .check-blank-btn,
+[data-theme="modern"] .fill-blank .hint-btn {
+  border-radius: var(--radius-sm);
+  border-width: 1px;
+  transition: background 0.2s ease;
 }

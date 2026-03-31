@@ -90,3 +90,9 @@ Bạn đã học xong **25 ký tự** — hơn một nửa bảng Katakana! Hãy
 <p>Tương tự: <strong>シ</strong> (shi) vs <strong>ツ</strong> (tsu) — hướng nét ngược nhau.</p>
 </div>
 </div>
+
+## Luyện tập nhanh
+
+Nối mỗi Katakana hàng T và N với romaji đúng:
+
+{% include matching-quiz.html pairs="タ:ta,チ:chi,ツ:tsu,ナ:na,ノ:no" %}

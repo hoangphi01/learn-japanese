@@ -130,3 +130,19 @@ Tiếng Nhật phân biệt <strong>3 khoảng cách</strong>: <strong>Ko-</stro
 Nhiều từ trong nhóm Địa điểm, Giao thông, Mua sắm là <strong>từ Hán-Việt</strong> — bạn sẽ học cách "giải mã" chúng ở Chương 6. Ví dụ: 空港 (kūkō) = Không + Cảng = Sân bay, 銀行 (ginkō) = Ngân + Hàng = Ngân hàng.
 </div>
 </div>
+
+## Luyện tập nhanh
+
+{% include matching-quiz.html pairs="駅 (eki):ga tàu,水 (mizu):nước,電車 (densha):tàu điện,切符 (kippu):vé,トイレ (toire):nhà vệ sinh" %}
+
+<div class="quiz-question" data-correct="3-khoang-cach">
+  <p class="question-text">これ、それ、あれ — pattern Ko-So-A biểu thị gì?</p>
+  <div class="question-options">
+    <button class="option-btn" data-value="3-thoi-gian" onclick="LJQuiz.checkAnswer(this, '3-khoang-cach')">3 mốc thời gian (quá khứ, hiện tại, tương lai)</button>
+    <button class="option-btn" data-value="3-khoang-cach" onclick="LJQuiz.checkAnswer(this, '3-khoang-cach')">3 khoảng cách (gần tôi, gần bạn, xa cả hai)</button>
+    <button class="option-btn" data-value="3-muc-lich-su" onclick="LJQuiz.checkAnswer(this, '3-khoang-cach')">3 mức lịch sự (thân mật, bình thường, trang trọng)</button>
+  </div>
+  <div class="question-explanation" style="display:none;">
+    Ko- (gần tôi), So- (gần bạn), A- (xa cả hai). Pattern này lặp lại ở rất nhiều từ: kore/sore/are, koko/soko/asoko...
+  </div>
+</div>

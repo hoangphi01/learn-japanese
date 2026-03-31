@@ -93,3 +93,21 @@ Giống Katakana, dùng **っ nhỏ** (tsu nhỏ):
 </p>
 </div>
 </div>
+
+## Luyện tập nhanh
+
+Nối mỗi Hiragana gốc với dạng Dakuten:
+
+{% include matching-quiz.html pairs="か (ka):が (ga),さ (sa):ざ (za),た (ta):だ (da),は (ha):ば (ba)" %}
+
+<div class="quiz-question" data-correct="wa">
+  <p class="question-text">Trợ từ chủ đề <span class="jp-char">は</span> đọc là gì?</p>
+  <div class="question-options">
+    <button class="option-btn" data-value="ha" onclick="LJQuiz.checkAnswer(this, 'wa')">ha</button>
+    <button class="option-btn" data-value="wa" onclick="LJQuiz.checkAnswer(this, 'wa')">wa</button>
+    <button class="option-btn" data-value="ba" onclick="LJQuiz.checkAnswer(this, 'wa')">ba</button>
+  </div>
+  <div class="question-explanation" style="display:none;">
+    Khi は dùng làm <strong>trợ từ chủ đề</strong>, đọc là <strong>"wa"</strong> (không phải "ha"). Đây là ngoại lệ quan trọng nhất!
+  </div>
+</div>

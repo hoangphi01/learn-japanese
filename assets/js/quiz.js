@@ -109,8 +109,136 @@ var LJQuiz = (function () {
     if (resultsDiv) resultsDiv.style.display = 'none';
   }
 
+  // ─── Matching Quiz ─────────────────────────────────
+  var selectedLeft = null;
+  var selectedRight = null;
+
+  function initMatching() {
+    var containers = document.querySelectorAll('.matching-quiz');
+    containers.forEach(function (container) {
+      // Shuffle right column items
+      var rightItems = Array.from(container.querySelectorAll('.match-item[data-side="right"]'));
+      var parent = rightItems[0] && rightItems[0].parentNode;
+      if (!parent) return;
+
+      // Fisher-Yates shuffle then re-append
+      for (var i = rightItems.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = rightItems[i];
+        rightItems[i] = rightItems[j];
+        rightItems[j] = temp;
+      }
+
+      // Find the first right item's position and re-insert
+      var leftItems = container.querySelectorAll('.match-item[data-side="left"]');
+      rightItems.forEach(function (item) {
+        container.appendChild(item);
+      });
+    });
+  }
+
+  function selectMatch(item) {
+    if (item.classList.contains('matched')) return;
+
+    var side = item.getAttribute('data-side');
+    var container = item.closest('.matching-quiz');
+
+    if (side === 'left') {
+      // Deselect previous left
+      if (selectedLeft) selectedLeft.classList.remove('selected');
+      selectedLeft = item;
+      item.classList.add('selected');
+    } else if (side === 'right') {
+      if (!selectedLeft) return; // Must select left first
+      // Deselect previous right
+      if (selectedRight) selectedRight.classList.remove('selected');
+      selectedRight = item;
+      item.classList.add('selected');
+
+      // Check match
+      var leftPair = selectedLeft.getAttribute('data-pair');
+      var rightPair = selectedRight.getAttribute('data-pair');
+
+      if (leftPair === rightPair) {
+        selectedLeft.classList.add('matched');
+        selectedLeft.classList.remove('selected');
+        selectedRight.classList.add('matched');
+        selectedRight.classList.remove('selected');
+        selectedLeft = null;
+        selectedRight = null;
+      } else {
+        // Wrong — brief red flash
+        var wrongLeft = selectedLeft;
+        var wrongRight = selectedRight;
+        wrongLeft.classList.add('incorrect');
+        wrongRight.classList.add('incorrect');
+        setTimeout(function () {
+          wrongLeft.classList.remove('selected', 'incorrect');
+          wrongRight.classList.remove('selected', 'incorrect');
+        }, 500);
+        selectedLeft = null;
+        selectedRight = null;
+      }
+    }
+  }
+
+  // ─── Fill-in-Blank ────────────────────────────────
+  function checkBlank(btn) {
+    var container = btn.closest('.fill-blank');
+    var input = container.querySelector('input');
+    if (!input || input.classList.contains('correct')) return;
+
+    var answers = (input.getAttribute('data-answers') || '').split('|');
+    var userVal = input.value.trim().toLowerCase();
+
+    var isCorrect = answers.some(function (a) {
+      return a.trim().toLowerCase() === userVal;
+    });
+
+    input.classList.remove('correct', 'incorrect');
+    if (isCorrect) {
+      input.classList.add('correct');
+      input.setAttribute('readonly', 'true');
+      btn.style.display = 'none';
+      var feedback = container.querySelector('.blank-feedback');
+      if (feedback) {
+        feedback.textContent = '✓';
+        feedback.style.color = 'var(--hira-color)';
+        feedback.style.display = 'inline';
+      }
+    } else {
+      input.classList.add('incorrect');
+      var feedback = container.querySelector('.blank-feedback');
+      if (feedback) {
+        feedback.textContent = 'Thử lại!';
+        feedback.style.color = 'var(--japan-red)';
+        feedback.style.display = 'inline';
+      }
+    }
+  }
+
+  function showHint(btn) {
+    var container = btn.closest('.fill-blank');
+    var hint = container.querySelector('.blank-hint');
+    if (hint) {
+      hint.style.display = 'inline';
+      btn.style.display = 'none';
+    }
+  }
+
+  // Init matching quizzes on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMatching);
+  } else {
+    initMatching();
+  }
+
   return {
     checkAnswer: checkAnswer,
-    reset: reset
+    reset: reset,
+    initMatching: initMatching,
+    selectMatch: selectMatch,
+    checkBlank: checkBlank,
+    showHint: showHint
   };
 })();

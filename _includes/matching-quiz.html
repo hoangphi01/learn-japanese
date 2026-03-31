@@ -1,0 +1,16 @@
+{% comment %}
+  Matching quiz component.
+  Usage: {% include matching-quiz.html pairs="ア:a,イ:i,ウ:u,エ:e,オ:o" %}
+  pairs: comma-separated left:right values. Right column shuffled by JS.
+{% endcomment %}
+{% assign pair_list = include.pairs | split: "," %}
+<div class="matching-quiz">
+  {% for pair in pair_list %}
+    {% assign sides = pair | split: ":" %}
+    <div class="match-item" data-side="left" data-pair="{{ forloop.index }}" onclick="LJQuiz.selectMatch(this)">{{ sides[0] }}</div>
+  {% endfor %}
+  {% for pair in pair_list %}
+    {% assign sides = pair | split: ":" %}
+    <div class="match-item" data-side="right" data-pair="{{ forloop.index }}" onclick="LJQuiz.selectMatch(this)">{{ sides[1] }}</div>
+  {% endfor %}
+</div>

@@ -92,3 +92,29 @@ Dấu gạch ngang kéo dài nguyên âm trước đó:
 Phụ âm đôi (ッ) giống như khi bạn nói "bookkeeper" — có một khoảng dừng ngắn giữa hai phụ âm. Trong tiếng Nhật, khoảng dừng này đúng 1 nhịp.
 </div>
 </div>
+
+## Luyện tập nhanh
+
+<div class="quiz-question" data-correct="sha">
+  <p class="question-text"><span class="jp-char">シャ</span> đọc là gì?</p>
+  <div class="question-options">
+    <button class="option-btn" data-value="sia" onclick="LJQuiz.checkAnswer(this, 'sha')">sia</button>
+    <button class="option-btn" data-value="sha" onclick="LJQuiz.checkAnswer(this, 'sha')">sha</button>
+    <button class="option-btn" data-value="shiya" onclick="LJQuiz.checkAnswer(this, 'sha')">shiya</button>
+  </div>
+  <div class="question-explanation" style="display:none;">
+    シ (shi) + ャ nhỏ (ya) = <strong>sha</strong>. Âm kết hợp chỉ có 1 nhịp, không phải 2.
+  </div>
+</div>
+
+<div class="quiz-question" data-correct="truong-am">
+  <p class="question-text">Ký hiệu <span class="jp-char">ー</span> (dấu gạch ngang) trong Katakana dùng để làm gì?</p>
+  <div class="question-options">
+    <button class="option-btn" data-value="ngat" onclick="LJQuiz.checkAnswer(this, 'truong-am')">Ngắt âm</button>
+    <button class="option-btn" data-value="truong-am" onclick="LJQuiz.checkAnswer(this, 'truong-am')">Kéo dài nguyên âm trước</button>
+    <button class="option-btn" data-value="noi" onclick="LJQuiz.checkAnswer(this, 'truong-am')">Nối hai từ</button>
+  </div>
+  <div class="question-explanation" style="display:none;">
+    Dấu ー kéo dài nguyên âm trước đó: コーヒー (ko-<strong>ō</strong>-hī) = Coffee.
+  </div>
+</div>

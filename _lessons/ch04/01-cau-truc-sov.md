@@ -88,3 +88,29 @@ Ví dụ thực tế:
 | <span class="jp">これをください</span> | kore wo kudasai | Cho tôi cái này |
 | <span class="jp">水を飲みます</span> | mizu wo nomimasu | (Tôi) uống nước |
 | <span class="jp">東京に行きます</span> | Tōkyō ni ikimasu | (Tôi) đi Tokyo |
+
+## Luyện tập nhanh
+
+<div class="quiz-question" data-correct="sov">
+  <p class="question-text">Tiếng Nhật sử dụng cấu trúc câu nào?</p>
+  <div class="question-options">
+    <button class="option-btn" data-value="svo" onclick="LJQuiz.checkAnswer(this, 'sov')">S-V-O (Chủ ngữ - Động từ - Tân ngữ)</button>
+    <button class="option-btn" data-value="sov" onclick="LJQuiz.checkAnswer(this, 'sov')">S-O-V (Chủ ngữ - Tân ngữ - Động từ)</button>
+    <button class="option-btn" data-value="vso" onclick="LJQuiz.checkAnswer(this, 'sov')">V-S-O (Động từ - Chủ ngữ - Tân ngữ)</button>
+  </div>
+  <div class="question-explanation" style="display:none;">
+    Tiếng Nhật là S-O-V: động từ <strong>LUÔN đứng cuối câu</strong>. Ví dụ: 私は これを 買います (Tôi + cái này + mua).
+  </div>
+</div>
+
+<div class="quiz-question" data-correct="bo">
+  <p class="question-text">Khi ngữ cảnh đã rõ, người Nhật thường làm gì với chủ ngữ?</p>
+  <div class="question-options">
+    <button class="option-btn" data-value="giu" onclick="LJQuiz.checkAnswer(this, 'bo')">Luôn giữ chủ ngữ đầy đủ</button>
+    <button class="option-btn" data-value="bo" onclick="LJQuiz.checkAnswer(this, 'bo')">Bỏ chủ ngữ (lược chủ ngữ)</button>
+    <button class="option-btn" data-value="viet-tat" onclick="LJQuiz.checkAnswer(this, 'bo')">Viết tắt chủ ngữ</button>
+  </div>
+  <div class="question-explanation" style="display:none;">
+    Người Nhật thường <strong>bỏ chủ ngữ</strong> khi ngữ cảnh đã rõ. Nói "watashi" quá nhiều bị coi là tự cao.
+  </div>
+</div>

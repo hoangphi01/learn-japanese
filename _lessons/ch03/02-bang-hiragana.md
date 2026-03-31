@@ -127,3 +127,7 @@ level: N5
 </p>
 </div>
 </div>
+
+## Luyện tập nhanh
+
+{% include matching-quiz.html pairs="あ:a,き:ki,す:su,て:te,の:no" %}

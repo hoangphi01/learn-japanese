@@ -110,3 +110,9 @@ Khi nghi ngờ → dùng <strong>desu/masu</strong>. Đây là "chế độ an t
 Trong tất cả bài học của NihonGo!, chúng ta sử dụng <strong>desu/masu form</strong> làm mặc định. Đây là cách nói an toàn nhất cho người mới — lịch sự mà không quá trang trọng. Bạn sẽ học dạng thường (casual) ở giai đoạn sau.
 </div>
 </div>
+
+## Luyện tập nhanh
+
+{% include fill-blank.html before="食べ" blank="ます|masu" after="(ăn — lịch sự)" hint="Nhóm 2: bỏ る, thêm..." %}
+
+{% include fill-blank.html before="行き" blank="ます|masu" after="(đi — lịch sự)" hint="Nhóm 1: đổi âm cuối sang -i" %}

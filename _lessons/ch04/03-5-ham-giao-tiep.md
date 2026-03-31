@@ -103,3 +103,11 @@ Lịch sự hơn: <strong>[X] + <span class="ptag">を</span> + <span class="jp"
 Chỉ cần <span class="jp">すみません</span> (sumimasen) + chỉ vào đồ + <span class="jp">これをください</span> (kore wo kudasai) là bạn đã có thể mua hầu hết mọi thứ ở Nhật. Thêm <span class="jp">いくらですか</span> để hỏi giá trước khi mua.
 </div>
 </div>
+
+## Luyện tập nhanh
+
+Hoàn thành các câu giao tiếp sinh tồn:
+
+{% include fill-blank.html before="水" blank="を" after="ください。(Cho tôi nước)" hint="Yêu cầu đồ vật → [X] + ? + ください" %}
+
+{% include fill-blank.html before="トイレは" blank="どこですか|doko desu ka" after="？ (Nhà vệ sinh ở đâu?)" hint="Hỏi vị trí → は + ?" %}

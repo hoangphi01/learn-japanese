@@ -1,0 +1,19 @@
+{% comment %}
+  Fill-in-the-blank component.
+  Usage: {% include fill-blank.html before="私は学生" blank="です|desu" after="。" hint="copula" %}
+  before: text before blank
+  blank: correct answer(s), pipe-separated for multiple accepted answers
+  after: text after blank
+  hint: optional hint text
+{% endcomment %}
+<div class="fill-blank">
+  <span class="jp">{{ include.before }}</span>
+  <input type="text" data-answers="{{ include.blank }}" placeholder="..." autocomplete="off">
+  <span class="jp">{{ include.after }}</span>
+  <button class="check-blank-btn" onclick="LJQuiz.checkBlank(this)">Kiểm tra</button>
+  {% if include.hint %}
+  <button class="hint-btn" onclick="LJQuiz.showHint(this)">Gợi ý</button>
+  <span class="blank-hint">{{ include.hint }}</span>
+  {% endif %}
+  <span class="blank-feedback"></span>
+</div>

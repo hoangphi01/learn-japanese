@@ -101,3 +101,30 @@ Tiếng Nhật có cấu trúc âm tiết **cực kỳ đơn giản** — luôn 
 
 - **Strike** → ストライク (su-to-ra-i-ku)
 - **Christmas** → クリスマス (ku-ri-su-ma-su)
+
+## Luyện tập nhanh
+
+<div class="quiz-question" data-correct="katakana">
+  <p class="question-text">Hệ chữ nào dùng để viết từ mượn ngoại ngữ (ví dụ: Coffee, Bus)?</p>
+  <div class="question-options">
+    <button class="option-btn" data-value="hiragana" onclick="LJQuiz.checkAnswer(this, 'katakana')">Hiragana</button>
+    <button class="option-btn" data-value="katakana" onclick="LJQuiz.checkAnswer(this, 'katakana')">Katakana</button>
+    <button class="option-btn" data-value="kanji" onclick="LJQuiz.checkAnswer(this, 'katakana')">Kanji</button>
+  </div>
+  <div class="question-explanation" style="display:none;">
+    Katakana chuyên phiên âm từ ngoại lai. コーヒー (coffee), バス (bus) đều viết bằng Katakana.
+  </div>
+</div>
+
+<div class="quiz-question" data-correct="5">
+  <p class="question-text">Tiếng Nhật có bao nhiêu nguyên âm gốc?</p>
+  <div class="question-options">
+    <button class="option-btn" data-value="3" onclick="LJQuiz.checkAnswer(this, '5')">3</button>
+    <button class="option-btn" data-value="5" onclick="LJQuiz.checkAnswer(this, '5')">5</button>
+    <button class="option-btn" data-value="7" onclick="LJQuiz.checkAnswer(this, '5')">7</button>
+    <button class="option-btn" data-value="12" onclick="LJQuiz.checkAnswer(this, '5')">12</button>
+  </div>
+  <div class="question-explanation" style="display:none;">
+    Tiếng Nhật chỉ có 5 nguyên âm: ア (a), イ (i), ウ (u), エ (e), オ (o) — đơn giản hơn tiếng Việt rất nhiều.
+  </div>
+</div>

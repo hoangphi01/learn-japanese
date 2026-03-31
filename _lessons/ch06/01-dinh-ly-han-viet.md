@@ -71,3 +71,29 @@ Mỗi Kanji có thể có hai cách đọc. Biết khi nào dùng cách nào là
 Khi bạn thấy <strong>2 Kanji đứng cạnh nhau</strong> → rất có thể đọc On'yomi → ánh xạ Hán-Việt hoạt động! Đây chính là "bộ giải mã" giúp bạn đoán nghĩa và cách đọc hàng nghìn từ.
 </div>
 </div>
+
+## Luyện tập nhanh
+
+<div class="quiz-question" data-correct="denwa">
+  <p class="question-text">Từ nào sau đây có nguồn gốc Hán-Việt?</p>
+  <div class="question-options">
+    <button class="option-btn" data-value="denwa" onclick="LJQuiz.checkAnswer(this, 'denwa')">電話 (Điện thoại)</button>
+    <button class="option-btn" data-value="taberu" onclick="LJQuiz.checkAnswer(this, 'denwa')">食べる (taberu)</button>
+    <button class="option-btn" data-value="koohii" onclick="LJQuiz.checkAnswer(this, 'denwa')">コーヒー (coffee)</button>
+  </div>
+  <div class="question-explanation" style="display:none;">
+    電話 = Điện (電 Den) + Thoại (話 Wa) — compound word đọc On'yomi, ánh xạ Hán-Việt hoạt động. 食べる có okurigana → Kun'yomi. コーヒー là từ mượn tiếng Anh.
+  </div>
+</div>
+
+<div class="quiz-question" data-correct="onyomi">
+  <p class="question-text">大学 đọc On'yomi hay Kun'yomi?</p>
+  <div class="question-options">
+    <button class="option-btn" data-value="onyomi" onclick="LJQuiz.checkAnswer(this, 'onyomi')">On'yomi (daigaku)</button>
+    <button class="option-btn" data-value="kunyomi" onclick="LJQuiz.checkAnswer(this, 'onyomi')">Kun'yomi</button>
+    <button class="option-btn" data-value="both" onclick="LJQuiz.checkAnswer(this, 'onyomi')">Cả hai</button>
+  </div>
+  <div class="question-explanation" style="display:none;">
+    大学 là compound word (2 Kanji ghép) → đọc On'yomi = Daigaku. Quy tắc: Kanji ghép với Kanji khác → On'yomi.
+  </div>
+</div>

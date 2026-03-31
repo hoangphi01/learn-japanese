@@ -214,3 +214,9 @@ Tuy nhiên, với 60-70% từ vựng là Hán ngữ, bạn đã có lợi thế 
 
 </div>
 </div>
+
+## Luyện tập nhanh
+
+{% include matching-quiz.html pairs="Đại (Rule 5):Dai,Tâm (Rule 9):Shin,Lý (Rule 13):Ri,Quốc (Rule 14):Koku,Phong (Rule 8):Fū" %}
+
+{% include fill-blank.html before="Ngân hàng = " blank="Ginkō|ginkou|ginkoo" after="(Rule 11: Ng→G)" hint="Ng- đầu → G-" %}

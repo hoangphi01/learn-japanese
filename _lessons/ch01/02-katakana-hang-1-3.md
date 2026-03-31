@@ -89,3 +89,9 @@ Với 15 ký tự vừa học, bạn đã đọc được các từ sau:
 | 1 | Trên xuống dưới | Nét nằm trên viết trước |
 | 2 | Trái sang phải | Nét bên trái viết trước |
 | 3 | Ngang trước dọc | Nét ngang viết trước nét đứng giao nhau |
+
+## Luyện tập nhanh
+
+Nối mỗi Katakana với romaji đúng:
+
+{% include matching-quiz.html pairs="ア:a,カ:ka,シ:shi,ク:ku,ソ:so" %}

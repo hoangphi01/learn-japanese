@@ -87,3 +87,11 @@ Thực hành nói giá:
 <p><strong>Được phép hỏi</strong> ở chợ trời, đồ cũ, Ameyoko (Tokyo), duty-free khi mua nhiều.</p>
 </div>
 </div>
+
+## Luyện tập nhanh
+
+Điền romaji cho các số sau:
+
+{% include fill-blank.html before="300 yen = " blank="sanbyaku en|san-byaku en|sanbyaku-en" after=" (romaji)" hint="Biến âm: san + hyaku = ?" %}
+
+{% include fill-blank.html before="47 = " blank="yon-juu-nana|yonjuunana|yon-juu-shichi|yonjuushichi" after=" (romaji)" hint="yon × juu + nana" %}
