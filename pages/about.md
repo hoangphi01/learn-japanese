@@ -76,3 +76,7 @@ Cuốn sách này **không** dạy bạn học tiếng Nhật theo cách truyề
 <span class="jp" style="font-size:1.3rem;color:var(--gold-accent);">頑張ってください。</span><br>
 <em>Ganbatte kudasai — Chúc bạn cố gắng hết mình.</em>
 </p>
+
+<div style="text-align:center;margin-top:2.5rem;">
+<img src="{{ '/assets/images/collab-logo.png' | relative_url }}" alt="hoangphi01 x Claude" style="max-width:220px;height:auto;opacity:0.7;">
+</div>
