@@ -613,6 +613,7 @@ strong { font-weight: 600; }
   background: var(--navy-blue);
   color: white;
   padding: 0.5rem 0.75rem;
+  border: 2px solid var(--navy-blue);
   text-align: left;
   font-weight: 600;
   font-size: 0.9rem;
@@ -620,7 +621,7 @@ strong { font-weight: 600; }
 
 .lesson-content table td {
   padding: 0.5rem 0.75rem;
-  border-bottom: 2px solid #e5e7eb;
+  border: 2px solid #e5e7eb;
 }
 
 .lesson-content table tr:nth-child(even) {
@@ -668,11 +669,12 @@ strong { font-weight: 600; }
   text-align: left;
   font-weight: 600;
   font-size: 0.9rem;
+  border: 2px solid var(--navy-blue);
 }
 
 .kana-table td {
   padding: 0.5rem 0.75rem;
-  border-bottom: 2px solid #e5e7eb;
+  border: 2px solid #e5e7eb;
 }
 
 .kana-table tr:nth-child(even) {
@@ -1576,7 +1578,7 @@ strong { font-weight: 600; }
 }
 
 [data-theme="modern"] .lesson-content table td {
-  border-bottom: 1px solid #e5e7eb;
+  border: 1px solid #e5e7eb;
 }
 
 /* ─── Modern: Lesson Complete ────────────────────── */
