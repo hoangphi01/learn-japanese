@@ -1,20 +1,23 @@
 /* ============================================================
-   BOX STYLES — Port from LaTeX tcolorbox
+   BOX STYLES — Port from LaTeX tcolorbox — Pixelated Theme
    ============================================================ */
 
 .box {
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   margin: 1.5rem 0;
   overflow: hidden;
-  border-width: 1px;
+  border-width: 3px;
   border-style: solid;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
 }
 
 .box-title {
   padding: 0.5rem 1rem;
+  font-family: var(--font-pixel);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: white;
+  line-height: 1.4;
 }
 
 .box-content {
@@ -31,7 +34,7 @@
 .formula-box {
   background: rgba(27, 42, 74, 0.06);
   border-color: var(--navy-blue);
-  border-width: 2px;
+  border-width: 3px;
   text-align: center;
 }
 
@@ -123,8 +126,8 @@
 
 .dialog-box {
   background: white;
-  border-color: #d1d5db;
-  box-shadow: var(--shadow);
+  border-color: #6b7280;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
 }
 
 .dialog-box .box-title {
@@ -159,8 +162,8 @@
 .jp-formula {
   display: block;
   background: rgba(27, 42, 74, 0.06);
-  border: 2px solid var(--navy-blue);
-  border-radius: var(--radius-sm);
+  border: 3px solid var(--navy-blue);
+  border-radius: 0;
   padding: 0.8rem 1.2rem;
   margin: 1rem 0;
   text-align: center;
@@ -168,6 +171,7 @@
   font-weight: 600;
   color: var(--navy-blue);
   line-height: 1.8;
+  box-shadow: 3px 3px 0 rgba(27, 42, 74, 0.3);
 }
 
 /* ─── Word display ───────────────────────────────── */
@@ -207,6 +211,39 @@
   font-weight: 700;
   font-size: 0.85rem;
   padding: 0.1rem 0.5rem;
-  border-radius: 3px;
+  border-radius: 0;
   font-family: var(--font-body);
+}
+
+/* ============================================================
+   MODERN THEME — Box Overrides
+   ============================================================ */
+
+[data-theme="modern"] .box {
+  border-radius: var(--radius);
+  border-width: 1px;
+  box-shadow: var(--shadow);
+}
+
+[data-theme="modern"] .box-title {
+  font-family: var(--font-pixel);
+}
+
+[data-theme="modern"] .formula-box {
+  border-radius: var(--radius-sm);
+  border-width: 1px;
+}
+
+[data-theme="modern"] .jp-formula {
+  border-radius: var(--radius-sm);
+  border-width: 1px;
+  box-shadow: var(--shadow);
+}
+
+[data-theme="modern"] .dialog-box {
+  box-shadow: var(--shadow);
+}
+
+[data-theme="modern"] .ptag {
+  border-radius: 50px;
 }

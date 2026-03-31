@@ -7,6 +7,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    (function(){
+      var t = localStorage.getItem('lj_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/boxes.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/flashcard.css' | relative_url }}">
@@ -16,6 +23,13 @@
 <body>
   {% include nav.html %}
 
+  <div class="mobile-progress-bar" id="mobile-progress-bar">
+    <div class="mobile-progress-track">
+      <div class="mobile-progress-fill" id="mobile-progress-fill" style="width: 0%"></div>
+    </div>
+    <span class="mobile-progress-pct" id="mobile-progress-pct">0%</span>
+  </div>
+
   <div class="layout-wrapper">
     {% include sidebar.html %}
 
@@ -24,6 +38,11 @@
     </main>
   </div>
 
+  <div class="footer-image">
+    <img src="{{ '/assets/images/footer.png' | relative_url }}" alt="">
+  </div>
+
+  <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
   <script src="{{ '/assets/js/nav.js' | relative_url }}"></script>
   <script src="{{ '/assets/js/progress.js' | relative_url }}"></script>
   <script src="{{ '/assets/js/quiz.js' | relative_url }}"></script>

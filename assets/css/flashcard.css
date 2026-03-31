@@ -1,5 +1,5 @@
 /* ============================================================
-   FLASHCARD STYLES
+   FLASHCARD STYLES — Pixelated Theme
    ============================================================ */
 
 .flashcard-deck {
@@ -42,20 +42,21 @@
   position: absolute;
   inset: 0;
   backface-visibility: hidden;
-  border-radius: var(--radius);
+  border-radius: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0.75rem;
-  border: 2px solid #e5e7eb;
+  border: 3px solid var(--navy-blue);
   background: white;
-  transition: border-color 0.2s;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.15);
+  transition: border-color 0.1s steps(1);
 }
 
 .flashcard:hover .flashcard-front,
 .flashcard:hover .flashcard-back {
-  border-color: var(--navy-blue);
+  border-color: var(--gold-accent);
 }
 
 .flashcard-back {
@@ -86,15 +87,15 @@
 }
 
 /* Flashcard type variants */
-.flashcard.kata .flashcard-front { border-color: rgba(27,42,140,0.3); }
+.flashcard.kata .flashcard-front { border-color: var(--kata-color); }
 .flashcard.kata .flashcard-char { color: var(--kata-color); }
 .flashcard.kata .flashcard-back { background: var(--kata-color); border-color: var(--kata-color); }
 
-.flashcard.hira .flashcard-front { border-color: rgba(27,100,74,0.3); }
+.flashcard.hira .flashcard-front { border-color: var(--hira-color); }
 .flashcard.hira .flashcard-char { color: var(--hira-color); }
 .flashcard.hira .flashcard-back { background: var(--hira-color); border-color: var(--hira-color); }
 
-.flashcard.kanji-card .flashcard-front { border-color: rgba(130,30,30,0.3); }
+.flashcard.kanji-card .flashcard-front { border-color: var(--kanji-color); }
 .flashcard.kanji-card .flashcard-char { color: var(--kanji-color); font-size: 3rem; }
 .flashcard.kanji-card .flashcard-back { background: var(--kanji-color); border-color: var(--kanji-color); }
 
@@ -109,8 +110,9 @@
   padding: 1rem;
   margin-bottom: 1rem;
   background: white;
-  border-radius: var(--radius);
-  border: 1px solid #e5e7eb;
+  border-radius: 0;
+  border: 3px solid var(--navy-blue);
+  box-shadow: 3px 3px 0 var(--navy-blue);
 }
 
 .flashcard-score .score-label {
@@ -119,6 +121,7 @@
 }
 
 .flashcard-score .score-value {
+  font-family: var(--font-pixel);
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--navy-blue);
@@ -137,4 +140,27 @@
   .flashcard-char {
     font-size: 2rem;
   }
+}
+
+/* ============================================================
+   MODERN THEME — Flashcard Overrides
+   ============================================================ */
+
+[data-theme="modern"] .flashcard-front,
+[data-theme="modern"] .flashcard-back {
+  border-radius: var(--radius);
+  border-width: 1px;
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-theme="modern"] .flashcard:hover .flashcard-front,
+[data-theme="modern"] .flashcard:hover .flashcard-back {
+  box-shadow: var(--shadow-lg);
+}
+
+[data-theme="modern"] .flashcard-score {
+  border-radius: var(--radius);
+  border-width: 1px;
+  box-shadow: var(--shadow);
 }

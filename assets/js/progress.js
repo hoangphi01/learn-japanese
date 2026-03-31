@@ -86,6 +86,12 @@ var LJProgress = (function () {
     if (progressFill) progressFill.style.width = pct + '%';
     if (progressPct) progressPct.textContent = pct + '%';
 
+    // Update mobile progress bar
+    var mobileFill = document.getElementById('mobile-progress-fill');
+    var mobilePct = document.getElementById('mobile-progress-pct');
+    if (mobileFill) mobileFill.style.width = pct + '%';
+    if (mobilePct) mobilePct.textContent = pct + '%';
+
     // Update chapter cards on homepage
     var cards = document.querySelectorAll('.chapter-card[data-chapter]');
     cards.forEach(function (card) {
