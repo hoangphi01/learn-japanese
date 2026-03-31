@@ -133,16 +133,6 @@ var LJHVDecoder = (function () {
 
     // Check compound dictionary first
     var compoundMatch = lookupCompound(input);
-    if (compoundMatch) {
-      return {
-        input: input.trim(),
-        source: 'compound',
-        compound: compoundMatch,
-        combined: compoundMatch.reading,
-        allResolved: true,
-        syllables: []
-      };
-    }
 
     var syllables = input.trim().split(/\s+/);
     var results = [];
@@ -191,9 +181,10 @@ var LJHVDecoder = (function () {
 
     return {
       input: input.trim(),
-      source: 'syllable',
-      combined: combined,
-      allResolved: allResolved,
+      source: compoundMatch ? 'compound' : 'syllable',
+      compound: compoundMatch || null,
+      combined: compoundMatch ? compoundMatch.reading : combined,
+      allResolved: compoundMatch ? true : allResolved,
       syllables: results
     };
   }

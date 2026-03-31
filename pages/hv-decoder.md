@@ -64,7 +64,7 @@ function decodeHV() {
 
   var html = '';
 
-  // Compound match — show directly
+  // Compound match — show compound header, then syllable breakdown
   if (result.source === 'compound') {
     var comp = result.compound;
     var displayReading = LJHVDecoder.toMacron(comp.reading);
@@ -72,39 +72,33 @@ function decodeHV() {
     html += '<div style="font-size:1.2rem;font-weight:700;margin-bottom:0.75rem;">';
     html += 'Kết quả: ' + escapeHtml(result.input) + ' → <span class="jp">' + escapeHtml(comp.kanji) + '</span> ' + escapeHtml(displayReading);
     html += '</div>';
-    html += '<div style="padding-left:1rem;">';
+    html += '<div style="padding-left:1rem;margin-bottom:0.5rem;">';
     html += '<span style="color:green;">&#10003;</span> tra cứu từ ghép chính xác';
     if (comp.meaning) {
       html += ' — ' + escapeHtml(comp.meaning);
     }
     html += '</div>';
-    html += '<div style="margin-top:0.75rem;padding-top:0.5rem;border-top:1px solid rgba(0,0,0,0.1);font-size:0.85rem;">';
-    html += '<span style="color:green;">&#10003;</span> Độ tin cậy: <strong>cao</strong> — từ ghép có trong từ điển';
-    html += '</div>';
-
-    resultEl.innerHTML = html;
-    resultEl.style.display = 'block';
-    return;
   }
 
-  // Syllable-by-syllable fallback
   // Build combined kanji string
   var combinedKanji = '';
   for (var c = 0; c < result.syllables.length; c++) {
     combinedKanji += result.syllables[c].kanji || '?';
   }
 
-  // Header line with combined reading
-  if (result.combined) {
-    var display = LJHVDecoder.toMacron(result.combined);
-    html += '<div style="font-size:1.2rem;font-weight:700;margin-bottom:0.75rem;">';
-    html += 'Kết quả: ' + escapeHtml(result.input) + ' → <span class="jp">' + escapeHtml(combinedKanji) + '</span> ' + escapeHtml(display);
-    html += '</div>';
-  } else {
-    html += '<div style="font-size:1.2rem;font-weight:700;margin-bottom:0.75rem;">';
-    html += 'Phân tích: ' + escapeHtml(result.input);
-    if (combinedKanji.indexOf('?') === -1) html += ' → <span class="jp">' + escapeHtml(combinedKanji) + '</span>';
-    html += '</div>';
+  // Header line with combined reading (skip if compound — already shown above)
+  if (result.source !== 'compound') {
+    if (result.combined) {
+      var display = LJHVDecoder.toMacron(result.combined);
+      html += '<div style="font-size:1.2rem;font-weight:700;margin-bottom:0.75rem;">';
+      html += 'Kết quả: ' + escapeHtml(result.input) + ' → <span class="jp">' + escapeHtml(combinedKanji) + '</span> ' + escapeHtml(display);
+      html += '</div>';
+    } else {
+      html += '<div style="font-size:1.2rem;font-weight:700;margin-bottom:0.75rem;">';
+      html += 'Phân tích: ' + escapeHtml(result.input);
+      if (combinedKanji.indexOf('?') === -1) html += ' → <span class="jp">' + escapeHtml(combinedKanji) + '</span>';
+      html += '</div>';
+    }
   }
 
   // Per-syllable breakdown
@@ -150,8 +144,8 @@ function decodeHV() {
   }
   html += '</div>';
 
-  // Multi-syllable disclaimer for syllable-by-syllable results
-  if (result.syllables.length > 1) {
+  // Multi-syllable disclaimer for syllable-by-syllable results (not compounds)
+  if (result.source !== 'compound' && result.syllables.length > 1) {
     html += '<div style="margin-top:0.5rem;padding-left:1rem;font-size:0.85rem;color:#886600;">';
     html += '<span style="color:orange;">&#9888;</span> Ghép từng chữ — kiểm tra từ điển Nhật để xác nhận';
     html += '</div>';
@@ -159,7 +153,9 @@ function decodeHV() {
 
   // Confidence indicator
   html += '<div style="margin-top:0.75rem;padding-top:0.5rem;border-top:1px solid rgba(0,0,0,0.1);font-size:0.85rem;">';
-  if (result.allResolved) {
+  if (result.source === 'compound') {
+    html += '<span style="color:green;">&#10003;</span> Độ tin cậy: <strong>cao</strong> — từ ghép có trong từ điển';
+  } else if (result.allResolved) {
     html += '<span style="color:green;">&#10003;</span> Độ tin cậy: <strong>cao</strong> — tất cả âm tiết đều có trong từ điển';
   } else {
     var dictCount = result.syllables.filter(function(s) { return s.source === 'dictionary'; }).length;
