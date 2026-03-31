@@ -5,8 +5,9 @@
 var LJHVDecoder = (function () {
   'use strict';
 
-  var _dict = [];   // Array of { hv, onyomi, kanji, meaning }
-  var _rules = [];  // Array from hv_rules.yml
+  var _dict = [];       // Array of { hv, onyomi, kanji, meaning }
+  var _rules = [];      // Array from hv_rules.yml
+  var _compounds = [];  // Array of { hv, kanji, reading, meaning }
 
   // Vietnamese tone marks (combining diacritics after NFD)
   var TONE_MARKS = /[\u0300\u0301\u0303\u0309\u0323]/g;
@@ -109,11 +110,39 @@ var LJHVDecoder = (function () {
   }
 
   /**
+   * Look up the full input as a compound in _compounds.
+   * Returns a match object or null.
+   */
+  function lookupCompound(input) {
+    var syllables = input.trim().split(/\s+/);
+    var norm = syllables.map(function (s) { return normalize(s); }).join(' ');
+    for (var i = 0; i < _compounds.length; i++) {
+      if (_compounds[i].hv === norm) {
+        return _compounds[i];
+      }
+    }
+    return null;
+  }
+
+  /**
    * Decode a full HV input (possibly multi-syllable).
-   * Returns { input, combined, syllables[] }
+   * Returns { input, combined, syllables[], source, compound }
    */
   function decode(input) {
     if (!input || !input.trim()) return null;
+
+    // Check compound dictionary first
+    var compoundMatch = lookupCompound(input);
+    if (compoundMatch) {
+      return {
+        input: input.trim(),
+        source: 'compound',
+        compound: compoundMatch,
+        combined: compoundMatch.reading,
+        allResolved: true,
+        syllables: []
+      };
+    }
 
     var syllables = input.trim().split(/\s+/);
     var results = [];
@@ -162,6 +191,7 @@ var LJHVDecoder = (function () {
 
     return {
       input: input.trim(),
+      source: 'syllable',
       combined: combined,
       allResolved: allResolved,
       syllables: results
@@ -187,9 +217,10 @@ var LJHVDecoder = (function () {
 
   // Public API
   return {
-    init: function (dictArray, rulesArray) {
+    init: function (dictArray, rulesArray, compoundsArray) {
       _dict = dictArray || [];
       _rules = rulesArray || [];
+      _compounds = compoundsArray || [];
     },
     decode: decode,
     normalize: normalize,

@@ -52,7 +52,7 @@ permalink: /pages/hv-decoder/
 
 <script>
 // Initialize decoder with data from Jekyll
-LJHVDecoder.init({{ site.data.hv_kanji | jsonify }}, {{ site.data.hv_rules | jsonify }});
+LJHVDecoder.init({{ site.data.hv_kanji | jsonify }}, {{ site.data.hv_rules | jsonify }}, {{ site.data.hv_compounds | jsonify }});
 
 function decodeHV() {
   var input = document.getElementById('hv-input').value.trim();
@@ -64,6 +64,30 @@ function decodeHV() {
 
   var html = '';
 
+  // Compound match — show directly
+  if (result.source === 'compound') {
+    var comp = result.compound;
+    var displayReading = LJHVDecoder.toMacron(comp.reading);
+    displayReading = displayReading.charAt(0).toUpperCase() + displayReading.slice(1);
+    html += '<div style="font-size:1.2rem;font-weight:700;margin-bottom:0.75rem;">';
+    html += 'Kết quả: ' + escapeHtml(result.input) + ' → <span class="jp">' + escapeHtml(comp.kanji) + '</span> ' + escapeHtml(displayReading);
+    html += '</div>';
+    html += '<div style="padding-left:1rem;">';
+    html += '<span style="color:green;">&#10003;</span> tra cứu từ ghép chính xác';
+    if (comp.meaning) {
+      html += ' — ' + escapeHtml(comp.meaning);
+    }
+    html += '</div>';
+    html += '<div style="margin-top:0.75rem;padding-top:0.5rem;border-top:1px solid rgba(0,0,0,0.1);font-size:0.85rem;">';
+    html += '<span style="color:green;">&#10003;</span> Độ tin cậy: <strong>cao</strong> — từ ghép có trong từ điển';
+    html += '</div>';
+
+    resultEl.innerHTML = html;
+    resultEl.style.display = 'block';
+    return;
+  }
+
+  // Syllable-by-syllable fallback
   // Build combined kanji string
   var combinedKanji = '';
   for (var c = 0; c < result.syllables.length; c++) {
@@ -125,6 +149,13 @@ function decodeHV() {
     html += '</div>';
   }
   html += '</div>';
+
+  // Multi-syllable disclaimer for syllable-by-syllable results
+  if (result.syllables.length > 1) {
+    html += '<div style="margin-top:0.5rem;padding-left:1rem;font-size:0.85rem;color:#886600;">';
+    html += '<span style="color:orange;">&#9888;</span> Ghép từng chữ — kiểm tra từ điển Nhật để xác nhận';
+    html += '</div>';
+  }
 
   // Confidence indicator
   html += '<div style="margin-top:0.75rem;padding-top:0.5rem;border-top:1px solid rgba(0,0,0,0.1);font-size:0.85rem;">';

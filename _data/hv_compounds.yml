@@ -1,0 +1,209 @@
+# Hán-Việt Compound Dictionary
+# Multi-syllable HV terms → actual Japanese jukugo
+# Each entry: hv (normalized, no tones), kanji, reading, meaning (Vietnamese with tones)
+# The decoder checks this FIRST before syllable-by-syllable fallback
+
+# ── Giáo dục / Education ──
+- hv: "dai hoc"
+  kanji: "大学"
+  reading: "daigaku"
+  meaning: "đại học"
+
+- hv: "tieu hoc"
+  kanji: "小学"
+  reading: "shougaku"
+  meaning: "tiểu học"
+
+- hv: "trung hoc"
+  kanji: "中学"
+  reading: "chuugaku"
+  meaning: "trung học"
+
+- hv: "hoc sinh"
+  kanji: "学生"
+  reading: "gakusei"
+  meaning: "học sinh"
+
+- hv: "dai hoc sinh"
+  kanji: "大学生"
+  reading: "daigakusei"
+  meaning: "đại học sinh"
+
+- hv: "luu hoc sinh"
+  kanji: "留学生"
+  reading: "ryuugakusei"
+  meaning: "lưu học sinh"
+
+- hv: "tien sinh"
+  kanji: "先生"
+  reading: "sensei"
+  meaning: "tiên sinh"
+
+# ── Quốc gia / Countries & Geography ──
+- hv: "nhat ban"
+  kanji: "日本"
+  reading: "nihon"
+  meaning: "nhật bản"
+
+- hv: "trung quoc"
+  kanji: "中国"
+  reading: "chuugoku"
+  meaning: "trung quốc"
+
+- hv: "han quoc"
+  kanji: "韓国"
+  reading: "kankoku"
+  meaning: "hàn quốc"
+
+- hv: "ngoai quoc"
+  kanji: "外国"
+  reading: "gaikoku"
+  meaning: "ngoại quốc"
+
+- hv: "ngoai quoc nhan"
+  kanji: "外国人"
+  reading: "gaikokujin"
+  meaning: "ngoại quốc nhân"
+
+# ── Thời gian / Time ──
+- hv: "kim nhat"
+  kanji: "今日"
+  reading: "kyou"
+  meaning: "kim nhật (hôm nay)"
+
+- hv: "minh nhat"
+  kanji: "明日"
+  reading: "ashita"
+  meaning: "minh nhật (ngày mai)"
+
+- hv: "mai nien"
+  kanji: "毎年"
+  reading: "mainen"
+  meaning: "mỗi niên (mỗi năm)"
+
+- hv: "mai nhat"
+  kanji: "毎日"
+  reading: "mainichi"
+  meaning: "mỗi nhật (mỗi ngày)"
+
+- hv: "ngo hau"
+  kanji: "午後"
+  reading: "gogo"
+  meaning: "ngọ hậu (buổi chiều)"
+
+- hv: "ngo tien"
+  kanji: "午前"
+  reading: "gozen"
+  meaning: "ngọ tiền (buổi sáng)"
+
+# ── Năng lượng & Công nghệ / Energy & Tech ──
+- hv: "thuy dien"
+  kanji: "水力発電"
+  reading: "suiryoku hatsuden"
+  meaning: "thủy điện"
+
+- hv: "dien thoai"
+  kanji: "電話"
+  reading: "denwa"
+  meaning: "điện thoại"
+
+- hv: "dien xa"
+  kanji: "電車"
+  reading: "densha"
+  meaning: "điện xa (tàu điện)"
+
+# ── Giao thông / Transport ──
+- hv: "tu dong xa"
+  kanji: "自動車"
+  reading: "jidousha"
+  meaning: "tự động xa (ô tô)"
+
+# ── Con người / People ──
+- hv: "nhat ban nhan"
+  kanji: "日本人"
+  reading: "nihonjin"
+  meaning: "nhật bản nhân (người Nhật)"
+
+- hv: "nam"
+  kanji: "男"
+  reading: "otoko"
+  meaning: "nam"
+
+- hv: "nu"
+  kanji: "女"
+  reading: "onna"
+  meaning: "nữ"
+
+- hv: "nam nhan"
+  kanji: "男の人"
+  reading: "otoko no hito"
+  meaning: "nam nhân (đàn ông)"
+
+- hv: "nu nhan"
+  kanji: "女の人"
+  reading: "onna no hito"
+  meaning: "nữ nhân (phụ nữ)"
+
+- hv: "hoi xa"
+  kanji: "会社"
+  reading: "kaisha"
+  meaning: "hội xã (công ty)"
+
+- hv: "hoi xa vien"
+  kanji: "会社員"
+  reading: "kaishain"
+  meaning: "hội xã viên (nhân viên)"
+
+- hv: "ngan hang"
+  kanji: "銀行"
+  reading: "ginkou"
+  meaning: "ngân hàng"
+
+# ── Ẩm thực / Food & Drink ──
+- hv: "tra"
+  kanji: "お茶"
+  reading: "ocha"
+  meaning: "trà"
+
+# ── Nơi chốn / Places ──
+- hv: "benh vien"
+  kanji: "病院"
+  reading: "byouin"
+  meaning: "bệnh viện"
+
+- hv: "do thu quan"
+  kanji: "図書館"
+  reading: "toshokan"
+  meaning: "đồ thư quán (thư viện)"
+
+- hv: "dai su quan"
+  kanji: "大使館"
+  reading: "taishikan"
+  meaning: "đại sứ quán"
+
+- hv: "buu dien"
+  kanji: "郵便局"
+  reading: "yuubinkyoku"
+  meaning: "bưu điện"
+
+# ── Ngôn ngữ / Language ──
+- hv: "nhat ngu"
+  kanji: "日本語"
+  reading: "nihongo"
+  meaning: "nhật ngữ (tiếng Nhật)"
+
+- hv: "nhat ban ngu"
+  kanji: "日本語"
+  reading: "nihongo"
+  meaning: "nhật bản ngữ (tiếng Nhật)"
+
+# ── Thiên nhiên / Nature ──
+- hv: "phong thuy"
+  kanji: "風水"
+  reading: "fuusui"
+  meaning: "phong thủy"
+
+- hv: "thien khi"
+  kanji: "天気"
+  reading: "tenki"
+  meaning: "thiên khí (thời tiết)"
