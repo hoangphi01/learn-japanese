@@ -5,7 +5,7 @@ title: Trang Chủ
 
 <div class="hero">
   <h1 class="hero-title">
-    <span class="accent">Toán Học</span> Ngôn Ngữ
+    <span class="accent">Nihon</span>Go!
   </h1>
   <p class="hero-subtitle">Giải mã Tiếng Nhật theo phương pháp Logic</p>
   <div class="hero-formula">

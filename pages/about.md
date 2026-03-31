@@ -4,7 +4,7 @@ title: "Giới thiệu phương pháp"
 permalink: /pages/about/
 ---
 
-# Giới thiệu: Toán Học Ngôn Ngữ
+# Giới thiệu: NihonGo!
 
 ## Triết lý cốt lõi
 

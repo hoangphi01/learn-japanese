@@ -1,4 +1,4 @@
-# Toán Học Ngôn Ngữ: Tiếng Nhật Cấp Tốc
+# NihonGo!
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen?logo=github)](https://hoangphi01.github.io/learn-japanese/)
 [![Jekyll](https://img.shields.io/badge/Jekyll-4.3-red?logo=jekyll)](https://jekyllrb.com/)
@@ -57,4 +57,4 @@ Yêu cầu: Ruby 3.3+, Bundler.
 
 ## Dựa trên
 
-Sách LaTeX "Toán Học Ngôn Ngữ: Tiếng Nhật Cấp Tốc" (V4, 68 trang, 10 chương).
+Sách LaTeX "NihonGo!" (V4, 68 trang, 10 chương).
