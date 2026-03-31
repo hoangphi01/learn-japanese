@@ -1163,16 +1163,12 @@ strong { font-weight: 600; }
 
 .footer-image {
   width: 100%;
-  line-height: 0;
+  height: 100px;
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: bottom center;
   opacity: 0.35;
   pointer-events: none;
-}
-
-.footer-image img {
-  width: 60%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
 }
 
 /* ============================================================
