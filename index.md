@@ -55,11 +55,16 @@ title: "NihonGo! — Giải mã Tiếng Nhật theo phương pháp Logic"
 
 **Lợi thế Hán-Việt** — 60–70% từ vựng N5 là Hán-Nhật. Người Việt có âm Hán-Việt → decode phần lớn từ vựng mà không cần học thuộc.
 
-| Quy tắc | Hán-Việt | On'yomi | Ví dụ |
-|---------|----------|---------|-------|
-| T- đầu → S-/Z- | **T**âm | **S**hin (心) | Tâm = Tim |
-| -c cuối → -ku | Họ**c** | Ga**ku** (学) | Học = Học |
-| Đ- đầu → D- | **Đ**ại | **D**ai (大) | Đại = Lớn |
-| Ph- đầu → H-/F- | **Ph**ong | **F**ū (風) | Phong = Gió |
+<table class="kana-table">
+<thead>
+<tr><th>Quy tắc</th><th>Hán-Việt</th><th>On'yomi</th><th>Ví dụ</th></tr>
+</thead>
+<tbody>
+<tr><td>T- đầu → S-/Z-</td><td><strong>T</strong>âm</td><td><strong>S</strong>hin (心)</td><td>Tâm = Tim</td></tr>
+<tr><td>-c cuối → -ku</td><td>Họ<strong>c</strong></td><td>Ga<strong>ku</strong> (学)</td><td>Học = Học</td></tr>
+<tr><td>Đ- đầu → D-</td><td><strong>Đ</strong>ại</td><td><strong>D</strong>ai (大)</td><td>Đại = Lớn</td></tr>
+<tr><td>Ph- đầu → H-/F-</td><td><strong>Ph</strong>ong</td><td><strong>F</strong>ū (風)</td><td>Phong = Gió</td></tr>
+</tbody>
+</table>
 
-<a href="{{ '/pages/hv-decoder/' | relative_url }}" class="btn btn-primary" style="margin-top: 1rem;">Khám phá HV Decoder →</a>
+<a href="{{ '/pages/hv-decoder/' | relative_url }}" class="btn btn-primary" style="margin-top: 1rem;">Khám phá Hán-Việt Decoder →</a>
