@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Flashcards: Hiragana"
+permalink: /flashcards/hiragana/
 ---
 
 <nav class="lesson-nav-top">

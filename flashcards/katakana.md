@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Flashcards: Katakana"
+permalink: /flashcards/katakana/
 ---
 
 <nav class="lesson-nav-top">

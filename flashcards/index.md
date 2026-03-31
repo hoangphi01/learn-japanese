@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Flashcards"
+permalink: /flashcards/
 ---
 
 <h1>Flashcards</h1>
