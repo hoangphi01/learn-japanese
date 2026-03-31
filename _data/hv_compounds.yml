@@ -9,6 +9,7 @@
   kanji: "大学"
   reading: "daigaku"
   meaning: "đại học"
+  level: "N5"
   breakdown:
     - { char: "大", reading: "dai", hv: "đại" }
     - { char: "学", reading: "gaku", hv: "học" }
@@ -17,6 +18,7 @@
   kanji: "小学"
   reading: "shougaku"
   meaning: "tiểu học"
+  level: "N5"
   breakdown:
     - { char: "小", reading: "shou", hv: "tiểu" }
     - { char: "学", reading: "gaku", hv: "học" }
@@ -25,6 +27,7 @@
   kanji: "中学"
   reading: "chuugaku"
   meaning: "trung học"
+  level: "N5"
   breakdown:
     - { char: "中", reading: "chuu", hv: "trung" }
     - { char: "学", reading: "gaku", hv: "học" }
@@ -33,6 +36,7 @@
   kanji: "学生"
   reading: "gakusei"
   meaning: "học sinh"
+  level: "N5"
   breakdown:
     - { char: "学", reading: "gaku", hv: "học" }
     - { char: "生", reading: "sei", hv: "sinh" }
@@ -41,6 +45,7 @@
   kanji: "大学生"
   reading: "daigakusei"
   meaning: "đại học sinh"
+  level: "N5"
   breakdown:
     - { char: "大", reading: "dai", hv: "đại" }
     - { char: "学", reading: "gaku", hv: "học" }
@@ -50,6 +55,7 @@
   kanji: "留学生"
   reading: "ryuugakusei"
   meaning: "lưu học sinh"
+  level: "N5"
   breakdown:
     - { char: "留", reading: "ryuu", hv: "lưu" }
     - { char: "学", reading: "gaku", hv: "học" }
@@ -59,6 +65,7 @@
   kanji: "先生"
   reading: "sensei"
   meaning: "tiên sinh"
+  level: "N5"
   breakdown:
     - { char: "先", reading: "sen", hv: "tiên" }
     - { char: "生", reading: "sei", hv: "sinh" }
@@ -67,6 +74,7 @@
   kanji: "学校"
   reading: "gakkou"
   meaning: "học hiệu (trường học)"
+  level: "N5"
   breakdown:
     - { char: "学", reading: "gaku", hv: "học" }
     - { char: "校", reading: "kou", hv: "hiệu" }
@@ -75,6 +83,7 @@
   kanji: "教室"
   reading: "kyoushitsu"
   meaning: "giáo thất (phòng học)"
+  level: "N5"
   breakdown:
     - { char: "教", reading: "kyou", hv: "giáo" }
     - { char: "室", reading: "shitsu", hv: "thất" }
@@ -83,6 +92,7 @@
   kanji: "試験"
   reading: "shiken"
   meaning: "thí nghiệm (kỳ thi)"
+  level: "N5"
   breakdown:
     - { char: "試", reading: "shi", hv: "thí" }
     - { char: "験", reading: "ken", hv: "nghiệm" }
@@ -91,15 +101,63 @@
   kanji: "問題"
   reading: "mondai"
   meaning: "vấn đề"
+  level: "N5"
   breakdown:
     - { char: "問", reading: "mon", hv: "vấn" }
     - { char: "題", reading: "dai", hv: "đề" }
+
+- hv: "trung hoc hieu"
+  kanji: "中学校"
+  reading: "chuugakkou"
+  meaning: "trung học hiệu (trường cấp 2)"
+  level: "N4"
+  breakdown:
+    - { char: "中", reading: "chuu", hv: "trung" }
+    - { char: "学", reading: "gaku", hv: "học" }
+    - { char: "校", reading: "kou", hv: "hiệu" }
+
+- hv: "nhap hoc"
+  kanji: "入学"
+  reading: "nyuugaku"
+  meaning: "nhập học"
+  level: "N4"
+  breakdown:
+    - { char: "入", reading: "nyuu", hv: "nhập" }
+    - { char: "学", reading: "gaku", hv: "học" }
+
+- hv: "cao hieu"
+  kanji: "高校"
+  reading: "koukou"
+  meaning: "cao hiệu (trường cấp 3)"
+  level: "N4"
+  breakdown:
+    - { char: "高", reading: "kou", hv: "cao" }
+    - { char: "校", reading: "kou", hv: "hiệu" }
+
+- hv: "van hoc"
+  kanji: "文学"
+  reading: "bungaku"
+  meaning: "văn học"
+  level: "N4"
+  breakdown:
+    - { char: "文", reading: "bun", hv: "văn" }
+    - { char: "学", reading: "gaku", hv: "học" }
+
+- hv: "giao duc"
+  kanji: "教育"
+  reading: "kyouiku"
+  meaning: "giáo dục"
+  level: "N4"
+  breakdown:
+    - { char: "教", reading: "kyou", hv: "giáo" }
+    - { char: "育", reading: "iku", hv: "dục" }
 
 # ── Quốc gia / Countries & Geography ──
 - hv: "nhat ban"
   kanji: "日本"
   reading: "nihon"
   meaning: "nhật bản"
+  level: "N5"
   breakdown:
     - { char: "日", reading: "ni", hv: "nhật" }
     - { char: "本", reading: "hon", hv: "bản" }
@@ -108,6 +166,7 @@
   kanji: "中国"
   reading: "chuugoku"
   meaning: "trung quốc"
+  level: "N5"
   breakdown:
     - { char: "中", reading: "chuu", hv: "trung" }
     - { char: "国", reading: "koku", hv: "quốc" }
@@ -116,6 +175,7 @@
   kanji: "韓国"
   reading: "kankoku"
   meaning: "hàn quốc"
+  level: "N5"
   breakdown:
     - { char: "韓", reading: "kan", hv: "hàn" }
     - { char: "国", reading: "koku", hv: "quốc" }
@@ -124,6 +184,7 @@
   kanji: "外国"
   reading: "gaikoku"
   meaning: "ngoại quốc"
+  level: "N5"
   breakdown:
     - { char: "外", reading: "gai", hv: "ngoại" }
     - { char: "国", reading: "koku", hv: "quốc" }
@@ -132,6 +193,7 @@
   kanji: "外国人"
   reading: "gaikokujin"
   meaning: "ngoại quốc nhân"
+  level: "N5"
   breakdown:
     - { char: "外", reading: "gai", hv: "ngoại" }
     - { char: "国", reading: "koku", hv: "quốc" }
@@ -142,6 +204,7 @@
   kanji: "毎年"
   reading: "mainen"
   meaning: "mỗi niên (mỗi năm)"
+  level: "N5"
   breakdown:
     - { char: "毎", reading: "mai", hv: "mỗi" }
     - { char: "年", reading: "nen", hv: "niên" }
@@ -150,6 +213,7 @@
   kanji: "毎日"
   reading: "mainichi"
   meaning: "mỗi nhật (mỗi ngày)"
+  level: "N5"
   breakdown:
     - { char: "毎", reading: "mai", hv: "mỗi" }
     - { char: "日", reading: "nichi", hv: "nhật" }
@@ -158,6 +222,7 @@
   kanji: "午後"
   reading: "gogo"
   meaning: "ngọ hậu (buổi chiều)"
+  level: "N5"
   breakdown:
     - { char: "午", reading: "go", hv: "ngọ" }
     - { char: "後", reading: "go", hv: "hậu" }
@@ -166,6 +231,7 @@
   kanji: "午前"
   reading: "gozen"
   meaning: "ngọ tiền (buổi sáng)"
+  level: "N5"
   breakdown:
     - { char: "午", reading: "go", hv: "ngọ" }
     - { char: "前", reading: "zen", hv: "tiền" }
@@ -174,15 +240,44 @@
   kanji: "時間"
   reading: "jikan"
   meaning: "thời gian"
+  level: "N5"
   breakdown:
     - { char: "時", reading: "ji", hv: "thời" }
     - { char: "間", reading: "kan", hv: "gian" }
+
+- hv: "lai nien"
+  kanji: "来年"
+  reading: "rainen"
+  meaning: "lai niên (năm sau)"
+  level: "N5"
+  breakdown:
+    - { char: "来", reading: "rai", hv: "lai" }
+    - { char: "年", reading: "nen", hv: "niên" }
+
+- hv: "mai chau"
+  kanji: "毎週"
+  reading: "maishuu"
+  meaning: "mỗi châu (mỗi tuần)"
+  level: "N5"
+  breakdown:
+    - { char: "毎", reading: "mai", hv: "mỗi" }
+    - { char: "週", reading: "shuu", hv: "châu" }
+
+- hv: "mai nguyet"
+  kanji: "毎月"
+  reading: "maigetsu"
+  meaning: "mỗi nguyệt (mỗi tháng)"
+  level: "N5"
+  breakdown:
+    - { char: "毎", reading: "mai", hv: "mỗi" }
+    - { char: "月", reading: "getsu", hv: "nguyệt" }
 
 # ── Năng lượng & Công nghệ / Energy & Tech ──
 - hv: "thuy dien"
   kanji: "水力発電"
   reading: "suiryoku hatsuden"
   meaning: "thủy điện"
+  level: "N5"
   note: "Viết tắt của 'thủy lực phát điện'"
   breakdown:
     - { char: "水", reading: "sui", hv: "thủy" }
@@ -194,6 +289,7 @@
   kanji: "電話"
   reading: "denwa"
   meaning: "điện thoại"
+  level: "N5"
   breakdown:
     - { char: "電", reading: "den", hv: "điện" }
     - { char: "話", reading: "wa", hv: "thoại" }
@@ -202,6 +298,7 @@
   kanji: "電車"
   reading: "densha"
   meaning: "điện xa (tàu điện)"
+  level: "N5"
   breakdown:
     - { char: "電", reading: "den", hv: "điện" }
     - { char: "車", reading: "sha", hv: "xa" }
@@ -211,6 +308,7 @@
   kanji: "自動車"
   reading: "jidousha"
   meaning: "tự động xa (ô tô)"
+  level: "N5"
   breakdown:
     - { char: "自", reading: "ji", hv: "tự" }
     - { char: "動", reading: "dou", hv: "động" }
@@ -220,15 +318,57 @@
   kanji: "旅行"
   reading: "ryokou"
   meaning: "lữ hành (du lịch)"
+  level: "N5"
   breakdown:
     - { char: "旅", reading: "ryo", hv: "lữ" }
     - { char: "行", reading: "kou", hv: "hành" }
+
+- hv: "tu chuyen xa"
+  kanji: "自転車"
+  reading: "jitensha"
+  meaning: "tự chuyển xa (xe đạp)"
+  level: "N5"
+  breakdown:
+    - { char: "自", reading: "ji", hv: "tự" }
+    - { char: "転", reading: "ten", hv: "chuyển" }
+    - { char: "車", reading: "sha", hv: "xa" }
+
+- hv: "tan can tuyen"
+  kanji: "新幹線"
+  reading: "shinkansen"
+  meaning: "tân cán tuyến (tàu cao tốc)"
+  level: "N4"
+  breakdown:
+    - { char: "新", reading: "shin", hv: "tân" }
+    - { char: "幹", reading: "kan", hv: "cán" }
+    - { char: "線", reading: "sen", hv: "tuyến" }
+
+- hv: "dia ha thiet"
+  kanji: "地下鉄"
+  reading: "chikatetsu"
+  meaning: "địa hạ thiết (tàu điện ngầm)"
+  level: "N4"
+  breakdown:
+    - { char: "地", reading: "chi", hv: "địa" }
+    - { char: "下", reading: "ka", hv: "hạ" }
+    - { char: "鉄", reading: "tetsu", hv: "thiết" }
+
+- hv: "phi hang co"
+  kanji: "飛行機"
+  reading: "hikouki"
+  meaning: "phi hành cơ (máy bay)"
+  level: "N4"
+  breakdown:
+    - { char: "飛", reading: "hi", hv: "phi" }
+    - { char: "行", reading: "kou", hv: "hành" }
+    - { char: "機", reading: "ki", hv: "cơ" }
 
 # ── Con người / People ──
 - hv: "nhat ban nhan"
   kanji: "日本人"
   reading: "nihonjin"
   meaning: "nhật bản nhân (người Nhật)"
+  level: "N5"
   breakdown:
     - { char: "日", reading: "ni", hv: "nhật" }
     - { char: "本", reading: "hon", hv: "bản" }
@@ -238,6 +378,7 @@
   kanji: "会社"
   reading: "kaisha"
   meaning: "hội xã (công ty)"
+  level: "N5"
   breakdown:
     - { char: "会", reading: "kai", hv: "hội" }
     - { char: "社", reading: "sha", hv: "xã" }
@@ -246,6 +387,7 @@
   kanji: "会社員"
   reading: "kaishain"
   meaning: "hội xã viên (nhân viên)"
+  level: "N5"
   breakdown:
     - { char: "会", reading: "kai", hv: "hội" }
     - { char: "社", reading: "sha", hv: "xã" }
@@ -255,15 +397,53 @@
   kanji: "銀行"
   reading: "ginkou"
   meaning: "ngân hàng"
+  level: "N5"
   breakdown:
     - { char: "銀", reading: "gin", hv: "ngân" }
     - { char: "行", reading: "kou", hv: "hàng" }
+
+- hv: "huu nhan"
+  kanji: "友人"
+  reading: "yuujin"
+  meaning: "hữu nhân (bạn bè)"
+  level: "N4"
+  breakdown:
+    - { char: "友", reading: "yuu", hv: "hữu" }
+    - { char: "人", reading: "jin", hv: "nhân" }
+
+- hv: "gia toc"
+  kanji: "家族"
+  reading: "kazoku"
+  meaning: "gia tộc"
+  level: "N4"
+  breakdown:
+    - { char: "家", reading: "ka", hv: "gia" }
+    - { char: "族", reading: "zoku", hv: "tộc" }
+
+- hv: "nam tinh"
+  kanji: "男性"
+  reading: "dansei"
+  meaning: "nam tính (nam giới)"
+  level: "N4"
+  breakdown:
+    - { char: "男", reading: "dan", hv: "nam" }
+    - { char: "性", reading: "sei", hv: "tính" }
+
+- hv: "nu tinh"
+  kanji: "女性"
+  reading: "josei"
+  meaning: "nữ tính (nữ giới)"
+  level: "N4"
+  breakdown:
+    - { char: "女", reading: "jo", hv: "nữ" }
+    - { char: "性", reading: "sei", hv: "tính" }
 
 # ── Ẩm thực / Food & Drink ──
 - hv: "thuc duong"
   kanji: "食堂"
   reading: "shokudou"
   meaning: "thực đường (nhà ăn)"
+  level: "N5"
   breakdown:
     - { char: "食", reading: "shoku", hv: "thực" }
     - { char: "堂", reading: "dou", hv: "đường" }
@@ -272,6 +452,7 @@
   kanji: "料理"
   reading: "ryouri"
   meaning: "liệu lý (nấu ăn)"
+  level: "N5"
   breakdown:
     - { char: "料", reading: "ryou", hv: "liệu" }
     - { char: "理", reading: "ri", hv: "lý" }
@@ -281,6 +462,7 @@
   kanji: "病院"
   reading: "byouin"
   meaning: "bệnh viện"
+  level: "N5"
   breakdown:
     - { char: "病", reading: "byou", hv: "bệnh" }
     - { char: "院", reading: "in", hv: "viện" }
@@ -289,6 +471,7 @@
   kanji: "図書館"
   reading: "toshokan"
   meaning: "đồ thư quán (thư viện)"
+  level: "N5"
   breakdown:
     - { char: "図", reading: "to", hv: "đồ" }
     - { char: "書", reading: "sho", hv: "thư" }
@@ -298,19 +481,76 @@
   kanji: "大使館"
   reading: "taishikan"
   meaning: "đại sứ quán"
+  level: "N5"
   breakdown:
     - { char: "大", reading: "tai", hv: "đại" }
     - { char: "使", reading: "shi", hv: "sứ" }
     - { char: "館", reading: "kan", hv: "quán" }
+
+- hv: "khong cang"
+  kanji: "空港"
+  reading: "kuukou"
+  meaning: "không cảng (sân bay)"
+  level: "N4"
+  breakdown:
+    - { char: "空", reading: "kuu", hv: "không" }
+    - { char: "港", reading: "kou", hv: "cảng" }
+
+- hv: "nhap khau"
+  kanji: "入口"
+  reading: "iriguchi"
+  meaning: "nhập khẩu (lối vào)"
+  level: "N5"
+  breakdown:
+    - { char: "入", reading: "iri", hv: "nhập" }
+    - { char: "口", reading: "guchi", hv: "khẩu" }
+
+- hv: "xuat khau"
+  kanji: "出口"
+  reading: "deguchi"
+  meaning: "xuất khẩu (lối ra)"
+  level: "N5"
+  breakdown:
+    - { char: "出", reading: "de", hv: "xuất" }
+    - { char: "口", reading: "guchi", hv: "khẩu" }
+
+- hv: "giao ban"
+  kanji: "交番"
+  reading: "kouban"
+  meaning: "giao ban (đồn cảnh sát)"
+  level: "N5"
+  breakdown:
+    - { char: "交", reading: "kou", hv: "giao" }
+    - { char: "番", reading: "ban", hv: "ban" }
+
+- hv: "thi truong"
+  kanji: "市場"
+  reading: "shijou"
+  meaning: "thị trường"
+  level: "N4"
+  breakdown:
+    - { char: "市", reading: "shi", hv: "thị" }
+    - { char: "場", reading: "jou", hv: "trường" }
 
 # ── Ngôn ngữ / Language ──
 - hv: "nhat ban ngu"
   kanji: "日本語"
   reading: "nihongo"
   meaning: "nhật bản ngữ (tiếng Nhật)"
+  level: "N5"
   breakdown:
     - { char: "日", reading: "ni", hv: "nhật" }
     - { char: "本", reading: "hon", hv: "bản" }
+    - { char: "語", reading: "go", hv: "ngữ" }
+
+- hv: "ngoai quoc ngu"
+  kanji: "外国語"
+  reading: "gaikokugo"
+  meaning: "ngoại quốc ngữ (ngoại ngữ)"
+  level: "N5"
+  breakdown:
+    - { char: "外", reading: "gai", hv: "ngoại" }
+    - { char: "国", reading: "koku", hv: "quốc" }
     - { char: "語", reading: "go", hv: "ngữ" }
 
 # ── Thiên nhiên / Nature ──
@@ -318,6 +558,7 @@
   kanji: "風水"
   reading: "fuusui"
   meaning: "phong thủy"
+  level: "N5"
   breakdown:
     - { char: "風", reading: "fuu", hv: "phong" }
     - { char: "水", reading: "sui", hv: "thủy" }
@@ -326,6 +567,7 @@
   kanji: "天気"
   reading: "tenki"
   meaning: "thiên khí (thời tiết)"
+  level: "N5"
   breakdown:
     - { char: "天", reading: "ten", hv: "thiên" }
     - { char: "気", reading: "ki", hv: "khí" }
@@ -335,6 +577,7 @@
   kanji: "新聞"
   reading: "shinbun"
   meaning: "tân văn (báo)"
+  level: "N5"
   breakdown:
     - { char: "新", reading: "shin", hv: "tân" }
     - { char: "聞", reading: "bun", hv: "văn" }
@@ -344,6 +587,191 @@
   kanji: "音楽"
   reading: "ongaku"
   meaning: "âm nhạc"
+  level: "N5"
   breakdown:
     - { char: "音", reading: "on", hv: "âm" }
     - { char: "楽", reading: "gaku", hv: "nhạc" }
+
+# ── Xã hội / Society ──
+- hv: "hoi nghi"
+  kanji: "会議"
+  reading: "kaigi"
+  meaning: "hội nghị"
+  level: "N4"
+  breakdown:
+    - { char: "会", reading: "kai", hv: "hội" }
+    - { char: "議", reading: "gi", hv: "nghị" }
+
+- hv: "xa hoi"
+  kanji: "社会"
+  reading: "shakai"
+  meaning: "xã hội"
+  level: "N4"
+  breakdown:
+    - { char: "社", reading: "sha", hv: "xã" }
+    - { char: "会", reading: "kai", hv: "hội" }
+
+- hv: "chinh tri"
+  kanji: "政治"
+  reading: "seiji"
+  meaning: "chính trị"
+  level: "N4"
+  breakdown:
+    - { char: "政", reading: "sei", hv: "chính" }
+    - { char: "治", reading: "ji", hv: "trị" }
+
+- hv: "kinh te"
+  kanji: "経済"
+  reading: "keizai"
+  meaning: "kinh tế"
+  level: "N4"
+  breakdown:
+    - { char: "経", reading: "kei", hv: "kinh" }
+    - { char: "済", reading: "zai", hv: "tế" }
+
+- hv: "cong vien"
+  kanji: "公園"
+  reading: "kouen"
+  meaning: "công viên"
+  level: "N4"
+  breakdown:
+    - { char: "公", reading: "kou", hv: "công" }
+    - { char: "園", reading: "en", hv: "viên" }
+
+# ── Đời sống / Daily Life ──
+- hv: "thuc su"
+  kanji: "食事"
+  reading: "shokuji"
+  meaning: "thực sự (bữa ăn)"
+  level: "N5"
+  breakdown:
+    - { char: "食", reading: "shoku", hv: "thực" }
+    - { char: "事", reading: "ji", hv: "sự" }
+
+- hv: "sinh hoat"
+  kanji: "生活"
+  reading: "seikatsu"
+  meaning: "sinh hoạt"
+  level: "N4"
+  breakdown:
+    - { char: "生", reading: "sei", hv: "sinh" }
+    - { char: "活", reading: "katsu", hv: "hoạt" }
+
+- hv: "khong khi"
+  kanji: "空気"
+  reading: "kuuki"
+  meaning: "không khí"
+  level: "N5"
+  breakdown:
+    - { char: "空", reading: "kuu", hv: "không" }
+    - { char: "気", reading: "ki", hv: "khí" }
+
+- hv: "nhan khau"
+  kanji: "人口"
+  reading: "jinkou"
+  meaning: "nhân khẩu (dân số)"
+  level: "N4"
+  breakdown:
+    - { char: "人", reading: "jin", hv: "nhân" }
+    - { char: "口", reading: "kou", hv: "khẩu" }
+
+# ── Khái niệm / Concepts ──
+- hv: "tu nhien"
+  kanji: "自然"
+  reading: "shizen"
+  meaning: "tự nhiên"
+  level: "N4"
+  breakdown:
+    - { char: "自", reading: "shi", hv: "tự" }
+    - { char: "然", reading: "zen", hv: "nhiên" }
+
+- hv: "van hoa"
+  kanji: "文化"
+  reading: "bunka"
+  meaning: "văn hóa"
+  level: "N4"
+  breakdown:
+    - { char: "文", reading: "bun", hv: "văn" }
+    - { char: "化", reading: "ka", hv: "hóa" }
+
+- hv: "lich su"
+  kanji: "歴史"
+  reading: "rekishi"
+  meaning: "lịch sử"
+  level: "N4"
+  breakdown:
+    - { char: "歴", reading: "reki", hv: "lịch" }
+    - { char: "史", reading: "shi", hv: "sử" }
+
+- hv: "khoa hoc"
+  kanji: "科学"
+  reading: "kagaku"
+  meaning: "khoa học"
+  level: "N4"
+  breakdown:
+    - { char: "科", reading: "ka", hv: "khoa" }
+    - { char: "学", reading: "gaku", hv: "học" }
+
+- hv: "kinh nghiem"
+  kanji: "経験"
+  reading: "keiken"
+  meaning: "kinh nghiệm"
+  level: "N3"
+  breakdown:
+    - { char: "経", reading: "kei", hv: "kinh" }
+    - { char: "験", reading: "ken", hv: "nghiệm" }
+
+- hv: "dac biet"
+  kanji: "特別"
+  reading: "tokubetsu"
+  meaning: "đặc biệt"
+  level: "N4"
+  breakdown:
+    - { char: "特", reading: "toku", hv: "đặc" }
+    - { char: "別", reading: "betsu", hv: "biệt" }
+
+- hv: "an toan"
+  kanji: "安全"
+  reading: "anzen"
+  meaning: "an toàn"
+  level: "N4"
+  breakdown:
+    - { char: "安", reading: "an", hv: "an" }
+    - { char: "全", reading: "zen", hv: "toàn" }
+
+- hv: "nguy hiem"
+  kanji: "危険"
+  reading: "kiken"
+  meaning: "nguy hiểm"
+  level: "N4"
+  breakdown:
+    - { char: "危", reading: "ki", hv: "nguy" }
+    - { char: "険", reading: "ken", hv: "hiểm" }
+
+- hv: "bao hiem"
+  kanji: "保険"
+  reading: "hoken"
+  meaning: "bảo hiểm"
+  level: "N3"
+  breakdown:
+    - { char: "保", reading: "ho", hv: "bảo" }
+    - { char: "険", reading: "ken", hv: "hiểm" }
+
+- hv: "van dong"
+  kanji: "運動"
+  reading: "undou"
+  meaning: "vận động"
+  level: "N4"
+  breakdown:
+    - { char: "運", reading: "un", hv: "vận" }
+    - { char: "動", reading: "dou", hv: "động" }
+
+# ── Nghiệp vụ / Work & Business ──
+- hv: "nghiep vu"
+  kanji: "業務"
+  reading: "gyoumu"
+  meaning: "nghiệp vụ"
+  level: "N4"
+  breakdown:
+    - { char: "業", reading: "gyou", hv: "nghiệp" }
+    - { char: "務", reading: "mu", hv: "vụ" }

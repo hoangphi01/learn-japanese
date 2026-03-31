@@ -8,6 +8,7 @@ var LJHVDecoder = (function () {
   var _dict = [];       // Array of { hv, onyomi, kanji, meaning }
   var _rules = [];      // Array from hv_rules.yml
   var _compounds = [];  // Array of { hv, kanji, reading, meaning }
+  var _syllableToCompounds = {};
 
   // Vietnamese tone marks (combining diacritics after NFD)
   var TONE_MARKS = /[\u0300\u0301\u0303\u0309\u0323]/g;
@@ -217,6 +218,41 @@ var LJHVDecoder = (function () {
   }
 
   /**
+   * Build reverse index from normalized HV syllables to compound indices.
+   */
+  function buildCompoundIndex() {
+    for (var i = 0; i < _compounds.length; i++) {
+      var comp = _compounds[i];
+      if (!comp.breakdown) continue;
+      for (var j = 0; j < comp.breakdown.length; j++) {
+        var hvNorm = normalize(comp.breakdown[j].hv || '');
+        if (!hvNorm) continue;
+        if (!_syllableToCompounds[hvNorm]) _syllableToCompounds[hvNorm] = [];
+        if (_syllableToCompounds[hvNorm].indexOf(i) === -1) {
+          _syllableToCompounds[hvNorm].push(i);
+        }
+      }
+    }
+  }
+
+  /**
+   * Find compounds that contain the given HV syllable.
+   */
+  function findRelatedCompounds(syllable) {
+    var norm = normalize(syllable);
+    var indices = _syllableToCompounds[norm] || [];
+    return indices.map(function(i) { return _compounds[i]; });
+  }
+
+  /**
+   * Filter dictionary entries by JLPT level.
+   */
+  function getDictByLevel(level) {
+    if (!level || level === 'all') return _dict;
+    return _dict.filter(function(e) { return e.level === level; });
+  }
+
+  /**
    * Convert onyomi romanization to display form with macrons.
    * ou → ō, uu → ū, ei stays as ei
    */
@@ -234,11 +270,16 @@ var LJHVDecoder = (function () {
       _dict = dictArray || [];
       _rules = rulesArray || [];
       _compounds = compoundsArray || [];
+      buildCompoundIndex();
     },
     decode: decode,
     normalize: normalize,
     toMacron: toMacron,
     lookupDict: lookupDict,
-    applyRules: applyRules
+    applyRules: applyRules,
+    findRelatedCompounds: findRelatedCompounds,
+    getDictByLevel: getDictByLevel,
+    getDict: function() { return _dict; },
+    getCompounds: function() { return _compounds; }
   };
 })();
