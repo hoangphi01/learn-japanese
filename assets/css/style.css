@@ -558,6 +558,16 @@ strong { font-weight: 600; }
   font-weight: 600;
 }
 
+/* Chapter accent colors */
+.lesson-page[data-chapter="4"] .lesson-badge { background: var(--navy-blue); }
+.lesson-page[data-chapter="4"] .lesson-header { border-left: 4px solid var(--navy-blue); padding-left: 1rem; }
+
+.lesson-page[data-chapter="5"] .lesson-badge { background: var(--japan-red); }
+.lesson-page[data-chapter="5"] .lesson-header { border-left: 4px solid var(--japan-red); padding-left: 1rem; }
+
+.lesson-page[data-chapter="6"] .lesson-badge { background: var(--gold-accent); }
+.lesson-page[data-chapter="6"] .lesson-header { border-left: 4px solid var(--gold-accent); padding-left: 1rem; }
+
 .lesson-tags {
   display: flex;
   gap: 0.4rem;
