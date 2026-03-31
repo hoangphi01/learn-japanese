@@ -1571,14 +1571,22 @@ strong { font-weight: 600; }
   border-radius: 50px;
 }
 
-[data-theme="modern"] .lesson-content table {
-  border: 1px solid #e5e7eb;
-  border-radius: var(--radius-sm);
+[data-theme="modern"] .lesson-content table,
+[data-theme="modern"] .kana-table {
+  border: 1.5px solid #d1d5db;
+  border-radius: 16px;
   overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
-[data-theme="modern"] .lesson-content table td {
+[data-theme="modern"] .lesson-content table td,
+[data-theme="modern"] .kana-table td {
   border: 1px solid #e5e7eb;
+}
+
+[data-theme="modern"] .lesson-content table th,
+[data-theme="modern"] .kana-table th {
+  border: 1px solid var(--navy-blue);
 }
 
 /* ─── Modern: Lesson Complete ────────────────────── */
