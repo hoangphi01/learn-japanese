@@ -852,6 +852,10 @@ strong { font-weight: 600; }
 
 /* ─── LESSON NAV ─────────────────────────────────── */
 
+.lesson-nav-top {
+  margin-bottom: 1rem;
+}
+
 .lesson-nav {
   display: flex;
   justify-content: space-between;

@@ -2,6 +2,20 @@
 layout: default
 ---
 <article class="lesson-page" data-chapter="{{ page.chapter }}">
+  <nav class="lesson-nav-top">
+    {% if page.prev_lesson %}
+    <a href="{{ '/lessons/' | append: page.prev_lesson | append: '/' | relative_url }}" class="lesson-nav-btn prev">
+      <span class="nav-arrow">&larr;</span>
+      <span class="nav-label">Bài trước</span>
+    </a>
+    {% else %}
+    <a href="{{ '/' | relative_url }}" class="lesson-nav-btn prev">
+      <span class="nav-arrow">&larr;</span>
+      <span class="nav-label">Trang chủ</span>
+    </a>
+    {% endif %}
+  </nav>
+
   <header class="lesson-header">
     <div class="lesson-meta">
       <span class="lesson-badge">Chương {{ page.chapter }} · Bài {{ page.lesson }}/{{ page.total_lessons_in_chapter }}</span>

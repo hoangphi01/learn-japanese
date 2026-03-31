@@ -3,6 +3,13 @@ layout: default
 title: "Flashcards: Hiragana"
 ---
 
+<nav class="lesson-nav-top">
+  <a href="{{ '/flashcards/' | relative_url }}" class="lesson-nav-btn prev">
+    <span class="nav-arrow">&larr;</span>
+    <span class="nav-label">Flashcards</span>
+  </a>
+</nav>
+
 <h1>Flashcards Hiragana</h1>
 <p>Nhấn vào thẻ để lật. Nhấn đúp để đánh dấu "đã biết".</p>
 
