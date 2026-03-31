@@ -19,6 +19,10 @@ defaults:
     values:
       image: /assets/images/preview_default.png
   - scope:
+      path: "flashcards"
+    values:
+      permalink: /flashcards/:basename/
+  - scope:
       path: ""
       type: "lessons"
     values:
