@@ -134,6 +134,28 @@ var LJHVDecoder = (function () {
     // Check compound dictionary first
     var compoundMatch = lookupCompound(input);
 
+    // If compound has per-kanji breakdown, use it directly
+    if (compoundMatch && compoundMatch.breakdown) {
+      var breakdownResults = [];
+      for (var b = 0; b < compoundMatch.breakdown.length; b++) {
+        var bd = compoundMatch.breakdown[b];
+        breakdownResults.push({
+          original: bd.hv,
+          kanji: bd.char,
+          onyomi: bd.reading,
+          source: 'compound-breakdown'
+        });
+      }
+      return {
+        input: input.trim(),
+        source: 'compound',
+        compound: compoundMatch,
+        combined: compoundMatch.reading,
+        allResolved: true,
+        syllables: breakdownResults
+      };
+    }
+
     var syllables = input.trim().split(/\s+/);
     var results = [];
     var combinedOnyomi = [];

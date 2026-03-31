@@ -101,48 +101,70 @@ function decodeHV() {
     }
   }
 
-  // Per-syllable breakdown
-  html += '<div style="padding-left:1rem;">';
-  for (var i = 0; i < result.syllables.length; i++) {
-    var syl = result.syllables[i];
-    html += '<div style="margin-bottom:0.4rem;">';
-
-    if (syl.source === 'dictionary') {
+  // Per-syllable / per-kanji breakdown
+  if (result.source === 'compound' && result.syllables.length > 0 && result.syllables[0].source === 'compound-breakdown') {
+    html += '<div style="padding-left:1rem;margin-top:0.5rem;">';
+    html += '<div style="font-weight:600;margin-bottom:0.4rem;">Phân tích từng chữ:</div>';
+    for (var i = 0; i < result.syllables.length; i++) {
+      var syl = result.syllables[i];
       var reading = LJHVDecoder.toMacron(syl.onyomi);
-      html += '<strong>' + escapeHtml(syl.original) + '</strong>';
-      html += ' → <span class="jp" style="font-size:1.1em;">' + escapeHtml(syl.kanji) + '</span> ' + escapeHtml(reading);
-      html += ' — <span style="color:green;">&#10003; tra cứu chính xác</span>';
+      reading = reading.charAt(0).toUpperCase() + reading.slice(1);
+      html += '<div style="margin-bottom:0.3rem;">';
+      html += '<span class="jp" style="font-size:1.1em;">' + escapeHtml(syl.kanji) + '</span>';
+      html += ' (' + escapeHtml(reading) + ')';
+      html += ' &larr; <em>' + escapeHtml(syl.original) + '</em>';
+      html += '</div>';
+    }
+    if (result.compound && result.compound.note) {
+      html += '<div style="margin-top:0.5rem;font-size:0.9rem;color:#886600;">';
+      html += '&#128161; ' + escapeHtml(result.compound.note);
+      html += '</div>';
+    }
+    html += '</div>';
+  } else {
+    // Per-syllable breakdown (syllable-by-syllable fallback)
+    html += '<div style="padding-left:1rem;">';
+    for (var i = 0; i < result.syllables.length; i++) {
+      var syl = result.syllables[i];
+      html += '<div style="margin-bottom:0.4rem;">';
 
-      // Show alternatives if multiple dict matches
-      if (syl.dictMatches.length > 1) {
-        html += '<br><span style="font-size:0.85rem;color:#666;">  Cũng có: ';
-        for (var j = 1; j < syl.dictMatches.length && j < 4; j++) {
-          if (j > 1) html += ', ';
-          html += '<span class="jp">' + escapeHtml(syl.dictMatches[j].kanji) + '</span> ';
-          html += LJHVDecoder.toMacron(syl.dictMatches[j].onyomi);
-          html += ' (' + escapeHtml(syl.dictMatches[j].meaning) + ')';
+      if (syl.source === 'dictionary') {
+        var reading = LJHVDecoder.toMacron(syl.onyomi);
+        html += '<strong>' + escapeHtml(syl.original) + '</strong>';
+        html += ' &rarr; <span class="jp" style="font-size:1.1em;">' + escapeHtml(syl.kanji) + '</span> ' + escapeHtml(reading);
+        html += ' — <span style="color:green;">&#10003; tra cứu chính xác</span>';
+
+        // Show alternatives if multiple dict matches
+        if (syl.dictMatches.length > 1) {
+          html += '<br><span style="font-size:0.85rem;color:#666;">  Cũng có: ';
+          for (var j = 1; j < syl.dictMatches.length && j < 4; j++) {
+            if (j > 1) html += ', ';
+            html += '<span class="jp">' + escapeHtml(syl.dictMatches[j].kanji) + '</span> ';
+            html += LJHVDecoder.toMacron(syl.dictMatches[j].onyomi);
+            html += ' (' + escapeHtml(syl.dictMatches[j].meaning) + ')';
+          }
+          html += '</span>';
+        }
+      } else if (syl.source === 'rules') {
+        html += '<strong>' + escapeHtml(syl.original) + '</strong>';
+        html += ' &rarr; <em>(dự đoán theo quy tắc)</em>';
+        html += ' — <span style="color:orange;">&#9679; dựa trên quy tắc</span>';
+        html += '<br><span style="font-size:0.85rem;color:#666;">  Quy tắc phù hợp: ';
+        for (var k = 0; k < syl.ruleMatches.length; k++) {
+          if (k > 0) html += ', ';
+          html += 'QT' + syl.ruleMatches[k].ruleId + ' (' + escapeHtml(syl.ruleMatches[k].rule.hv_pattern) + ')';
         }
         html += '</span>';
+      } else {
+        html += '<strong>' + escapeHtml(syl.original) + '</strong>';
+        html += ' &rarr; <em>(không tìm thấy)</em>';
+        html += ' — <span style="color:red;">&#10007; chưa có dữ liệu</span>';
       }
-    } else if (syl.source === 'rules') {
-      html += '<strong>' + escapeHtml(syl.original) + '</strong>';
-      html += ' → <em>(dự đoán theo quy tắc)</em>';
-      html += ' — <span style="color:orange;">&#9679; dựa trên quy tắc</span>';
-      html += '<br><span style="font-size:0.85rem;color:#666;">  Quy tắc phù hợp: ';
-      for (var k = 0; k < syl.ruleMatches.length; k++) {
-        if (k > 0) html += ', ';
-        html += 'QT' + syl.ruleMatches[k].ruleId + ' (' + escapeHtml(syl.ruleMatches[k].rule.hv_pattern) + ')';
-      }
-      html += '</span>';
-    } else {
-      html += '<strong>' + escapeHtml(syl.original) + '</strong>';
-      html += ' → <em>(không tìm thấy)</em>';
-      html += ' — <span style="color:red;">&#10007; chưa có dữ liệu</span>';
-    }
 
+      html += '</div>';
+    }
     html += '</div>';
   }
-  html += '</div>';
 
   // Multi-syllable disclaimer for syllable-by-syllable results (not compounds)
   if (result.source !== 'compound' && result.syllables.length > 1) {

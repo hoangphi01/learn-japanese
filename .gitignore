@@ -7,3 +7,6 @@ vendor/
 *.gem
 Gemfile.lock
 .DS_Store
+*.tex
+*.pdf
+nihongo_project.md
