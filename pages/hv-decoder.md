@@ -25,14 +25,20 @@ permalink: /pages/hv-decoder/
 {% for rule in site.data.hv_rules %}
 <div class="grammar-box box">
 <div class="box-title">Quy tắc {{ rule.id }}: {{ rule.hv_pattern }} → {{ rule.onyomi }}</div>
-<div class="box-content" markdown="1">
+<div class="box-content">
 
-{{ rule.description }}
+<p>{{ rule.description }}</p>
 
-| Hán-Việt | On'yomi (Nhật) |
-|----------|---------------|
-{% for ex in rule.examples %} | {{ ex.hv }} | {{ ex.jp }} |
+<table class="kana-table">
+<thead>
+<tr><th>Hán-Việt</th><th>On'yomi (Nhật)</th></tr>
+</thead>
+<tbody>
+{% for ex in rule.examples %}
+<tr><td>{{ ex.hv }}</td><td>{{ ex.jp }}</td></tr>
 {% endfor %}
+</tbody>
+</table>
 
 </div>
 </div>
