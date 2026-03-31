@@ -36,4 +36,5 @@ exclude:
   - README.md
   - CLAUDE.md
   - ARCHITECTURE.md
+  - SKILL.md
   - vendor

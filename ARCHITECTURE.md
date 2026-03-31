@@ -15,7 +15,7 @@ NihonGo! is a **Jekyll 4.3 static site** for learning Japanese, targeting Vietna
 
 ```
 learn_japanese/
-├── _config.yml                     # Jekyll config (baseurl, collections, defaults)
+├── _config.yml                     # Jekyll config (baseurl, url, collections, defaults, OG image)
 ├── _data/
 │   ├── chapters.yml                # 10 chapters: id, title, level, phase, week, milestone
 │   ├── levels.yml                  # JLPT N5–N1: id, title, description, active
@@ -53,11 +53,25 @@ learn_japanese/
 │   │   ├── 02-am-ket-hop.md
 │   │   ├── 03-so-dem.md
 │   │   └── 04-bai-tap.md
-│   └── ch03/                       # Chapter 3: Hiragana
-│       ├── 01-hiragana-la-gi.md
-│       ├── 02-bang-hiragana.md
-│       ├── 03-hiragana-dakuten.md
-│       └── 04-bai-tap.md
+│   ├── ch03/                       # Chapter 3: Hiragana
+│   │   ├── 01-hiragana-la-gi.md
+│   │   ├── 02-bang-hiragana.md
+│   │   ├── 03-hiragana-dakuten.md
+│   │   └── 04-bai-tap.md
+│   ├── ch04/                       # Chapter 4: Particles (Trợ Từ)
+│   │   ├── 01-cau-truc-sov.md
+│   │   ├── 02-7-toan-tu.md
+│   │   ├── 03-5-ham-giao-tiep.md
+│   │   └── 04-bai-tap.md
+│   ├── ch05/                       # Chapter 5: Verbs & Nouns
+│   │   ├── 01-masu-form.md
+│   │   ├── 02-15-dong-tu.md
+│   │   ├── 03-50-danh-tu.md
+│   │   └── 04-bai-tap.md
+│   └── ch06/                       # Chapter 6: Hán-Việt Decoder
+│       ├── 01-dinh-ly-han-viet.md
+│       ├── 02-8-quy-tac.md
+│       └── 03-bai-tap.md
 │
 ├── assets/
 │   ├── css/
@@ -77,6 +91,7 @@ learn_japanese/
 │   │   ├── bookerly/               # Serif font family (4 weights)
 │   │   └── minecraft-unicode.ttf   # Pixel font for titles
 │   └── images/
+│       └── preview.png             # OG meta preview image for social sharing
 │
 ├── flashcards/
 │   ├── katakana.md                 # Katakana flashcard deck page
@@ -171,6 +186,7 @@ Two top-level keys: `katakana`, `hiragana`. Each has:
 ```
 default.html
 ├── lesson.html       # Adds: lesson header, progress-bar include, prev/next nav, completion checkbox
+│                     #   <article data-chapter="{{ page.chapter }}"> enables per-chapter accent colors
 ├── chapter.html      # Adds: chapter header, lesson list from site.lessons collection
 └── quiz.html         # Adds: quiz header, #quiz-results card, reset button
 ```
@@ -229,6 +245,22 @@ default.html
 | `--shadow-lg` | `none` | Larger drop shadow |
 | Border width | `3px` | `1px` |
 | Box shadow | `4px 4px 0 navy` | Standard CSS shadow |
+
+### Chapter Accent Colors
+
+Each chapter can have a unique accent color applied to its lesson badge and header border via the `data-chapter` attribute on `<article>` in `lesson.html`:
+
+| Chapter | Color Variable | Visual |
+|---------|---------------|--------|
+| 4 | `--navy-blue` | Blue badge + left border |
+| 5 | `--japan-red` | Red badge + left border |
+| 6 | `--gold-accent` | Gold badge + left border |
+
+Selector pattern: `.lesson-page[data-chapter="N"] .lesson-badge / .lesson-header`
+
+### Global `.kana-table` Styles
+
+Reusable table class for kana/vocabulary tables defined in `style.css`. Features navy header, zebra striping, centered text, and responsive font sizing. Used across lesson content with `<table class="kana-table">`.
 
 ### Responsive Breakpoints
 

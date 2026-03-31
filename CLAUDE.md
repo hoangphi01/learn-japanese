@@ -20,14 +20,17 @@ _data/               # YAML data files (curriculum, kana, vocabulary, rules)
 _includes/           # Reusable HTML components (boxes, nav, sidebar, quiz, flashcard)
 _layouts/            # Page templates (default → lesson, chapter, quiz)
 _lessons/            # Lesson content (Markdown + includes)
-  ch01/              # Chapter folders
-  ch02/
-  ch03/
+  ch01/              # Phase 1: Katakana & Sound System (4 lessons)
+  ch02/              # Phase 1: Dakuten, Combos, Numbers (4 lessons)
+  ch03/              # Phase 1: Hiragana (4 lessons)
+  ch04/              # Phase 2: Particles / Trợ Từ (4 lessons)
+  ch05/              # Phase 2: Verbs & Nouns (4 lessons)
+  ch06/              # Phase 2: Hán-Việt Decoder (3 lessons)
 assets/
   css/               # 5 CSS files (style, boxes, flashcard, quiz, welcome)
   js/                # 6 JS modules (theme, nav, progress, quiz, flashcard, welcome)
   font/              # Bookerly + Minecraft Unicode (do NOT modify)
-  images/
+  images/            # preview.png (OG meta), icons, logos
 flashcards/          # Flashcard pages (katakana.md, hiragana.md)
 pages/               # Static pages (about, hv-decoder, roadmap)
 index.md             # Homepage
@@ -84,6 +87,8 @@ Also available: `quiz-question.html` (params: correct, question, options, explan
 - **Modern theme**: Applied via `[data-theme="modern"]` on `<html>`, rounded corners, soft shadows
 - Custom properties defined in `:root` of `style.css`
 - Responsive: sidebar collapses at 1024px, mobile dock appears
+- **Chapter accent colors**: `lesson.html` sets `data-chapter` on `<article>`, CSS targets `.lesson-page[data-chapter="N"]` to color badge and header border per chapter
+- **`.kana-table`**: Global table class in `style.css` for kana/vocabulary tables (navy header, zebra rows)
 
 ### JavaScript Modules
 

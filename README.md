@@ -25,6 +25,8 @@ Học **hệ thống tạo ra** mẫu câu, không học thuộc mẫu câu — 
 - **Progress Tracking** — Theo dõi tiến độ bài học và điểm quiz (localStorage)
 - **Interactive** — Quiz trắc nghiệm, flashcards lật 3D, bài tập tương tác
 - **Mobile-first** — Responsive design với mobile dock, học mọi lúc mọi nơi
+- **Chapter Accent Colors** — Mỗi chương có màu nhấn riêng trên badge và header
+- **OG Meta Preview** — Hình ảnh preview khi chia sẻ link trên mạng xã hội
 
 ## Nội dung đã xuất bản
 
@@ -33,17 +35,20 @@ Học **hệ thống tạo ra** mẫu câu, không học thuộc mẫu câu — 
 | 1 | Katakana & Hệ Thống Âm | 4 bài | Hệ thống âm thanh, Katakana hàng 1–5, bài tập |
 | 2 | Dakuten, Âm Kết Hợp & Số | 4 bài | Katakana dakuten, âm kết hợp, số đếm, bài tập |
 | 3 | Hiragana | 4 bài | Hiragana cơ bản, bảng chữ, dakuten, bài tập |
+| 4 | Trợ Từ (Particles) | 4 bài | Cấu trúc SOV, 7 toán tử, 5 hàm giao tiếp, bài tập |
+| 5 | Động Từ & Danh Từ | 4 bài | ます-form, 15 động từ, 50 danh từ, bài tập |
+| 6 | Hán-Việt Decoder | 3 bài | Định lý Hán-Việt, 8 quy tắc, bài tập |
 
-**Tổng: 12 bài học** across 3 chương (Phase 1 — Chữ viết)
+**Tổng: 23 bài học** across 6 chương (Phase 1–2)
 
 ### Roadmap
 
-| Phase | Chương | Nội dung |
-|-------|--------|----------|
-| 1 — Chữ viết | 1–3 | Katakana, Hiragana, Số đếm |
-| 2 — Ngữ pháp | 4–6 | Particles, Động từ, Hán-Việt Decoder |
-| 3 — Thực chiến | 7–9 | 3 Kịch bản, Simulation, Ôn tập |
-| 4 — N5 | 10+ | Tính từ, Te-form, và hơn thế |
+| Phase | Chương | Nội dung | Trạng thái |
+|-------|--------|----------|------------|
+| 1 — Chữ viết | 1–3 | Katakana, Hiragana, Số đếm | ✅ Hoàn thành |
+| 2 — Ngữ pháp | 4–6 | Particles, Động từ, Hán-Việt Decoder | ✅ Hoàn thành |
+| 3 — Thực chiến | 7–9 | 3 Kịch bản, Simulation, Ôn tập | 🔜 Sắp tới |
+| 4 — N5 | 10+ | Tính từ, Te-form, và hơn thế | 🔜 Sắp tới |
 
 ## Phát triển
 

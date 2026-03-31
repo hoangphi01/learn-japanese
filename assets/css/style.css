@@ -651,6 +651,34 @@ strong { font-weight: 600; }
   padding: 0.4rem;
 }
 
+/* ─── GLOBAL TABLE (outside lesson-content) ─────── */
+
+.kana-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 1rem;
+  border: 2px solid var(--navy-blue);
+}
+
+.kana-table th {
+  background: var(--navy-blue);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.kana-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.kana-table tr:nth-child(even) {
+  background: #f9fafb;
+}
+
 /* ─── PROGRESS DASHBOARD ─────────────────────────── */
 
 .progress-dashboard {
