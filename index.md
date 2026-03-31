@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Trang Chủ
+title: "NihonGo! — Giải mã Tiếng Nhật theo phương pháp Logic"
 ---
 
 <div class="hero">
