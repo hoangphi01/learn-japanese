@@ -15,7 +15,14 @@
   </div>
 
   <nav class="sidebar-nav">
-    {% for ch in site.data.chapters %}
+    {% for level in site.data.levels %}
+    {% assign level_chapters = site.data.chapters | where: "level", level.id %}
+    {% if level_chapters.size > 0 %}
+    <div class="sidebar-level-header">
+      <span class="sidebar-level-badge">{{ level.id }}</span>
+      <span class="sidebar-level-title">{{ level.title }}</span>
+    </div>
+    {% for ch in level_chapters %}
     {% assign ch_lessons = site.lessons | where: "chapter", ch.id | sort: "lesson" %}
     <div class="sidebar-chapter {% if page.chapter == ch.id %}active{% endif %}" data-level="{{ ch.level }}">
       <button class="chapter-toggle" data-chapter="{{ ch.id }}">
@@ -35,6 +42,12 @@
       </ul>
     </div>
     {% endfor %}
+    {% endif %}
+    {% endfor %}
   </nav>
+
+  <div class="sidebar-logo">
+    <img src="{{ '/assets/images/collab-logo.png' | relative_url }}" alt="hoangphi01 x Claude">
+  </div>
 </aside>
 <div class="sidebar-overlay" id="sidebar-overlay"></div>

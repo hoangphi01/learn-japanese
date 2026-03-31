@@ -323,6 +323,38 @@ strong { font-weight: 600; }
   padding: 0.5rem 0;
 }
 
+.sidebar-level-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #f9fafb;
+  border-bottom: 2px solid var(--navy-blue);
+}
+
+.sidebar-level-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.15rem 0.5rem;
+  background: var(--japan-red);
+  color: white;
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 0;
+  line-height: 1;
+}
+
+.sidebar-level-title {
+  font-size: 0.75rem;
+  color: var(--med-gray);
+  font-weight: 600;
+}
+
 .sidebar-chapter {
   border-bottom: 2px solid #f3f4f6;
 }
@@ -439,6 +471,24 @@ strong { font-weight: 600; }
   border: solid white;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
+}
+
+.sidebar-logo {
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border-top: 2px solid #e5e7eb;
+  text-align: center;
+}
+
+.sidebar-logo img {
+  max-width: 80%;
+  height: auto;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.sidebar-logo img:hover {
+  opacity: 1;
 }
 
 .sidebar-overlay {
@@ -1171,6 +1221,12 @@ strong { font-weight: 600; }
   pointer-events: none;
 }
 
+@media (max-width: 768px) {
+  .footer-image {
+    margin-bottom: calc(60px + var(--sab));
+  }
+}
+
 /* ============================================================
    SIDEBAR TOGGLE BUTTON (navbar left edge)
    ============================================================ */
@@ -1357,6 +1413,20 @@ strong { font-weight: 600; }
 [data-theme="modern"] .progress-fill {
   border-radius: 999px;
   transition: width 0.5s ease;
+}
+
+[data-theme="modern"] .sidebar-level-header {
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+[data-theme="modern"] .sidebar-level-badge {
+  border-radius: 999px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+[data-theme="modern"] .sidebar-logo {
+  border-top: 1px solid #e5e7eb;
 }
 
 [data-theme="modern"] .sidebar-chapter {
