@@ -67,6 +67,9 @@
   --nav-height: 56px;
   --max-content: 800px;
 
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+
   --radius: 0px;
   --radius-sm: 0px;
   --shadow: none;
@@ -132,7 +135,8 @@ strong { font-weight: 600; }
   top: 0;
   left: 0;
   right: 0;
-  height: var(--nav-height);
+  height: calc(var(--nav-height) + var(--sat));
+  padding-top: var(--sat);
   background: var(--navy-blue);
   z-index: 1000;
   border-bottom: 3px solid var(--gold-accent);
@@ -220,8 +224,8 @@ strong { font-weight: 600; }
 
 .layout-wrapper {
   display: flex;
-  margin-top: var(--nav-height);
-  min-height: calc(100vh - var(--nav-height));
+  margin-top: calc(var(--nav-height) + var(--sat));
+  min-height: calc(100dvh - var(--nav-height) - var(--sat));
 }
 
 .main-content {
@@ -240,7 +244,7 @@ strong { font-weight: 600; }
   background: white;
   border-right: 3px solid var(--navy-blue);
   position: fixed;
-  top: var(--nav-height);
+  top: calc(var(--nav-height) + var(--sat));
   left: 0;
   bottom: 0;
   overflow-y: auto;
@@ -981,7 +985,8 @@ strong { font-weight: 600; }
   }
 
   .sidebar {
-    top: calc(var(--nav-height) + 30px);
+    top: calc(var(--nav-height) + var(--sat) + 30px);
+    bottom: calc(60px + var(--sab));
   }
 
   .hero-title {
@@ -1032,7 +1037,7 @@ strong { font-weight: 600; }
   .mobile-progress-bar {
     display: flex;
     position: fixed;
-    top: var(--nav-height);
+    top: calc(var(--nav-height) + var(--sat));
     left: 0;
     right: 0;
     z-index: 999;
@@ -1070,7 +1075,7 @@ strong { font-weight: 600; }
 
   /* Offset content below the progress bar */
   .layout-wrapper {
-    margin-top: calc(var(--nav-height) + 30px);
+    margin-top: calc(var(--nav-height) + var(--sat) + 30px);
   }
 
   [data-theme="modern"] .mobile-progress-bar {
@@ -1102,14 +1107,14 @@ strong { font-weight: 600; }
     bottom: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: calc(60px + var(--sab));
     background: var(--navy-blue);
     border-top: 3px solid var(--gold-accent);
     z-index: 1000;
     align-items: center;
     justify-content: space-around;
     padding: 0 0.5rem;
-    padding-bottom: env(safe-area-inset-bottom, 0);
+    padding-bottom: var(--sab);
   }
 
   .dock-item {
@@ -1145,7 +1150,7 @@ strong { font-weight: 600; }
 
   /* Extra bottom padding so content isn't hidden behind dock */
   .main-content {
-    padding-bottom: 80px !important;
+    padding-bottom: calc(70px + var(--sab)) !important;
   }
 
   [data-theme="modern"] .mobile-dock {
