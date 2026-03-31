@@ -1,0 +1,189 @@
+# ============================================================
+# VOCABULARY FLASHCARD DECKS
+# Each deck: id, title, chapter, description, cards[]
+# Card format: front (Japanese), back (reading), note (Vietnamese)
+# ============================================================
+
+# ── Từ Mượn Katakana (Ch1-2) ──
+- id: "loanwords"
+  title: "Từ Mượn Katakana"
+  chapter: 1
+  description: "20 từ mượn nước ngoài viết bằng Katakana"
+  cards:
+    - { front: "コーヒー", back: "koohii", note: "cà phê" }
+    - { front: "バス", back: "basu", note: "xe buýt" }
+    - { front: "テニス", back: "tenisu", note: "tennis" }
+    - { front: "アイス", back: "aisu", note: "kem" }
+    - { front: "タコス", back: "takosu", note: "tacos" }
+    - { front: "ネット", back: "netto", note: "internet" }
+    - { front: "カカオ", back: "kakao", note: "cacao" }
+    - { front: "ホテル", back: "hoteru", note: "khách sạn" }
+    - { front: "レストラン", back: "resutoran", note: "nhà hàng" }
+    - { front: "タクシー", back: "takushii", note: "taxi" }
+    - { front: "スーパー", back: "suupaa", note: "siêu thị" }
+    - { front: "ビール", back: "biiru", note: "bia" }
+    - { front: "メニュー", back: "menyuu", note: "thực đơn" }
+    - { front: "トイレ", back: "toire", note: "nhà vệ sinh" }
+    - { front: "エレベーター", back: "erebeetaa", note: "thang máy" }
+    - { front: "コンビニ", back: "konbini", note: "cửa hàng tiện lợi" }
+    - { front: "アメリカ", back: "amerika", note: "Mỹ" }
+    - { front: "ベトナム", back: "betonamu", note: "Việt Nam" }
+    - { front: "チケット", back: "chiketto", note: "vé" }
+    - { front: "カメラ", back: "kamera", note: "máy ảnh" }
+
+# ── Số Đếm Nhật (Ch2) ──
+- id: "numbers"
+  title: "Số Đếm Nhật"
+  chapter: 2
+  description: "13 số đếm cơ bản từ 0 đến 1000"
+  cards:
+    - { front: "ゼロ/れい", back: "zero / rei", note: "0" }
+    - { front: "一", back: "ichi", note: "1 — một" }
+    - { front: "二", back: "ni", note: "2 — hai" }
+    - { front: "三", back: "san", note: "3 — ba" }
+    - { front: "四", back: "shi / yon", note: "4 — bốn" }
+    - { front: "五", back: "go", note: "5 — năm" }
+    - { front: "六", back: "roku", note: "6 — sáu" }
+    - { front: "七", back: "shichi / nana", note: "7 — bảy" }
+    - { front: "八", back: "hachi", note: "8 — tám" }
+    - { front: "九", back: "ku / kyuu", note: "9 — chín" }
+    - { front: "十", back: "juu", note: "10 — mười" }
+    - { front: "百", back: "hyaku", note: "100 — trăm" }
+    - { front: "千", back: "sen", note: "1000 — nghìn" }
+
+# ── 7 Trợ Từ Cốt Lõi + 5 Cụm Sinh Tồn (Ch4) ──
+- id: "particles"
+  title: "Trợ Từ & Cụm Sinh Tồn"
+  chapter: 4
+  description: "7 particles + 5 câu giao tiếp thiết yếu"
+  cards:
+    # 7 particles
+    - { front: "は", back: "wa", note: "Chủ đề câu (topic)" }
+    - { front: "を", back: "wo", note: "Tân ngữ trực tiếp" }
+    - { front: "が", back: "ga", note: "Chủ ngữ ngữ pháp" }
+    - { front: "で", back: "de", note: "Địa điểm hành động" }
+    - { front: "に", back: "ni", note: "Điểm đến / thời gian" }
+    - { front: "も", back: "mo", note: "Cũng (also / too)" }
+    - { front: "か", back: "ka", note: "Dấu hỏi cuối câu" }
+    # 5 survival phrases
+    - { front: "これをください", back: "kore wo kudasai", note: "Cho tôi cái này" }
+    - { front: "いくらですか？", back: "ikura desu ka?", note: "Bao nhiêu tiền?" }
+    - { front: "どこですか？", back: "doko desu ka?", note: "Ở đâu?" }
+    - { front: "ほしいです", back: "hoshii desu", note: "Tôi muốn (+ danh từ)" }
+    - { front: "すみません", back: "sumimasen", note: "Xin lỗi / Xin phép" }
+
+# ── 15 Động Từ Cốt Lõi (Ch5) ──
+- id: "verbs"
+  title: "15 Động Từ Cốt Lõi"
+  chapter: 5
+  description: "15 động từ cơ bản dạng masu-form"
+  cards:
+    - { front: "行く", back: "ikimasu", note: "đi (Godan)" }
+    - { front: "来る", back: "kimasu", note: "đến (Bất quy tắc)" }
+    - { front: "食べる", back: "tabemasu", note: "ăn (Ichidan)" }
+    - { front: "飲む", back: "nomimasu", note: "uống (Godan)" }
+    - { front: "買う", back: "kaimasu", note: "mua (Godan)" }
+    - { front: "見る", back: "mimasu", note: "nhìn, xem (Ichidan)" }
+    - { front: "話す", back: "hanashimasu", note: "nói (Godan)" }
+    - { front: "聞く", back: "kikimasu", note: "nghe, hỏi (Godan)" }
+    - { front: "分かる", back: "wakarimasu", note: "hiểu (Godan)" }
+    - { front: "ある", back: "arimasu", note: "có (đồ vật)" }
+    - { front: "いる", back: "imasu", note: "có (người/sinh vật)" }
+    - { front: "する", back: "shimasu", note: "làm (Bất quy tắc)" }
+    - { front: "乗る", back: "norimasu", note: "lên xe/tàu (Godan)" }
+    - { front: "降りる", back: "orimasu", note: "xuống (Ichidan)" }
+    - { front: "見せる", back: "misemasu", note: "cho xem (Ichidan)" }
+
+# ── 50 Danh Từ Cốt Lõi (Ch5) ──
+- id: "nouns"
+  title: "50 Danh Từ Cốt Lõi"
+  chapter: 5
+  description: "50 danh từ thiết yếu cho du lịch, chia 5 nhóm"
+  cards:
+    # Nhóm 1: Chỉ Định
+    - { front: "これ", back: "kore", note: "cái này" }
+    - { front: "それ", back: "sore", note: "cái đó" }
+    - { front: "あれ", back: "are", note: "cái kia" }
+    - { front: "どれ", back: "dore", note: "cái nào?" }
+    - { front: "ここ", back: "koko", note: "nơi này" }
+    - { front: "そこ", back: "soko", note: "nơi đó" }
+    - { front: "あそこ", back: "asoko", note: "nơi kia" }
+    - { front: "どこ", back: "doko", note: "ở đâu?" }
+    - { front: "何", back: "nani", note: "cái gì?" }
+    - { front: "いつ", back: "itsu", note: "khi nào?" }
+    # Nhóm 2: Địa Điểm
+    - { front: "駅", back: "eki", note: "ga tàu" }
+    - { front: "空港", back: "kuukou", note: "sân bay" }
+    - { front: "ホテル", back: "hoteru", note: "khách sạn" }
+    - { front: "病院", back: "byouin", note: "bệnh viện" }
+    - { front: "薬局", back: "yakkyoku", note: "nhà thuốc" }
+    - { front: "銀行", back: "ginkou", note: "ngân hàng" }
+    - { front: "トイレ", back: "toire", note: "nhà vệ sinh" }
+    - { front: "出口", back: "deguchi", note: "lối ra" }
+    - { front: "入口", back: "iriguchi", note: "lối vào" }
+    - { front: "コンビニ", back: "konbini", note: "cửa hàng 24h" }
+    # Nhóm 3: Thức Ăn & Đồ Uống
+    - { front: "水", back: "mizu", note: "nước" }
+    - { front: "お茶", back: "ocha", note: "trà" }
+    - { front: "コーヒー", back: "koohii", note: "cà phê" }
+    - { front: "ビール", back: "biiru", note: "bia" }
+    - { front: "ラーメン", back: "raamen", note: "mì ramen" }
+    - { front: "寿司", back: "sushi", note: "sushi" }
+    - { front: "天ぷら", back: "tenpura", note: "tempura" }
+    - { front: "弁当", back: "bentou", note: "cơm hộp" }
+    - { front: "お菓子", back: "okashi", note: "bánh kẹo" }
+    - { front: "魚", back: "sakana", note: "cá" }
+    # Nhóm 4: Giao Thông
+    - { front: "電車", back: "densha", note: "tàu điện" }
+    - { front: "バス", back: "basu", note: "xe buýt" }
+    - { front: "タクシー", back: "takushii", note: "taxi" }
+    - { front: "地下鉄", back: "chikatetsu", note: "tàu ngầm" }
+    - { front: "切符", back: "kippu", note: "vé" }
+    - { front: "新幹線", back: "shinkansen", note: "Shinkansen" }
+    - { front: "道", back: "michi", note: "đường" }
+    - { front: "地図", back: "chizu", note: "bản đồ" }
+    - { front: "右", back: "migi", note: "bên phải" }
+    - { front: "左", back: "hidari", note: "bên trái" }
+    # Nhóm 5: Mua Sắm
+    - { front: "値段", back: "nedan", note: "giá tiền" }
+    - { front: "お金", back: "okane", note: "tiền" }
+    - { front: "クレジット", back: "kurejitto", note: "thẻ (credit)" }
+    - { front: "レシート", back: "reshiito", note: "hóa đơn" }
+    - { front: "袋", back: "fukuro", note: "túi" }
+    - { front: "サイズ", back: "saizu", note: "kích cỡ" }
+    - { front: "色", back: "iro", note: "màu sắc" }
+    - { front: "セール", back: "seeru", note: "giảm giá" }
+    - { front: "試着", back: "shichaku", note: "thử đồ" }
+    - { front: "返品", back: "henpin", note: "đổi/trả" }
+
+# ── Từ Ghép Hán-Việt (Ch6) ──
+- id: "hanviet"
+  title: "Từ Ghép Hán-Việt"
+  chapter: 6
+  description: "25 từ ghép Hán-Việt — giải mã On'yomi qua tiếng Việt"
+  cards:
+    - { front: "大学", back: "daigaku", note: "đại học" }
+    - { front: "学生", back: "gakusei", note: "học sinh" }
+    - { front: "先生", back: "sensei", note: "tiên sinh (thầy/cô)" }
+    - { front: "学校", back: "gakkou", note: "học hiệu (trường)" }
+    - { front: "教室", back: "kyoushitsu", note: "giáo thất (phòng học)" }
+    - { front: "日本", back: "nihon", note: "nhật bản" }
+    - { front: "日本語", back: "nihongo", note: "nhật bản ngữ (tiếng Nhật)" }
+    - { front: "中国", back: "chuugoku", note: "trung quốc" }
+    - { front: "外国人", back: "gaikokujin", note: "ngoại quốc nhân" }
+    - { front: "電話", back: "denwa", note: "điện thoại" }
+    - { front: "電車", back: "densha", note: "điện xa (tàu điện)" }
+    - { front: "自動車", back: "jidousha", note: "tự động xa (ô tô)" }
+    - { front: "銀行", back: "ginkou", note: "ngân hàng" }
+    - { front: "会社", back: "kaisha", note: "hội xã (công ty)" }
+    - { front: "会社員", back: "kaishain", note: "hội xã viên (nhân viên)" }
+    - { front: "病院", back: "byouin", note: "bệnh viện" }
+    - { front: "図書館", back: "toshokan", note: "đồ thư quán (thư viện)" }
+    - { front: "大使館", back: "taishikan", note: "đại sứ quán" }
+    - { front: "時間", back: "jikan", note: "thời gian" }
+    - { front: "毎日", back: "mainichi", note: "mỗi nhật (mỗi ngày)" }
+    - { front: "天気", back: "tenki", note: "thiên khí (thời tiết)" }
+    - { front: "旅行", back: "ryokou", note: "lữ hành (du lịch)" }
+    - { front: "料理", back: "ryouri", note: "liệu lý (nấu ăn)" }
+    - { front: "新聞", back: "shinbun", note: "tân văn (báo)" }
+    - { front: "音楽", back: "ongaku", note: "âm nhạc" }

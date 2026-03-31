@@ -18,7 +18,7 @@ bundle exec jekyll build    # Production build → _site/
 _config.yml          # Jekyll config (baseurl: /learn-japanese)
 _data/               # YAML data files (curriculum, kana, vocabulary, rules)
 _includes/           # Reusable HTML components (boxes, nav, sidebar, quiz, flashcard)
-_layouts/            # Page templates (default → lesson, chapter, quiz)
+_layouts/            # Page templates (default → lesson, chapter, quiz, flashcard)
 _lessons/            # Lesson content (Markdown + includes)
   ch01/              # Phase 1: Katakana & Sound System (4 lessons)
   ch02/              # Phase 1: Dakuten, Combos, Numbers (4 lessons)
@@ -31,7 +31,7 @@ assets/
   js/                # 6 JS modules (theme, nav, progress, quiz, flashcard, welcome)
   font/              # Bookerly + Minecraft Unicode (do NOT modify)
   images/            # preview.png (OG meta), icons, logos
-flashcards/          # Flashcard pages (katakana.md, hiragana.md)
+flashcards/          # Flashcard hub + deck pages (index, katakana, hiragana, 6 vocab decks)
 pages/               # Static pages (about, hv-decoder, roadmap)
 index.md             # Homepage
 ```
@@ -68,6 +68,7 @@ level: N5
 | `kana.yml` | Katakana & Hiragana characters: char, romaji, row, strokes, note; dakuten variants |
 | `hv_rules.yml` | 8 Hán-Việt → On'yomi mapping rules with examples |
 | `vocabulary.yml` | Loanwords (jp, romaji, en, vi) and numbers (num, jp, romaji) |
+| `flashcard_decks.yml` | 6 vocabulary flashcard decks (loanwords, numbers, particles, verbs, nouns, hanviet) |
 
 ### Content Boxes (Includes)
 
@@ -113,6 +114,21 @@ All use IIFE pattern. No frameworks.
 | `lj_selected_level` | `'N5'`, `'N4'`, etc. | nav.js, welcome.js |
 | `lj_sidebar` | `'collapsed'` or `'open'` | nav.js |
 | `lj_welcome_dismissed` | `'true'` or absent | welcome.js |
+
+## 3 Pillars Architecture
+
+NihonGo! has 3 core interactive pillars:
+
+| Pillar | Path | Purpose |
+|--------|------|---------|
+| **Lessons** | `_lessons/ch{NN}/` | Structured curriculum (Markdown + includes) |
+| **HV Decoder** | `pages/hv-decoder/` | Interactive Hán-Việt → On'yomi lookup tool |
+| **Flashcards** | `flashcards/` | Practice decks — kana (from `kana.yml`) + vocabulary (from `flashcard_decks.yml`) |
+
+Flashcard decks:
+- **Kana decks** (katakana, hiragana): use `layout: default`, read from `kana.yml` directly
+- **Vocabulary decks** (6 decks): use `layout: flashcard`, read from `flashcard_decks.yml` via `page.deck_id`
+- **Index page** (`flashcards/index.md`): hub listing all 8 decks grouped by phase
 
 ## Do NOT
 

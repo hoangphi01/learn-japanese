@@ -143,6 +143,123 @@
 }
 
 /* ============================================================
+   VOCABULARY CARD VARIANT
+   ============================================================ */
+
+.vocab-grid {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.flashcard.vocab {
+  height: 160px;
+}
+
+.flashcard.vocab .flashcard-char {
+  font-size: 1.8rem;
+}
+
+.flashcard.vocab .flashcard-front {
+  border-color: var(--gold-accent);
+}
+
+.flashcard.vocab .flashcard-char {
+  color: var(--gold-accent);
+}
+
+.flashcard.vocab .flashcard-back {
+  background: var(--gold-accent);
+  border-color: var(--gold-accent);
+}
+
+/* Flashcard intro text */
+.flashcard-intro {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--bg-light, #f8f9fa);
+  border-left: 4px solid var(--gold-accent);
+}
+
+/* ============================================================
+   FLASHCARD HUB / INDEX
+   ============================================================ */
+
+.flashcard-hub {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.deck-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+  border: 3px solid var(--navy-blue);
+  background: white;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.15);
+  text-decoration: none;
+  color: var(--navy-blue);
+  transition: border-color 0.1s steps(1), transform 0.1s steps(1);
+}
+
+.deck-card:hover {
+  border-color: var(--gold-accent);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 rgba(0,0,0,0.15);
+}
+
+.deck-card--vocab {
+  border-color: var(--gold-accent);
+}
+
+.deck-badge {
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  background: var(--navy-blue);
+  color: white;
+}
+
+.deck-card--vocab .deck-badge {
+  background: var(--gold-accent);
+}
+
+.deck-title {
+  font-family: var(--font-jp);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.deck-count {
+  font-size: 0.8rem;
+  color: var(--med-gray);
+}
+
+@media (max-width: 768px) {
+  .vocab-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .flashcard.vocab {
+    height: 140px;
+  }
+
+  .flashcard.vocab .flashcard-char {
+    font-size: 1.5rem;
+  }
+
+  .flashcard-hub {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+/* ============================================================
    MODERN THEME — Flashcard Overrides
    ============================================================ */
 
@@ -163,4 +280,25 @@
   border-radius: var(--radius);
   border-width: 1px;
   box-shadow: var(--shadow);
+}
+
+[data-theme="modern"] .deck-card {
+  border-radius: var(--radius);
+  border-width: 1px;
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+[data-theme="modern"] .deck-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+[data-theme="modern"] .deck-badge {
+  border-radius: 4px;
+}
+
+[data-theme="modern"] .flashcard-intro {
+  border-radius: var(--radius);
+  border-left-width: 4px;
 }

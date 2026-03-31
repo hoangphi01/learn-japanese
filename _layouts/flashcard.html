@@ -1,0 +1,40 @@
+---
+layout: default
+---
+{% assign deck = site.data.flashcard_decks | where: "id", page.deck_id | first %}
+
+<h1>{{ page.title }}</h1>
+<p>Nhấn vào thẻ để lật. Nhấn đúp để đánh dấu "đã biết".</p>
+
+{% if content != '' %}
+<div class="flashcard-intro">
+{{ content }}
+</div>
+{% endif %}
+
+<div class="flashcard-controls">
+  <button class="btn btn-secondary" onclick="LJFlashcard.shuffle('{{ page.deck_id }}')">Trộn bài</button>
+  <button class="btn btn-secondary" onclick="LJFlashcard.flipAll('{{ page.deck_id }}')">Lật tất cả</button>
+  <button class="btn btn-secondary" onclick="LJFlashcard.resetAll('{{ page.deck_id }}')">Reset</button>
+</div>
+
+<div class="flashcard-score">
+  <span class="score-label">Đã biết: </span>
+  <span class="score-value" data-deck-score="{{ page.deck_id }}">0 / {{ deck.cards | size }}</span>
+</div>
+
+<div class="flashcard-grid vocab-grid" id="{{ page.deck_id }}">
+{% for card in deck.cards %}
+  <div class="flashcard vocab" onclick="this.classList.toggle('flipped')">
+    <div class="flashcard-inner">
+      <div class="flashcard-front">
+        <span class="flashcard-char">{{ card.front }}</span>
+      </div>
+      <div class="flashcard-back">
+        <span class="flashcard-text">{{ card.back }}</span>
+        {% if card.note %}<span class="flashcard-note">{{ card.note }}</span>{% endif %}
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
