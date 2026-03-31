@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article class="quiz-page">
+  <header class="quiz-header">
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}
+    <p class="quiz-description">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <div class="quiz-content">
+    {{ content }}
+  </div>
+
+  <div class="quiz-results" id="quiz-results" style="display:none;">
+    <div class="results-card">
+      <h2>Kết quả</h2>
+      <div class="score-display">
+        <span class="score-number" id="quiz-score">0</span>
+        <span class="score-total">/ <span id="quiz-total">0</span></span>
+      </div>
+      <p class="score-message" id="score-message"></p>
+      <button class="btn btn-primary" onclick="LJQuiz.reset()">Làm lại</button>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,15 @@
+<div class="quiz-question" data-correct="{{ include.correct }}">
+  <p class="question-text">{{ include.question }}</p>
+  <div class="question-options">
+    {% for option in include.options %}
+    <button class="option-btn" data-value="{{ option.value }}" onclick="LJQuiz.checkAnswer(this, '{{ include.correct }}')">
+      {{ option.label }}
+    </button>
+    {% endfor %}
+  </div>
+  {% if include.explanation %}
+  <div class="question-explanation" style="display:none;">
+    {{ include.explanation }}
+  </div>
+  {% endif %}
+</div>

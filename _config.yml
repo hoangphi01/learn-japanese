@@ -1,0 +1,33 @@
+title: "Toán Học Ngôn Ngữ: Tiếng Nhật Cấp Tốc"
+description: "Học tiếng Nhật theo phương pháp logic-toán học. 8 tuần giao tiếp cơ bản, 6 tháng N5."
+baseurl: "/learn_japanese"
+url: ""
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+
+collections:
+  lessons:
+    output: true
+    permalink: /lessons/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "lessons"
+    values:
+      layout: "lesson"
+
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - nihongo_v4.tex
+  - nihongo_toanphuong.tex
+  - nihongo_project.md
+  - README.md
+  - vendor

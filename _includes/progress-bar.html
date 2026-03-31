@@ -1,0 +1,34 @@
+<div class="progress-dashboard">
+  <div class="progress-header">
+    <span class="progress-week">{{ include.week }}</span>
+    <span class="progress-sep">|</span>
+    <span class="progress-phase">{{ include.phase_name }}</span>
+    <span class="progress-time">{{ include.time }}</span>
+  </div>
+
+  <div class="progress-row">
+    <div class="progress-info">
+      <span class="progress-name red">MỤC TIÊU 8 TUẦN</span>
+      <span class="progress-sub">(Giao tiếp cơ bản)</span>
+    </div>
+    <span class="progress-value red">{{ include.eight_week_pct }}% hoàn thành</span>
+  </div>
+  <div class="progress-track-lg">
+    <div class="progress-fill-lg red" style="width: {{ include.eight_week_pct }}%"></div>
+  </div>
+
+  <div class="progress-row">
+    <div class="progress-info">
+      <span class="progress-name blue">LỘ TRÌNH N5</span>
+      <span class="progress-sub">(6 tháng)</span>
+    </div>
+    <span class="progress-value blue">{{ include.n5_pct }}% hoàn thành</span>
+  </div>
+  <div class="progress-track-lg">
+    <div class="progress-fill-lg blue" style="width: {{ include.n5_pct }}%"></div>
+  </div>
+
+  <div class="progress-milestone">
+    <strong>Đạt được sau chương này:</strong> {{ include.milestone }}
+  </div>
+</div>

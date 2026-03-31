@@ -1,0 +1,13 @@
+<div class="flashcard" data-front="{{ include.front }}" data-back="{{ include.back }}" onclick="this.classList.toggle('flipped')">
+  <div class="flashcard-inner">
+    <div class="flashcard-front">
+      <span class="flashcard-char">{{ include.front }}</span>
+    </div>
+    <div class="flashcard-back">
+      <span class="flashcard-text">{{ include.back }}</span>
+      {% if include.note %}
+      <span class="flashcard-note">{{ include.note }}</span>
+      {% endif %}
+    </div>
+  </div>
+</div>

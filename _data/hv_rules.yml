@@ -1,0 +1,87 @@
+- id: 1
+  hv_pattern: "T- đầu"
+  onyomi: "S-/Z-"
+  examples:
+    - hv: "Tâm"
+      jp: "Shin (心)"
+    - hv: "Sinh"
+      jp: "Sei (生)"
+    - hv: "Tử"
+      jp: "Shi (死)"
+
+- id: 2
+  hv_pattern: "-c/-ch cuối"
+  onyomi: "-ku/-ki"
+  examples:
+    - hv: "Học"
+      jp: "Gaku (学)"
+    - hv: "Quốc"
+      jp: "Koku (国)"
+    - hv: "Mục"
+      jp: "Moku (目)"
+
+- id: 3
+  hv_pattern: "-t cuối"
+  onyomi: "-tsu/-chi"
+  examples:
+    - hv: "Nhất"
+      jp: "Ichi (一)"
+    - hv: "Phật"
+      jp: "Butsu (仏)"
+    - hv: "Nhật"
+      jp: "Nichi (日)"
+
+- id: 4
+  hv_pattern: "-ng/-nh cuối"
+  onyomi: "Trường âm -ō/-ū"
+  examples:
+    - hv: "Đường"
+      jp: "Dō (道)"
+    - hv: "Không"
+      jp: "Kū (空)"
+    - hv: "Trung"
+      jp: "Chū (中)"
+
+- id: 5
+  hv_pattern: "Đ- đầu"
+  onyomi: "D-"
+  examples:
+    - hv: "Đại"
+      jp: "Dai (大)"
+    - hv: "Độc"
+      jp: "Doku (読)"
+    - hv: "Điện"
+      jp: "Den (電)"
+
+- id: 6
+  hv_pattern: "Nh- đầu"
+  onyomi: "Ni-/Jin-"
+  examples:
+    - hv: "Nhân"
+      jp: "Jin (人)"
+    - hv: "Nhật"
+      jp: "Nichi (日)"
+    - hv: "Nhập"
+      jp: "Nyū (入)"
+
+- id: 7
+  hv_pattern: "-n cuối"
+  onyomi: "-n giữ nguyên"
+  examples:
+    - hv: "Quan"
+      jp: "Kan (関)"
+    - hv: "Kinh"
+      jp: "Kyō (京)"
+    - hv: "Sơn"
+      jp: "San (山)"
+
+- id: 8
+  hv_pattern: "Ph- đầu"
+  onyomi: "H-/F-"
+  examples:
+    - hv: "Phong"
+      jp: "Fū (風)"
+    - hv: "Pháp"
+      jp: "Hō (法)"
+    - hv: "Phú"
+      jp: "Fu (富)"

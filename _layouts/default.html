@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/boxes.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/flashcard.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/quiz.css' | relative_url }}">
+  {% seo %}
+</head>
+<body>
+  {% include nav.html %}
+
+  <div class="layout-wrapper">
+    {% include sidebar.html %}
+
+    <main class="main-content" id="main-content">
+      {{ content }}
+    </main>
+  </div>
+
+  <script src="{{ '/assets/js/nav.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/progress.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/quiz.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/flashcard.js' | relative_url }}"></script>
+</body>
+</html>

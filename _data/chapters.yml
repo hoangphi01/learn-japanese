@@ -1,0 +1,99 @@
+- id: 1
+  title: "Hệ Thống Âm Thanh & Katakana (Hàng 1–5)"
+  short_title: "Katakana Hàng 1–5"
+  phase: 1
+  week: "Tuần 1"
+  eight_week_pct: 0
+  n5_pct: 0
+  milestone: "Đọc được 25 Katakana đầu và nhận diện 10+ từ mượn tiếng Anh"
+  lessons: 4
+
+- id: 2
+  title: "Katakana Hoàn Chỉnh & Số Đếm"
+  short_title: "Katakana & Số Đếm"
+  phase: 1
+  week: "Tuần 2"
+  eight_week_pct: 12
+  n5_pct: 5
+  milestone: "Đọc toàn bộ 46 Katakana, nhận diện 50+ từ mượn, nói được giá tiền"
+  lessons: 4
+
+- id: 3
+  title: "Hiragana — Hệ Chữ Thứ Hai"
+  short_title: "Hiragana"
+  phase: 1
+  week: "Tuần 2+"
+  eight_week_pct: 25
+  n5_pct: 12
+  milestone: "Đọc và viết đủ 92 ký tự (Katakana + Hiragana)"
+  lessons: 4
+
+- id: 4
+  title: "Hệ Thống Toán Tử (Particles)"
+  short_title: "Particles"
+  phase: 2
+  week: "Tuần 3"
+  eight_week_pct: 38
+  n5_pct: 22
+  milestone: "Hiểu 7 Particles và 5 hàm giao tiếp cơ bản"
+  lessons: 4
+
+- id: 5
+  title: "Động Từ & 50 Danh Từ Cốt Lõi"
+  short_title: "Động Từ & Danh Từ"
+  phase: 2
+  week: "Tuần 4"
+  eight_week_pct: 50
+  n5_pct: 32
+  milestone: "15 động từ masu-form và 50 danh từ cốt lõi"
+  lessons: 4
+
+- id: 6
+  title: "Bộ Giải Mã Hán-Việt"
+  short_title: "Hán-Việt Decoder"
+  phase: 2
+  week: "Tuần 5"
+  eight_week_pct: 62
+  n5_pct: 42
+  milestone: "8 quy tắc ánh xạ Hán-Việt → On'yomi"
+  lessons: 3
+
+- id: 7
+  title: "Từ Vựng Chuyên Biệt: 3 Kịch Bản"
+  short_title: "3 Kịch Bản"
+  phase: 3
+  week: "Tuần 6"
+  eight_week_pct: 75
+  n5_pct: 55
+  milestone: "Giao tiếp cơ bản ở cửa hàng, nhà hàng, ga tàu"
+  lessons: 4
+
+- id: 8
+  title: "Simulation Drills"
+  short_title: "Simulation"
+  phase: 3
+  week: "Tuần 7"
+  eight_week_pct: 88
+  n5_pct: 68
+  milestone: "Xử lý 5 tình huống thực tế"
+  lessons: 3
+
+- id: 9
+  title: "Ôn Tập Toàn Diện & Nghe Hiểu"
+  short_title: "Ôn Tập"
+  phase: 3
+  week: "Tuần 8"
+  eight_week_pct: 96
+  n5_pct: 78
+  milestone: "Shadowing, filler words, self-assessment"
+  lessons: 3
+
+- id: 10
+  title: "Hệ Thống Tính Từ い/な"
+  short_title: "Tính Từ"
+  phase: 4
+  week: "Tuần 9–10"
+  eight_week_pct: 100
+  n5_pct: 82
+  milestone: "4 dạng chia tính từ, 50 tính từ N5"
+  lessons: 5

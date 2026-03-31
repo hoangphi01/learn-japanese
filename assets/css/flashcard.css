@@ -1,0 +1,140 @@
+/* ============================================================
+   FLASHCARD STYLES
+   ============================================================ */
+
+.flashcard-deck {
+  margin: 2rem 0;
+}
+
+.flashcard-controls {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.flashcard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.75rem;
+}
+
+.flashcard {
+  perspective: 600px;
+  cursor: pointer;
+  height: 140px;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  border: 2px solid #e5e7eb;
+  background: white;
+  transition: border-color 0.2s;
+}
+
+.flashcard:hover .flashcard-front,
+.flashcard:hover .flashcard-back {
+  border-color: var(--navy-blue);
+}
+
+.flashcard-back {
+  transform: rotateY(180deg);
+  background: var(--navy-blue);
+  color: white;
+  border-color: var(--navy-blue);
+}
+
+.flashcard-char {
+  font-family: var(--font-jp);
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--navy-blue);
+}
+
+.flashcard-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.flashcard-note {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-top: 0.3rem;
+  text-align: center;
+}
+
+/* Flashcard type variants */
+.flashcard.kata .flashcard-front { border-color: rgba(27,42,140,0.3); }
+.flashcard.kata .flashcard-char { color: var(--kata-color); }
+.flashcard.kata .flashcard-back { background: var(--kata-color); border-color: var(--kata-color); }
+
+.flashcard.hira .flashcard-front { border-color: rgba(27,100,74,0.3); }
+.flashcard.hira .flashcard-char { color: var(--hira-color); }
+.flashcard.hira .flashcard-back { background: var(--hira-color); border-color: var(--hira-color); }
+
+.flashcard.kanji-card .flashcard-front { border-color: rgba(130,30,30,0.3); }
+.flashcard.kanji-card .flashcard-char { color: var(--kanji-color); font-size: 3rem; }
+.flashcard.kanji-card .flashcard-back { background: var(--kanji-color); border-color: var(--kanji-color); }
+
+/* Known state */
+.flashcard.known {
+  opacity: 0.4;
+}
+
+/* Score display */
+.flashcard-score {
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: white;
+  border-radius: var(--radius);
+  border: 1px solid #e5e7eb;
+}
+
+.flashcard-score .score-label {
+  font-size: 0.85rem;
+  color: var(--med-gray);
+}
+
+.flashcard-score .score-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--navy-blue);
+}
+
+@media (max-width: 768px) {
+  .flashcard-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .flashcard {
+    height: 120px;
+  }
+
+  .flashcard-char {
+    font-size: 2rem;
+  }
+}

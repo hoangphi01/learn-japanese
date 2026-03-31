@@ -1,0 +1,920 @@
+/* ============================================================
+   DESIGN SYSTEM — Toán Học Ngôn Ngữ
+   Ported from LaTeX color scheme
+   ============================================================ */
+
+:root {
+  --japan-red: rgb(188, 0, 45);
+  --navy-blue: rgb(27, 42, 74);
+  --gold-accent: rgb(185, 149, 60);
+  --hira-color: rgb(27, 100, 74);
+  --kata-color: rgb(27, 42, 140);
+  --kanji-color: rgb(130, 30, 30);
+  --progress-red: rgb(200, 30, 60);
+  --progress-blue: rgb(30, 60, 140);
+  --med-gray: rgb(110, 110, 110);
+  --cream-bg: rgb(250, 245, 235);
+  --light-blue: rgb(228, 238, 255);
+  --light-green: rgb(228, 248, 228);
+  --light-gold: rgb(255, 249, 210);
+  --light-red: rgb(255, 232, 232);
+
+  --font-jp: 'Noto Sans JP', sans-serif;
+  --font-body: 'Inter', 'Noto Sans JP', sans-serif;
+
+  --sidebar-width: 280px;
+  --nav-height: 56px;
+  --max-content: 800px;
+
+  --radius: 8px;
+  --radius-sm: 5px;
+  --shadow: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-lg: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+/* ─── RESET & BASE ───────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.7;
+  color: var(--navy-blue);
+  background: #fafafa;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── TYPOGRAPHY ─────────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--navy-blue);
+}
+
+h1 { font-size: 1.75rem; margin-bottom: 0.75rem; }
+h2 { font-size: 1.4rem; margin-top: 2rem; margin-bottom: 0.5rem; border-bottom: 2px solid var(--navy-blue); padding-bottom: 0.3rem; display: inline-block; }
+h3 { font-size: 1.15rem; margin-top: 1.5rem; margin-bottom: 0.4rem; color: var(--navy-blue); }
+
+p { margin-bottom: 1rem; }
+a { color: var(--japan-red); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+strong { font-weight: 600; }
+
+.jp {
+  font-family: var(--font-jp);
+}
+
+.jp-large {
+  font-family: var(--font-jp);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+/* ─── TOP NAV ────────────────────────────────────── */
+
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background: var(--navy-blue);
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.logo-jp {
+  font-family: var(--font-jp);
+  font-size: 1.5rem;
+  color: var(--gold-accent);
+}
+
+.logo-text {
+  font-size: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--gold-accent);
+  text-decoration: none;
+}
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav-hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.nav-hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.nav-hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ─── LAYOUT ─────────────────────────────────────── */
+
+.layout-wrapper {
+  display: flex;
+  margin-top: var(--nav-height);
+  min-height: calc(100vh - var(--nav-height));
+}
+
+.main-content {
+  flex: 1;
+  max-width: var(--max-content);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  width: 100%;
+}
+
+/* ─── SIDEBAR ────────────────────────────────────── */
+
+.sidebar {
+  width: var(--sidebar-width);
+  background: white;
+  border-right: 1px solid #e5e7eb;
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 900;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-header {
+  padding: 1rem 1rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.sidebar-header h3 {
+  font-size: 0.95rem;
+  color: var(--navy-blue);
+  margin: 0;
+}
+
+.sidebar-close {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--med-gray);
+}
+
+.sidebar-progress {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.progress-mini {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.progress-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--med-gray);
+  width: 100%;
+}
+
+.progress-track {
+  flex: 1;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--progress-red);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.progress-pct {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--progress-red);
+  min-width: 2.5rem;
+  text-align: right;
+}
+
+.sidebar-nav {
+  padding: 0.5rem 0;
+}
+
+.sidebar-chapter {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.chapter-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.85rem;
+  color: var(--navy-blue);
+  transition: background 0.2s;
+}
+
+.chapter-toggle:hover {
+  background: #f9fafb;
+}
+
+.chapter-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--navy-blue);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.chapter-title {
+  flex: 1;
+  font-weight: 500;
+}
+
+.chapter-arrow {
+  font-size: 0.7rem;
+  color: var(--med-gray);
+  transition: transform 0.2s;
+}
+
+.sidebar-chapter.active .chapter-arrow {
+  transform: rotate(180deg);
+}
+
+.chapter-lessons {
+  list-style: none;
+  display: none;
+  padding-bottom: 0.25rem;
+}
+
+.sidebar-chapter.active .chapter-lessons {
+  display: block;
+}
+
+.chapter-lessons li {
+  position: relative;
+}
+
+.chapter-lessons li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem 0.4rem 2.5rem;
+  font-size: 0.8rem;
+  color: var(--navy-blue);
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.chapter-lessons li a:hover {
+  background: #f3f4f6;
+  text-decoration: none;
+}
+
+.chapter-lessons li.current a {
+  background: var(--light-blue);
+  color: var(--navy-blue);
+  font-weight: 600;
+}
+
+.lesson-check {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #d1d5db;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.chapter-lessons li.completed .lesson-check {
+  background: var(--hira-color);
+  border-color: var(--hira-color);
+  position: relative;
+}
+
+.chapter-lessons li.completed .lesson-check::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 0px;
+  width: 5px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 899;
+}
+
+/* ─── LESSON PAGE ────────────────────────────────── */
+
+.lesson-header {
+  margin-bottom: 1.5rem;
+}
+
+.lesson-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.lesson-badge {
+  display: inline-block;
+  background: var(--navy-blue);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.lesson-time {
+  font-size: 0.8rem;
+  color: var(--gold-accent);
+  font-weight: 600;
+}
+
+.lesson-tags {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.tag {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.tag-katakana { background: rgba(27,42,140,0.1); color: var(--kata-color); }
+.tag-hiragana { background: rgba(27,100,74,0.1); color: var(--hira-color); }
+.tag-kanji { background: rgba(130,30,30,0.1); color: var(--kanji-color); }
+.tag-kana { background: rgba(27,42,140,0.1); color: var(--kata-color); }
+.tag-phase-1 { background: rgba(188,0,45,0.08); color: var(--japan-red); }
+.tag-phase-2 { background: rgba(27,42,74,0.08); color: var(--navy-blue); }
+.tag-grammar { background: rgba(27,42,74,0.08); color: var(--navy-blue); }
+.tag-vocabulary { background: rgba(185,149,60,0.1); color: var(--gold-accent); }
+.tag-numbers { background: rgba(185,149,60,0.1); color: var(--gold-accent); }
+
+.lesson-content {
+  font-size: 1rem;
+}
+
+.lesson-content h2 {
+  display: block;
+  margin-top: 2.5rem;
+}
+
+.lesson-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.lesson-content table th {
+  background: var(--navy-blue);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.lesson-content table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.lesson-content table tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+.lesson-content .kana-table {
+  text-align: center;
+}
+
+.lesson-content .kana-table td {
+  font-family: var(--font-jp);
+  font-size: 1.4rem;
+  padding: 0.6rem 0.4rem;
+  line-height: 1.2;
+}
+
+.lesson-content .kana-table td .romaji {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--med-gray);
+  font-family: var(--font-body);
+  margin-top: 0.2rem;
+}
+
+.lesson-content .kana-table th {
+  font-size: 0.8rem;
+  padding: 0.4rem;
+}
+
+/* ─── PROGRESS DASHBOARD ─────────────────────────── */
+
+.progress-dashboard {
+  background: white;
+  border: 1px solid rgba(27,42,74,0.2);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.progress-header {
+  background: var(--navy-blue);
+  color: white;
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.progress-week {
+  font-weight: 700;
+}
+
+.progress-sep {
+  opacity: 0.3;
+}
+
+.progress-phase {
+  flex: 1;
+}
+
+.progress-time {
+  color: var(--gold-accent);
+  font-weight: 600;
+}
+
+.progress-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem 0;
+}
+
+.progress-info {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.progress-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.progress-name.red { color: var(--progress-red); }
+.progress-name.blue { color: var(--progress-blue); }
+
+.progress-sub {
+  font-size: 0.7rem;
+  color: var(--med-gray);
+}
+
+.progress-value {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.progress-value.red { color: var(--progress-red); }
+.progress-value.blue { color: var(--progress-blue); }
+
+.progress-track-lg {
+  height: 10px;
+  background: #f3f4f6;
+  border-radius: 5px;
+  margin: 0.3rem 1rem 0.5rem;
+  overflow: hidden;
+}
+
+.progress-fill-lg {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.5s ease;
+}
+
+.progress-fill-lg.red { background: var(--progress-red); }
+.progress-fill-lg.blue { background: var(--progress-blue); }
+
+.progress-milestone {
+  background: rgba(185,149,60,0.12);
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  color: var(--navy-blue);
+}
+
+.progress-milestone strong {
+  color: var(--gold-accent);
+}
+
+/* ─── LESSON COMPLETE ────────────────────────────── */
+
+.lesson-complete {
+  margin: 2.5rem 0 1.5rem;
+  padding: 1rem;
+  background: var(--light-green);
+  border-radius: var(--radius);
+  border: 1px solid rgba(27,100,74,0.2);
+}
+
+.complete-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.complete-checkbox input {
+  display: none;
+}
+
+.checkmark {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--hira-color);
+  border-radius: 4px;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.complete-checkbox input:checked + .checkmark {
+  background: var(--hira-color);
+  position: relative;
+}
+
+.complete-checkbox input:checked + .checkmark::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 7px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* ─── LESSON NAV ─────────────────────────────────── */
+
+.lesson-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.lesson-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--navy-blue);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.lesson-nav-btn:hover {
+  border-color: var(--navy-blue);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+}
+
+.lesson-nav-btn.disabled {
+  visibility: hidden;
+}
+
+.nav-arrow {
+  font-size: 1.2rem;
+}
+
+/* ─── HOMEPAGE ───────────────────────────────────── */
+
+.hero {
+  text-align: center;
+  padding: 2rem 0 1rem;
+}
+
+.hero-title {
+  font-size: 2rem;
+  color: var(--navy-blue);
+  margin-bottom: 0.5rem;
+}
+
+.hero-title .accent {
+  color: var(--japan-red);
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--med-gray);
+  margin-bottom: 1.5rem;
+}
+
+.hero-formula {
+  background: var(--navy-blue);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.hero-formula .var { color: var(--gold-accent); }
+.hero-formula .op { color: var(--japan-red); }
+
+.chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.chapter-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.chapter-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.chapter-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.chapter-card-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--navy-blue);
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.chapter-card-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.chapter-card-meta {
+  font-size: 0.8rem;
+  color: var(--med-gray);
+  margin-bottom: 0.75rem;
+}
+
+.chapter-card-progress {
+  height: 4px;
+  background: #f3f4f6;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.chapter-card-progress-fill {
+  height: 100%;
+  background: var(--progress-red);
+  border-radius: 2px;
+}
+
+/* ─── BUTTON ─────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+  background: var(--japan-red);
+  color: white;
+}
+
+.btn-primary:hover { background: #a30028; }
+
+.btn-secondary {
+  background: var(--navy-blue);
+  color: white;
+}
+
+.btn-secondary:hover { background: #1a2a4a; }
+
+/* ─── RESPONSIVE ─────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-close {
+    display: block;
+  }
+
+  .sidebar-overlay.active {
+    display: block;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 1025px) {
+  .main-content {
+    margin-left: var(--sidebar-width);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--navy-blue);
+    flex-direction: column;
+    padding: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  h1 { font-size: 1.4rem; }
+  h2 { font-size: 1.2rem; }
+
+  .main-content {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .chapter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .progress-header {
+    font-size: 0.75rem;
+  }
+
+  .lesson-content .kana-table td {
+    font-size: 1.1rem;
+    padding: 0.4rem 0.2rem;
+  }
+
+  .lesson-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #e5e7eb;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    z-index: 800;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.08);
+  }
+}

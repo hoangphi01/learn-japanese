@@ -1,0 +1,40 @@
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h3>Mục lục</h3>
+    <button class="sidebar-close" id="sidebar-close" aria-label="Đóng">&times;</button>
+  </div>
+
+  <div class="sidebar-progress">
+    <div class="progress-mini">
+      <span class="progress-label">Tổng tiến độ</span>
+      <div class="progress-track">
+        <div class="progress-fill" id="overall-progress" style="width: 0%"></div>
+      </div>
+      <span class="progress-pct" id="overall-pct">0%</span>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    {% for ch in site.data.chapters %}
+    {% assign ch_lessons = site.lessons | where: "chapter", ch.id | sort: "lesson" %}
+    <div class="sidebar-chapter {% if page.chapter == ch.id %}active{% endif %}">
+      <button class="chapter-toggle" data-chapter="{{ ch.id }}">
+        <span class="chapter-num">{{ ch.id }}</span>
+        <span class="chapter-title">{{ ch.short_title }}</span>
+        <span class="chapter-arrow">&#9662;</span>
+      </button>
+      <ul class="chapter-lessons" id="ch-{{ ch.id }}-lessons">
+        {% for lesson in ch_lessons %}
+        <li class="{% if page.url == lesson.url %}current{% endif %}" data-lesson="{{ lesson.url | slugify }}">
+          <a href="{{ lesson.url | relative_url }}">
+            <span class="lesson-check"></span>
+            {{ lesson.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </nav>
+</aside>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>

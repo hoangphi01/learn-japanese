@@ -1,0 +1,65 @@
+---
+layout: default
+---
+<article class="lesson-page">
+  <header class="lesson-header">
+    <div class="lesson-meta">
+      <span class="lesson-badge">Chương {{ page.chapter }} · Bài {{ page.lesson }}/{{ page.total_lessons_in_chapter }}</span>
+      <span class="lesson-time">{{ page.estimated_time }}</span>
+    </div>
+    <h1>{{ page.title }}</h1>
+    {% if page.tags %}
+    <div class="lesson-tags">
+      {% for tag in page.tags %}
+      <span class="tag tag-{{ tag }}">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </header>
+
+  {% assign ch_index = page.chapter | minus: 1 %}
+  {% assign ch = site.data.chapters[ch_index] %}
+  {% if ch %}
+  {% include progress-bar.html
+     week=ch.week
+     phase_name=ch.short_title
+     time=page.estimated_time
+     eight_week_pct=ch.eight_week_pct
+     n5_pct=ch.n5_pct
+     milestone=ch.milestone %}
+  {% endif %}
+
+  <div class="lesson-content">
+    {{ content }}
+  </div>
+
+  <div class="lesson-complete" id="lesson-complete">
+    <label class="complete-checkbox">
+      <input type="checkbox" id="mark-complete"
+             data-lesson="{{ page.url | slugify }}"
+             onchange="LJProgress.toggleLesson(this.dataset.lesson, this.checked)">
+      <span class="checkmark"></span>
+      <span>Đánh dấu bài học hoàn thành</span>
+    </label>
+  </div>
+
+  <nav class="lesson-nav">
+    {% if page.prev_lesson %}
+    <a href="{{ '/lessons/' | append: page.prev_lesson | append: '/' | relative_url }}" class="lesson-nav-btn prev">
+      <span class="nav-arrow">&larr;</span>
+      <span class="nav-label">Bài trước</span>
+    </a>
+    {% else %}
+    <span class="lesson-nav-btn prev disabled"></span>
+    {% endif %}
+
+    {% if page.next_lesson %}
+    <a href="{{ '/lessons/' | append: page.next_lesson | append: '/' | relative_url }}" class="lesson-nav-btn next">
+      <span class="nav-label">Bài tiếp</span>
+      <span class="nav-arrow">&rarr;</span>
+    </a>
+    {% else %}
+    <span class="lesson-nav-btn next disabled"></span>
+    {% endif %}
+  </nav>
+</article>
