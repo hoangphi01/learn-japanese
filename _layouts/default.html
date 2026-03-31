@@ -54,6 +54,7 @@
 
     <main class="main-content" id="main-content">
       {% if page.url contains 'hv-decoder' %}<script src="{{ '/assets/js/hv-decoder.js' | relative_url }}"></script>{% endif %}
+      {% if page.url contains 'travel-phrasebook' %}<script src="{{ '/assets/js/phrasebook.js' | relative_url }}"></script>{% endif %}
       {{ content }}
     </main>
   </div>

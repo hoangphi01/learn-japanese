@@ -17,7 +17,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/preview.png
+      image: /assets/images/preview_default.png
   - scope:
       path: ""
       type: "lessons"

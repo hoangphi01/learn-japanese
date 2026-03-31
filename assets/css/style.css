@@ -1788,3 +1788,192 @@ strong { font-weight: 600; }
 [data-theme="modern"] .hv-pagination .btn-sm.active {
   box-shadow: var(--shadow);
 }
+
+/* ============================================================
+   PHRASEBOOK — Sổ Tay JP
+   ============================================================ */
+
+.phrase-categories {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.phrase-cat-btn {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: 2px solid var(--navy-blue);
+  background: white;
+  color: var(--navy-blue);
+  font-family: inherit;
+  box-shadow: var(--pixel-shadow-sm);
+  transition: background 0.15s, color 0.15s;
+}
+
+.phrase-cat-btn:hover {
+  background: var(--light-blue);
+}
+
+.phrase-cat-btn.active {
+  background: var(--navy-blue);
+  color: white;
+}
+
+.phrase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.phrase-card {
+  border: 2px solid var(--navy-blue);
+  padding: 1rem;
+  background: white;
+  box-shadow: var(--pixel-shadow-sm);
+}
+
+.phrase-card-vi {
+  font-size: 0.9rem;
+  color: var(--med-gray);
+  margin-bottom: 0.3rem;
+}
+
+.phrase-card-jp {
+  font-size: 1.3rem;
+  font-family: var(--font-jp);
+  margin-bottom: 0.25rem;
+  color: var(--navy-blue);
+  font-weight: 500;
+}
+
+.phrase-card-romaji {
+  font-size: 0.85rem;
+  color: var(--gold-accent);
+  font-style: italic;
+}
+
+.phrase-card-note {
+  font-size: 0.8rem;
+  color: var(--japan-red);
+  margin-top: 0.3rem;
+}
+
+.phrase-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.phrase-card-actions button {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+}
+
+.phrase-toast {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy-blue);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.85rem;
+  z-index: 9999;
+  animation: phraseToastIn 0.2s ease;
+  font-family: var(--font-body);
+}
+
+@keyframes phraseToastIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.dict-section {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  border: 2px solid var(--navy-blue);
+  background: var(--cream-bg);
+  box-shadow: var(--pixel-shadow);
+}
+
+.dict-result {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: white;
+  border: 2px solid #e5e7eb;
+  min-height: 3rem;
+}
+
+.dict-result-direction {
+  font-size: 0.75rem;
+  color: var(--med-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.3rem;
+}
+
+.dict-result-original {
+  font-size: 0.9rem;
+  color: var(--med-gray);
+  margin-bottom: 0.5rem;
+}
+
+.dict-result-translated {
+  font-size: 1.3rem;
+  font-family: var(--font-jp);
+  color: var(--navy-blue);
+  font-weight: 500;
+}
+
+.dict-result-alts {
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.85rem;
+  color: var(--med-gray);
+}
+
+.dict-alt-item {
+  margin-bottom: 0.2rem;
+}
+
+/* ─── Modern: Phrasebook ───────────────────────────── */
+
+[data-theme="modern"] .phrase-cat-btn {
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  border-width: 1px;
+}
+
+[data-theme="modern"] .phrase-card {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border-width: 1px;
+}
+
+[data-theme="modern"] .dict-section {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  border-width: 1px;
+}
+
+[data-theme="modern"] .dict-result {
+  border-radius: var(--radius-sm);
+}
+
+[data-theme="modern"] .phrase-toast {
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ─── Mobile: Phrasebook ───────────────────────────── */
+
+@media (max-width: 600px) {
+  .phrase-grid {
+    grid-template-columns: 1fr;
+  }
+}
