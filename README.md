@@ -16,14 +16,27 @@ Câu nói = f(Từ vựng[Biến số], Trợ từ[Toán tử], Động từ[Hà
 
 Học **hệ thống tạo ra** mẫu câu, không học thuộc mẫu câu — giống học đại số thay vì học thuộc bảng nhân.
 
-## Điểm nổi bật
+## Tính năng
 
 - **Hán-Việt Decoder** — 8 quy tắc ánh xạ Hán-Việt → On'yomi, khai thác lợi thế người Việt
 - **Dual Timeline** — 8 tuần giao tiếp sinh tồn + 6 tháng JLPT N5
-- **Interactive** — Quiz, flashcards, progress tracking (localStorage)
-- **Mobile-first** — Học mọi lúc mọi nơi trên điện thoại
+- **Level Selector** — Chọn cấp độ JLPT (N5–N1), lọc nội dung phù hợp
+- **Dual Theme** — Pixel theme (mặc định) và Modern theme, chuyển đổi tức thì
+- **Progress Tracking** — Theo dõi tiến độ bài học và điểm quiz (localStorage)
+- **Interactive** — Quiz trắc nghiệm, flashcards lật 3D, bài tập tương tác
+- **Mobile-first** — Responsive design với mobile dock, học mọi lúc mọi nơi
 
-## Nội dung
+## Nội dung đã xuất bản
+
+| Chương | Tên | Bài học | Nội dung chính |
+|--------|-----|---------|----------------|
+| 1 | Katakana & Hệ Thống Âm | 4 bài | Hệ thống âm thanh, Katakana hàng 1–5, bài tập |
+| 2 | Dakuten, Âm Kết Hợp & Số | 4 bài | Katakana dakuten, âm kết hợp, số đếm, bài tập |
+| 3 | Hiragana | 4 bài | Hiragana cơ bản, bảng chữ, dakuten, bài tập |
+
+**Tổng: 12 bài học** across 3 chương (Phase 1 — Chữ viết)
+
+### Roadmap
 
 | Phase | Chương | Nội dung |
 |-------|--------|----------|
@@ -45,15 +58,23 @@ bundle exec jekyll serve
 bundle exec jekyll build
 ```
 
-Yêu cầu: Ruby 3.3+, Bundler.
+Yêu cầu: Ruby 3.3+ (rbenv), Bundler.
 
 ## Tech Stack
 
-- **Jekyll** — Static site generator
+- **Jekyll 4.3** — Static site generator
 - **GitHub Pages** — Hosting
-- **Vanilla JS** — Quiz engine, flashcards, progress tracking
-- **CSS Custom Properties** — Design system ported từ LaTeX
-- **localStorage** — Lưu tiến độ học tập
+- **Vanilla JS** — 6 modules (IIFE pattern): quiz, flashcards, progress, theme, nav, welcome
+- **CSS Custom Properties** — Design system with dual themes, ported from LaTeX tcolorbox
+- **localStorage** — Client-side persistence (progress, theme, level selection)
+
+## Architecture
+
+See [ARCHITECTURE.md](ARCHITECTURE.md) for the full system architecture: directory tree, data model, layouts, CSS/JS breakdown, and component patterns.
+
+## Contributing
+
+See [CLAUDE.md](CLAUDE.md) for project conventions, build commands, localStorage keys, and do-not rules.
 
 ## Dựa trên
 

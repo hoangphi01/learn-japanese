@@ -14,14 +14,24 @@
     </div>
   </div>
 
+  <div class="sidebar-level-selector">
+    <label class="sidebar-level-header" for="sidebar-level-select">
+      <span class="sidebar-level-badge" id="sidebar-level-badge">N5</span>
+      <select class="sidebar-level-select" id="sidebar-level-select">
+        {% for level in site.data.levels %}
+        <option value="{{ level.id }}" {% unless level.active %}disabled{% endunless %}>
+          {{ level.title }}
+        </option>
+        {% endfor %}
+      </select>
+      <span class="sidebar-level-arrow">&#9662;</span>
+    </label>
+  </div>
+
   <nav class="sidebar-nav">
     {% for level in site.data.levels %}
     {% assign level_chapters = site.data.chapters | where: "level", level.id %}
     {% if level_chapters.size > 0 %}
-    <div class="sidebar-level-header">
-      <span class="sidebar-level-badge">{{ level.id }}</span>
-      <span class="sidebar-level-title">{{ level.title }}</span>
-    </div>
     {% for ch in level_chapters %}
     {% assign ch_lessons = site.lessons | where: "chapter", ch.id | sort: "lesson" %}
     <div class="sidebar-chapter {% if page.chapter == ch.id %}active{% endif %}" data-level="{{ ch.level }}">

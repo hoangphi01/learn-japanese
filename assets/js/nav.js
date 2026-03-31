@@ -91,4 +91,27 @@
       parent.classList.toggle('active');
     });
   });
+
+  // Level selector in sidebar
+  var levelSelect = document.getElementById('sidebar-level-select');
+  var levelBadge = document.getElementById('sidebar-level-badge');
+
+  function filterChaptersByLevel(level) {
+    var chapters = document.querySelectorAll('.sidebar-chapter');
+    chapters.forEach(function (ch) {
+      ch.style.display = ch.getAttribute('data-level') === level ? '' : 'none';
+    });
+    if (levelBadge) levelBadge.textContent = level;
+    localStorage.setItem('lj_selected_level', level);
+  }
+
+  if (levelSelect) {
+    var savedLevel = localStorage.getItem('lj_selected_level') || 'N5';
+    levelSelect.value = savedLevel;
+    filterChaptersByLevel(savedLevel);
+
+    levelSelect.addEventListener('change', function () {
+      filterChaptersByLevel(this.value);
+    });
+  }
 })();

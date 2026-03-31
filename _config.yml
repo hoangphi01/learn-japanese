@@ -30,4 +30,6 @@ exclude:
   - nihongo_toanphuong.tex
   - nihongo_project.md
   - README.md
+  - CLAUDE.md
+  - ARCHITECTURE.md
   - vendor
