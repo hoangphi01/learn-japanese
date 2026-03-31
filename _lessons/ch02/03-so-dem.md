@@ -10,6 +10,7 @@ estimated_time: "20 phút"
 prev_lesson: ch02/02-am-ket-hop
 next_lesson: ch02/04-bai-tap
 tags: [katakana, numbers, phase-1]
+level: N5
 ---
 
 ## 13 Hằng Số Cơ Bản

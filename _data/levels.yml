@@ -1,0 +1,24 @@
+- id: N5
+  title: "N5 — Sơ cấp"
+  description: "Giao tiếp cơ bản, Kana, 100 Kanji, 800 từ vựng"
+  active: true
+
+- id: N4
+  title: "N4 — Sơ trung cấp"
+  description: "300 Kanji, 1500 từ vựng, ngữ pháp trung cấp"
+  active: false
+
+- id: N3
+  title: "N3 — Trung cấp"
+  description: "650 Kanji, 3750 từ vựng"
+  active: false
+
+- id: N2
+  title: "N2 — Thượng trung cấp"
+  description: "1000 Kanji, 6000 từ vựng"
+  active: false
+
+- id: N1
+  title: "N1 — Cao cấp"
+  description: "2000 Kanji, 10000 từ vựng"
+  active: false

@@ -1,0 +1,220 @@
+/* ============================================================
+   WELCOME MODAL — NihonGo!
+   Rounded / circular design
+   ============================================================ */
+
+body.welcome-active {
+  overflow: hidden;
+}
+
+.welcome-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.welcome-overlay.hidden {
+  display: none;
+}
+
+.welcome-modal {
+  background: var(--cream-bg);
+  max-width: 640px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2.5rem 2rem;
+  border-radius: 24px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  color: var(--navy-blue);
+}
+
+.welcome-brand {
+  font-family: var(--font-pixel);
+  font-size: 2.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.welcome-brand .accent {
+  color: var(--japan-red);
+}
+
+.welcome-tagline {
+  font-family: var(--font-pixel);
+  font-size: 0.85rem;
+  color: var(--med-gray);
+  margin-bottom: 1.5rem;
+}
+
+.welcome-why {
+  background: var(--light-gold);
+  border: 2px solid var(--gold-accent);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.welcome-section-title {
+  font-family: var(--font-pixel);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* ─── Level Grid ────────────────────────────────── */
+
+.level-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.level-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1rem 0.5rem;
+  border: 2px solid rgba(27, 42, 74, 0.2);
+  border-radius: 16px;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+  font-family: var(--font-pixel);
+  transition: all 0.2s ease;
+}
+
+.level-card:hover:not(:disabled) {
+  border-color: var(--navy-blue);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.level-card.selected {
+  border-color: var(--japan-red);
+  box-shadow: 0 0 0 3px rgba(188, 0, 45, 0.2), 0 4px 12px rgba(188, 0, 45, 0.15);
+  background: var(--light-red);
+}
+
+.level-card.level-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.level-id {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--japan-red);
+}
+
+.level-disabled .level-id {
+  color: var(--med-gray);
+}
+
+.level-title {
+  font-size: 0.7rem;
+  color: var(--navy-blue);
+}
+
+.level-desc {
+  font-size: 0.6rem;
+  color: var(--med-gray);
+  line-height: 1.3;
+}
+
+.level-badge {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.25rem;
+  background: var(--med-gray);
+  color: #fff;
+  font-size: 0.55rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* ─── Footer ────────────────────────────────────── */
+
+.welcome-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.welcome-dismiss-label {
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  font-family: var(--font-pixel);
+}
+
+.welcome-dismiss-label input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--japan-red);
+}
+
+.welcome-start {
+  font-family: var(--font-pixel);
+  font-size: 1rem;
+  padding: 0.7rem 1.8rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--japan-red);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.welcome-start:hover:not(:disabled) {
+  background: rgb(160, 0, 38);
+  box-shadow: 0 4px 12px rgba(188, 0, 45, 0.3);
+}
+
+.welcome-start:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ─── Responsive ────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .welcome-modal {
+    padding: 1.5rem 1rem;
+    border-radius: 20px;
+  }
+
+  .welcome-brand {
+    font-size: 2rem;
+  }
+
+  .level-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-footer {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .welcome-start {
+    width: 100%;
+  }
+}

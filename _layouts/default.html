@@ -14,6 +14,7 @@
   <script>
     (function(){
       var t = localStorage.getItem('lj_theme');
+      if (t === null) t = 'modern';
       if (t) document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
@@ -24,9 +25,11 @@
   <link rel="stylesheet" href="{{ '/assets/css/boxes.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/flashcard.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/quiz.css' | relative_url }}">
+  {% if page.url == '/' %}<link rel="stylesheet" href="{{ '/assets/css/welcome.css' | relative_url }}">{% endif %}
   {% seo %}
 </head>
 <body>
+  {% if page.url == '/' %}{% include welcome-modal.html %}{% endif %}
   {% include nav.html %}
 
   <div class="mobile-progress-bar" id="mobile-progress-bar">
@@ -53,5 +56,6 @@
   <script src="{{ '/assets/js/progress.js' | relative_url }}"></script>
   <script src="{{ '/assets/js/quiz.js' | relative_url }}"></script>
   <script src="{{ '/assets/js/flashcard.js' | relative_url }}"></script>
+  {% if page.url == '/' %}<script src="{{ '/assets/js/welcome.js' | relative_url }}"></script>{% endif %}
 </body>
 </html>

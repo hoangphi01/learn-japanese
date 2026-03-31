@@ -10,6 +10,7 @@ estimated_time: "25 phút"
 prev_lesson: ch01/04-bai-tap
 next_lesson: ch02/02-am-ket-hop
 tags: [katakana, kana, phase-1]
+level: N5
 ---
 
 ## Bảng Katakana Hàng 6–11

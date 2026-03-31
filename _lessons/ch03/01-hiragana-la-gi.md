@@ -10,6 +10,7 @@ estimated_time: "15 phút"
 prev_lesson: ch02/04-bai-tap
 next_lesson: ch03/02-bang-hiragana
 tags: [hiragana, kana, phase-1]
+level: N5
 ---
 
 ## 3 Hệ Chữ Viết Tiếng Nhật

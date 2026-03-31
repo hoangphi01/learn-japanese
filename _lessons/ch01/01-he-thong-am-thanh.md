@@ -10,6 +10,7 @@ estimated_time: "15 phút"
 prev_lesson:
 next_lesson: ch01/02-katakana-hang-1-3
 tags: [katakana, kana, phase-1]
+level: N5
 ---
 
 ## ROI Analysis: Nên học gì trước?

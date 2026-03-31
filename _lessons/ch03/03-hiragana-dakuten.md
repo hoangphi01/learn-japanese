@@ -10,6 +10,7 @@ estimated_time: "15 phút"
 prev_lesson: ch03/02-bang-hiragana
 next_lesson: ch03/04-bai-tap
 tags: [hiragana, kana, phase-1]
+level: N5
 ---
 
 ## Dakuten & Handakuten (giống Katakana)

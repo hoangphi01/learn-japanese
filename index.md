@@ -36,7 +36,7 @@ title: Trang Chủ
 {% for ch in site.data.chapters %}
   {% assign ch_lessons = site.lessons | where: "chapter", ch.id | sort: "lesson" %}
   {% assign first_lesson = ch_lessons | first %}
-  <a class="chapter-card" data-chapter="{{ ch.id }}" {% if first_lesson %}href="{{ first_lesson.url | relative_url }}"{% endif %}>
+  <a class="chapter-card" data-chapter="{{ ch.id }}" data-level="{{ ch.level }}" {% if first_lesson %}href="{{ first_lesson.url | relative_url }}"{% endif %}>
     <div class="chapter-card-header">
       <span class="chapter-card-num">{{ ch.id }}</span>
       <span class="chapter-card-title">{{ ch.title }}</span>

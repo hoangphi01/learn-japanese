@@ -14,6 +14,7 @@
 
   // Apply saved theme (also done inline in <head> to prevent FOUC)
   var saved = localStorage.getItem('lj_theme');
+  if (saved === null) saved = 'modern';
   applyTheme(saved);
 
   toggle.addEventListener('change', function () {

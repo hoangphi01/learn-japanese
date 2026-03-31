@@ -10,6 +10,7 @@ estimated_time: "15 phút"
 prev_lesson: ch02/03-so-dem
 next_lesson: ch03/01-hiragana-la-gi
 tags: [katakana, numbers, phase-1]
+level: N5
 ---
 
 ## Bài 2.1 — Đọc từ mượn (Katakana đầy đủ)

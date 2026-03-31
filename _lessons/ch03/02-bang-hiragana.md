@@ -10,6 +10,7 @@ estimated_time: "25 phút"
 prev_lesson: ch03/01-hiragana-la-gi
 next_lesson: ch03/03-hiragana-dakuten
 tags: [hiragana, kana, phase-1]
+level: N5
 ---
 
 ## Bảng Hiragana Cơ Bản (46 ký tự)

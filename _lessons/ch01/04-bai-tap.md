@@ -10,6 +10,7 @@ estimated_time: "15 phút"
 prev_lesson: ch01/03-katakana-hang-4-5
 next_lesson: ch02/01-katakana-dakuten
 tags: [katakana, kana, phase-1]
+level: N5
 ---
 
 ## Bài 1.1 — Đọc từ mượn tiếng Anh

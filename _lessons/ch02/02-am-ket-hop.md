@@ -10,6 +10,7 @@ estimated_time: "15 phút"
 prev_lesson: ch02/01-katakana-dakuten
 next_lesson: ch02/03-so-dem
 tags: [katakana, kana, phase-1]
+level: N5
 ---
 
 ## Âm kết hợp (拗音 Yōon)

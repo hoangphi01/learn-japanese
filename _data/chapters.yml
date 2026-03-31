@@ -1,6 +1,7 @@
 - id: 1
   title: "Hệ Thống Âm Thanh & Katakana (Hàng 1–5)"
   short_title: "Katakana Hàng 1–5"
+  level: N5
   phase: 1
   week: "Tuần 1"
   eight_week_pct: 0
@@ -11,6 +12,7 @@
 - id: 2
   title: "Katakana Hoàn Chỉnh & Số Đếm"
   short_title: "Katakana & Số Đếm"
+  level: N5
   phase: 1
   week: "Tuần 2"
   eight_week_pct: 12
@@ -21,6 +23,7 @@
 - id: 3
   title: "Hiragana — Hệ Chữ Thứ Hai"
   short_title: "Hiragana"
+  level: N5
   phase: 1
   week: "Tuần 2+"
   eight_week_pct: 25
@@ -31,6 +34,7 @@
 - id: 4
   title: "Hệ Thống Toán Tử (Particles)"
   short_title: "Particles"
+  level: N5
   phase: 2
   week: "Tuần 3"
   eight_week_pct: 38
@@ -41,6 +45,7 @@
 - id: 5
   title: "Động Từ & 50 Danh Từ Cốt Lõi"
   short_title: "Động Từ & Danh Từ"
+  level: N5
   phase: 2
   week: "Tuần 4"
   eight_week_pct: 50
@@ -51,6 +56,7 @@
 - id: 6
   title: "Bộ Giải Mã Hán-Việt"
   short_title: "Hán-Việt Decoder"
+  level: N5
   phase: 2
   week: "Tuần 5"
   eight_week_pct: 62
@@ -61,6 +67,7 @@
 - id: 7
   title: "Từ Vựng Chuyên Biệt: 3 Kịch Bản"
   short_title: "3 Kịch Bản"
+  level: N5
   phase: 3
   week: "Tuần 6"
   eight_week_pct: 75
@@ -71,6 +78,7 @@
 - id: 8
   title: "Simulation Drills"
   short_title: "Simulation"
+  level: N5
   phase: 3
   week: "Tuần 7"
   eight_week_pct: 88
@@ -81,6 +89,7 @@
 - id: 9
   title: "Ôn Tập Toàn Diện & Nghe Hiểu"
   short_title: "Ôn Tập"
+  level: N5
   phase: 3
   week: "Tuần 8"
   eight_week_pct: 96
@@ -91,6 +100,7 @@
 - id: 10
   title: "Hệ Thống Tính Từ い/な"
   short_title: "Tính Từ"
+  level: N5
   phase: 4
   week: "Tuần 9–10"
   eight_week_pct: 100

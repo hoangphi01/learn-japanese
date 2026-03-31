@@ -10,6 +10,7 @@ estimated_time: "20 phút"
 prev_lesson: ch01/02-katakana-hang-1-3
 next_lesson: ch01/04-bai-tap
 tags: [katakana, kana, phase-1]
+level: N5
 ---
 
 ## Bảng Katakana Hàng T và N

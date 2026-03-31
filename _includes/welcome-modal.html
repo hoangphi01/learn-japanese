@@ -1,0 +1,37 @@
+<div class="welcome-overlay" id="welcome-overlay">
+  <div class="welcome-modal">
+    <h1 class="welcome-brand"><span class="accent">Nihon</span>Go!</h1>
+    <p class="welcome-tagline">Giải mã Tiếng Nhật bằng Hán-Việt — phương pháp chỉ người Việt mới có</p>
+
+    <div class="welcome-why">
+      <p>60–70% từ vựng N5 là gốc Hán. Bạn đã biết âm Hán-Việt → bạn đã biết phần lớn từ vựng mà chưa cần học thuộc. NihonGo! khai thác lợi thế này để bạn tiến nhanh hơn Minna no Nihongo.</p>
+    </div>
+
+    <h2 class="welcome-section-title">Chọn trình độ JLPT</h2>
+
+    <div class="level-grid">
+      {% for level in site.data.levels %}
+      <button class="level-card {% if level.active %}level-active{% else %}level-disabled{% endif %}"
+              data-level="{{ level.id }}"
+              {% unless level.active %}disabled{% endunless %}>
+        <span class="level-id">{{ level.id }}</span>
+        <span class="level-title">{{ level.title }}</span>
+        <span class="level-desc">{{ level.description }}</span>
+        {% unless level.active %}
+        <span class="level-badge">Sắp ra mắt</span>
+        {% endunless %}
+      </button>
+      {% endfor %}
+    </div>
+
+    <div class="welcome-footer">
+      <label class="welcome-dismiss-label">
+        <input type="checkbox" id="welcome-dismiss-check">
+        Không hiển thị lại
+      </label>
+      <button class="btn btn-primary welcome-start" id="welcome-start" disabled>
+        Bắt đầu học →
+      </button>
+    </div>
+  </div>
+</div>

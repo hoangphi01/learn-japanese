@@ -10,6 +10,7 @@ estimated_time: "20 phút"
 prev_lesson: ch01/01-he-thong-am-thanh
 next_lesson: ch01/03-katakana-hang-4-5
 tags: [katakana, kana, phase-1]
+level: N5
 ---
 
 ## Bảng Katakana Hàng 1–3

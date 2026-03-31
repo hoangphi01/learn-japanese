@@ -10,6 +10,7 @@ estimated_time: "15 phút"
 prev_lesson: ch03/03-hiragana-dakuten
 next_lesson:
 tags: [hiragana, kana, phase-1]
+level: N5
 ---
 
 ## Bài 3.1 — Phân biệt Katakana vs Hiragana

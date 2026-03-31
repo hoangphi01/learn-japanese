@@ -17,7 +17,7 @@
   <nav class="sidebar-nav">
     {% for ch in site.data.chapters %}
     {% assign ch_lessons = site.lessons | where: "chapter", ch.id | sort: "lesson" %}
-    <div class="sidebar-chapter {% if page.chapter == ch.id %}active{% endif %}">
+    <div class="sidebar-chapter {% if page.chapter == ch.id %}active{% endif %}" data-level="{{ ch.level }}">
       <button class="chapter-toggle" data-chapter="{{ ch.id }}">
         <span class="chapter-num">{{ ch.id }}</span>
         <span class="chapter-title">{{ ch.short_title }}</span>
