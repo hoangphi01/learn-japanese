@@ -80,7 +80,58 @@ level: N5
 {% include formula-box.html content="Content" %}
 ```
 
-Also available: `quiz-question.html` (params: correct, question, options, explanation), `flashcard.html` (params: front, back, note).
+Also available: `flashcard.html` (params: front, back, note).
+
+### Quiz Components (3 Types)
+
+**1. Multiple Choice** — `quiz-question.html` or inline HTML
+
+```liquid
+{% include quiz-question.html correct="B" question="Question?" options="A|B|C" explanation="Why B is correct" %}
+```
+
+Inline HTML (preferred pattern in most lessons):
+
+```html
+<div class="quiz-section">
+<div class="quiz-question" data-correct="answer">
+<p class="question-text">Question text</p>
+<div class="question-options">
+<button class="option-btn" data-value="answer" onclick="LJQuiz.checkAnswer(this, 'answer')">Correct option</button>
+<button class="option-btn" data-value="wrong" onclick="LJQuiz.checkAnswer(this, 'answer')">Wrong option</button>
+</div>
+<div class="question-explanation" style="display:none;">Explanation here.</div>
+</div>
+</div>
+
+<div class="quiz-results" id="quiz-results" style="display:none;">
+<div class="results-card">
+<h2>Kết quả</h2>
+<div class="score-display">
+<span class="score-number" id="quiz-score">0</span>
+<span class="score-total">/ <span id="quiz-total">N</span></span>
+</div>
+<p class="score-message" id="score-message"></p>
+<button class="btn btn-primary" onclick="LJQuiz.reset()">Làm lại</button>
+</div>
+</div>
+```
+
+**2. Matching** — `matching-quiz.html`
+
+```liquid
+{% include matching-quiz.html pairs="ア:a,イ:i,ウ:u,エ:e,オ:o" %}
+```
+
+- `pairs`: comma-separated `left:right` values. Right column auto-shuffled by JS.
+
+**3. Fill-in-the-Blank** — `fill-blank.html`
+
+```liquid
+{% include fill-blank.html before="私は" blank="学生|がくせい" after="です。" hint="student" %}
+```
+
+- `blank`: pipe-separated accepted answers. `hint`: optional, shown via button.
 
 ### CSS Theme System
 

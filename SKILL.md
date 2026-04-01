@@ -48,8 +48,11 @@ LaTeX `.tex` file with NihonGo! macros: `\chapter`, `\section`, `\begin{tcolorbo
    ---
    ```
 
-8. **Build quiz** — Convert `exercisebox` content into `{% include quiz-question.html %}` calls:
+8. **Build exercises** — Every lesson should include interactive exercises. Convert `exercisebox` content into quiz components. Use a mix of the 3 quiz types:
 
+   **Type 1: Multiple Choice** (`quiz-question.html` include or inline HTML)
+
+   Liquid include:
    ```liquid
    {% include quiz-question.html
      question="Question text"
@@ -59,9 +62,85 @@ LaTeX `.tex` file with NihonGo! macros: `\chapter`, `\section`, `\begin{tcolorbo
    %}
    ```
 
+   Inline HTML (preferred — most existing lessons use this pattern):
+   ```html
+   <div class="quiz-section">
+
+   <div class="quiz-question" data-correct="answer_value">
+   <p class="question-text">Question text</p>
+   <div class="question-options">
+   <button class="option-btn" data-value="answer_value" onclick="LJQuiz.checkAnswer(this, 'answer_value')">Option A</button>
+   <button class="option-btn" data-value="wrong1" onclick="LJQuiz.checkAnswer(this, 'answer_value')">Option B</button>
+   <button class="option-btn" data-value="wrong2" onclick="LJQuiz.checkAnswer(this, 'answer_value')">Option C</button>
+   </div>
+   <div class="question-explanation" style="display:none;">
+   Explanation of the correct answer.
+   </div>
+   </div>
+
+   </div>
+   ```
+
+   **Type 2: Matching** (`matching-quiz.html`)
+
+   ```liquid
+   {% include matching-quiz.html pairs="ア:a,イ:i,ウ:u,エ:e,オ:o" %}
+   ```
+
+   - `pairs`: comma-separated `left:right` values
+   - Right column is auto-shuffled by JS on page load
+   - User clicks left item first, then right item to match
+   - Best for: kana recognition, vocabulary pairing, particle-meaning matching
+
+   **Type 3: Fill-in-the-Blank** (`fill-blank.html`)
+
+   ```liquid
+   {% include fill-blank.html before="私は" blank="学生|がくせい" after="です。" hint="student" %}
+   ```
+
+   - `before`: text displayed before the blank
+   - `blank`: correct answer(s), pipe-separated for multiple accepted answers
+   - `after`: text displayed after the blank
+   - `hint`: optional hint text (shown via "Gợi ý" button)
+   - Best for: grammar exercises, particle fill-in, verb conjugation
+
+   **Quiz Results Block** — Add after each `<div class="quiz-section">` that contains multiple-choice questions:
+
+   ```html
+   <div class="quiz-results" id="quiz-results" style="display:none;">
+   <div class="results-card">
+   <h2>Kết quả</h2>
+   <div class="score-display">
+   <span class="score-number" id="quiz-score">0</span>
+   <span class="score-total">/ <span id="quiz-total">N</span></span>
+   </div>
+   <p class="score-message" id="score-message"></p>
+   <button class="btn btn-primary" onclick="LJQuiz.reset()">Làm lại</button>
+   </div>
+   </div>
+   ```
+
+   Replace `N` in `quiz-total` with the actual number of `.quiz-question` elements on the page.
+
+   **Which quiz type to use:**
+
+   | Content Type | Best Quiz Type |
+   |---|---|
+   | Kana recognition | Matching or Multiple Choice |
+   | Vocabulary meaning | Multiple Choice |
+   | Grammar / particles | Fill-in-the-Blank |
+   | Sentence patterns | Fill-in-the-Blank |
+   | Concept understanding | Multiple Choice |
+
+   **Guidelines:**
+   - Minimum 3–5 quiz questions per lesson
+   - Mix quiz types where the content allows
+   - Wrap all quiz blocks in `<div class="quiz-section">`
+   - Include a quiz-results block if the page has multiple-choice questions
+
 ### Output
 
-Jekyll lesson `.md` files in `_lessons/chNN/` with correct frontmatter, HTML/Liquid content, and prev/next chain.
+Jekyll lesson `.md` files in `_lessons/chNN/` with correct frontmatter, HTML/Liquid content, exercises, and prev/next chain.
 
 ---
 
@@ -85,16 +164,33 @@ PDF textbook (e.g., Minna no Nihongo) with grammar points, vocabulary lists, and
    | Sentence pattern | Equation template |
 
 3. **Map Hán-Việt** — For every kanji/vocabulary item, find Hán-Việt connections where possible. Use `_data/hv_rules.yml` patterns to highlight systematic mappings.
-4. **Structure each lesson** — Follow this flow:
+4. **Structure each lesson** — Follow the "Text + Test" flow:
 
    ```
+   ── TEXT (teaching content) ──────────────────────
    1. Concept explanation (grammar-box)
    2. Formula box (formula-box) — the core pattern
    3. Examples table (kana-table) — JP | Romaji | Vietnamese
    4. Culture note (culture-box) — if applicable
+
+   ── TEST (interactive exercises) ─────────────────
    5. Exercises (exercise-box) — practice problems
-   6. Quiz (quiz-question) — interactive check
+   6. Quiz section — interactive check using all 3 types:
+      • Multiple choice (quiz-question) — concept understanding, vocab
+      • Matching (matching-quiz) — kana, vocabulary pairing
+      • Fill-in-blank (fill-blank) — grammar, particles, conjugation
+   7. Quiz results block — score display with reset button
    ```
+
+   **Which quiz type fits which content:**
+
+   | Content Type | Best Quiz Type |
+   |---|---|
+   | Kana recognition | Matching or Multiple Choice |
+   | Vocabulary meaning | Multiple Choice |
+   | Grammar / particles | Fill-in-the-Blank |
+   | Sentence patterns | Fill-in-the-Blank |
+   | Concept understanding | Multiple Choice |
 
 5. **Group into chapters** — Follow the chapter structure in `_data/chapters.yml`. Each chapter = 3–4 lessons, each lesson = 15–25 minutes.
 
@@ -115,7 +211,11 @@ Before committing any new lesson content, verify:
 - [ ] **Box usage** — At least one grammar-box or vocab-box per lesson; exercises use exercise-box
 - [ ] **Formula boxes** — Key patterns wrapped in formula-box for emphasis
 - [ ] **Japanese text** — All Japanese wrapped in `<span lang="ja">` or inside kana-table
-- [ ] **Quiz format** — Quiz questions use `quiz-question.html` include with correct/options/explanation
+- [ ] **Quiz format** — Quiz questions use correct include or inline HTML pattern
+- [ ] **Quiz count** — At least 3 quiz questions per lesson
+- [ ] **Quiz results** — `<div class="quiz-results">` present if page has multiple-choice questions
+- [ ] **Quiz variety** — Mix of quiz types where content allows (MC, matching, fill-blank)
+- [ ] **Quiz section wrapper** — All quiz blocks wrapped in `<div class="quiz-section">`
 - [ ] **Estimated time** — Realistic (15–25 min per lesson)
 - [ ] **Tags** — Include chapter topic, phase, and kana type where relevant
 - [ ] **Tables** — Use `class="kana-table"` for consistent styling

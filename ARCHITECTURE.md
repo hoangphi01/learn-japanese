@@ -205,7 +205,9 @@ default.html
 | `sidebar.html` | none | Iterates `site.data.levels`, `site.data.chapters`, `site.lessons` |
 | `progress-bar.html` | `week`, `phase_name`, `time`, `eight_week_pct`, `n5_pct`, `milestone` | Dual progress bars |
 | `welcome-modal.html` | none | Iterates `site.data.levels` |
-| `quiz-question.html` | `correct`, `question`, `options[]`, `explanation` | Multiple-choice |
+| `quiz-question.html` | `correct`, `question`, `options` (pipe-separated), `explanation` | Multiple-choice |
+| `matching-quiz.html` | `pairs` (comma-separated `left:right`) | Matching pairs, right column shuffled |
+| `fill-blank.html` | `before`, `blank` (pipe-separated answers), `after`, `hint` | Fill-in-the-blank |
 | `flashcard.html` | `front`, `back`, `note` | 3D flip card |
 | `vocab-box.html` | `title`, `content` | Gold theme |
 | `grammar-box.html` | `title`, `content` | Blue theme |
@@ -300,11 +302,15 @@ Storage: `lj_progress` → `{ lessons: { "ch01/slug": { completed: true, date: "
 #### LJQuiz (quiz.js)
 
 ```javascript
-LJQuiz.checkAnswer(btn, correctValue)  // Validate and show feedback
-LJQuiz.reset()                         // Clear all answers
+LJQuiz.checkAnswer(btn, correctValue)  // Multiple choice: validate and show feedback
+LJQuiz.reset()                         // Clear all MC answers, hide results
+LJQuiz.selectMatch(item)               // Matching: select left/right item, check pair
+LJQuiz.initMatching()                  // Matching: shuffle right column (auto on DOMContentLoaded)
+LJQuiz.checkBlank(btn)                 // Fill-blank: validate input against accepted answers
+LJQuiz.showHint(btn)                   // Fill-blank: reveal hint text
 ```
 
-Integrates with `LJProgress.saveQuizScore()` when all questions answered.
+Integrates with `LJProgress.saveQuizScore()` when all MC questions answered.
 
 #### LJFlashcard (flashcard.js)
 
@@ -347,11 +353,56 @@ Ported from LaTeX tcolorbox. Each box type has a distinct color scheme:
 
 ### Quiz Engine
 
-- Questions defined via `quiz-question.html` include or inline HTML
-- `data-correct` attribute holds the answer
-- Options are `.option-btn` elements
-- After answering: correct = green, incorrect = red, explanation revealed
-- Results card shows when all questions answered
+Three interactive quiz component types, all managed by `LJQuiz` (quiz.js):
+
+#### 1. Multiple Choice (`quiz-question.html` or inline HTML)
+
+- Questions wrapped in `<div class="quiz-question" data-correct="value">`
+- Options are `.option-btn` elements with `data-value` and `onclick="LJQuiz.checkAnswer(this, 'correct')"`
+- After answering: correct = green, incorrect = red, `.question-explanation` revealed
+- Quiz results block (`#quiz-results`) shown when all questions on the page are answered
+- Score saved via `LJProgress.saveQuizScore(quizId, correct, total)` using page pathname as `quizId`
+
+Include params: `correct`, `question`, `options` (pipe-separated), `explanation`
+
+#### 2. Matching (`matching-quiz.html`)
+
+- Container: `<div class="matching-quiz">`
+- Items: `.match-item[data-side="left|right"][data-pair="N"]` with `onclick="LJQuiz.selectMatch(this)"`
+- `LJQuiz.initMatching()` runs on DOMContentLoaded — Fisher-Yates shuffles right column
+- User clicks left item, then right item. Matching `data-pair` values = correct (`.matched` class)
+- Wrong match: brief red flash (`.incorrect` class, removed after 500ms)
+
+Include params: `pairs` (comma-separated `left:right` values)
+
+#### 3. Fill-in-the-Blank (`fill-blank.html`)
+
+- Container: `<div class="fill-blank">`
+- Input: `<input data-answers="answer1|answer2">` — pipe-separated accepted answers
+- `LJQuiz.checkBlank(btn)`: compares input value (case-insensitive) against all accepted answers
+- Correct: input gets `.correct` class, becomes readonly, check button hidden
+- Wrong: input gets `.incorrect` class, feedback shows "Thử lại!"
+- `LJQuiz.showHint(btn)`: reveals `.blank-hint` span, hides hint button
+
+Include params: `before`, `blank` (pipe-separated answers), `after`, `hint` (optional)
+
+#### Quiz Results Block
+
+```html
+<div class="quiz-results" id="quiz-results" style="display:none;">
+  <div class="results-card">
+    <h2>Kết quả</h2>
+    <div class="score-display">
+      <span class="score-number" id="quiz-score">0</span>
+      <span class="score-total">/ <span id="quiz-total">N</span></span>
+    </div>
+    <p class="score-message" id="score-message"></p>
+    <button class="btn btn-primary" onclick="LJQuiz.reset()">Làm lại</button>
+  </div>
+</div>
+```
+
+Required when a page has multiple-choice questions. Score messages: 100% = "Xuất sắc!", ≥70% = "Tốt lắm!", <70% = "Cần luyện thêm."
 
 ### Progress Tracking
 
