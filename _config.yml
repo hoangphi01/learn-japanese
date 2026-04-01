@@ -1,7 +1,7 @@
 title: "NihonGo!"
 description: "Học tiếng Nhật theo phương pháp logic-toán học. 8 tuần giao tiếp cơ bản, 6 tháng N5."
-baseurl: "/learn-japanese"
-url: "https://hoangphi01.github.io"
+baseurl: ""
+url: "https://nihongo.io.vn"
 
 markdown: kramdown
 kramdown:

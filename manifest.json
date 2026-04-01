@@ -1,13 +1,13 @@
 {
   "name": "NihonGo! — Học tiếng Nhật",
   "short_name": "NihonGo!",
-  "start_url": "/learn-japanese/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#fafafa",
   "theme_color": "#1b2a4a",
   "icons": [
     {
-      "src": "/learn-japanese/assets/images/AppstoreIcon.png",
+      "src": "/assets/images/AppstoreIcon.png",
       "sizes": "530x528",
       "type": "image/png"
     }
