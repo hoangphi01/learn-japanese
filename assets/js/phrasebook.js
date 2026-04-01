@@ -8,12 +8,32 @@ var LJPhrasebook = (function () {
   var _data = [];
   var _currentCat = 'all';
   var _searchQuery = '';
+  var _slowMode = localStorage.getItem('lj_tts_slow') === 'true';
 
   function init(data) {
     _data = data || [];
     renderCategories();
     renderPhrases();
     bindEvents();
+    updateSlowToggle();
+  }
+
+  function toggleSlow() {
+    _slowMode = !_slowMode;
+    localStorage.setItem('lj_tts_slow', _slowMode ? 'true' : 'false');
+    updateSlowToggle();
+  }
+
+  function updateSlowToggle() {
+    var btn = document.getElementById('tts-slow-toggle');
+    if (!btn) return;
+    if (_slowMode) {
+      btn.classList.add('active');
+      btn.innerHTML = '&#128034; Chậm: ON';
+    } else {
+      btn.classList.remove('active');
+      btn.innerHTML = '&#128034; Chậm';
+    }
   }
 
   // ── Category pills ──
@@ -132,7 +152,7 @@ var LJPhrasebook = (function () {
     window.speechSynthesis.cancel();
     var utter = new SpeechSynthesisUtterance(text);
     utter.lang = 'ja-JP';
-    utter.rate = 0.85;
+    utter.rate = _slowMode ? 0.5 : 0.85;
     // Try to find a Japanese voice
     var voices = window.speechSynthesis.getVoices();
     for (var i = 0; i < voices.length; i++) {
@@ -265,5 +285,5 @@ var LJPhrasebook = (function () {
     }
   }
 
-  return { init: init };
+  return { init: init, toggleSlow: toggleSlow };
 })();

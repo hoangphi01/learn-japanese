@@ -30,6 +30,7 @@ permalink: /pages/travel-phrasebook/
 <div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:1rem;flex-wrap:wrap;">
   <input type="text" id="phrase-search" placeholder="Tìm kiếm: toilet, cảm ơn, bao nhiêu..."
          style="flex:1;min-width:200px;padding:0.6rem 1rem;border:2px solid var(--navy-blue);border-radius:var(--radius-sm);font-size:1rem;font-family:inherit;">
+  <button class="btn btn-sm tts-slow-toggle" id="tts-slow-toggle" onclick="LJPhrasebook.toggleSlow()" title="Chuyển tốc độ phát âm">&#128034; Chậm</button>
   <span id="phrase-count" style="font-size:0.85rem;color:var(--med-gray);white-space:nowrap;"></span>
 </div>
 

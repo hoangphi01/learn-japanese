@@ -1876,6 +1876,27 @@ strong { font-weight: 600; }
   cursor: pointer;
 }
 
+.tts-slow-toggle {
+  border: 2px solid var(--navy-blue);
+  background: white;
+  color: var(--navy-blue);
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tts-slow-toggle.active {
+  background: var(--japan-red);
+  color: white;
+  border-color: var(--japan-red);
+}
+
+[data-theme="modern"] .tts-slow-toggle {
+  border-radius: 6px;
+}
+
 .phrase-toast {
   position: fixed;
   bottom: 80px;
