@@ -1,0 +1,264 @@
+# ============================================================
+# GRAMMAR REFERENCE — N5 Grammar Points
+# Each entry: id, pattern, meaning, formation, examples, chapter, level, tags
+# ============================================================
+
+# ── Chapter 4: Particles ──
+- id: "wa-topic"
+  pattern: "〜は"
+  meaning: "Trợ từ chủ đề — đánh dấu chủ đề của câu"
+  formation: "[Danh từ] + は"
+  level: "N5"
+  chapter: 4
+  tags: ["particle", "basic"]
+  examples:
+    - jp: "私は学生です。"
+      romaji: "Watashi wa gakusei desu."
+      vi: "Tôi là sinh viên."
+    - jp: "これは本です。"
+      romaji: "Kore wa hon desu."
+      vi: "Đây là sách."
+
+- id: "wo-object"
+  pattern: "〜を"
+  meaning: "Trợ từ tân ngữ — đánh dấu đối tượng của hành động"
+  formation: "[Danh từ] + を + [Động từ]"
+  level: "N5"
+  chapter: 4
+  tags: ["particle", "basic"]
+  examples:
+    - jp: "パンを食べます。"
+      romaji: "Pan wo tabemasu."
+      vi: "Ăn bánh mì."
+    - jp: "水を飲みます。"
+      romaji: "Mizu wo nomimasu."
+      vi: "Uống nước."
+
+- id: "ga-subject"
+  pattern: "〜が"
+  meaning: "Trợ từ chủ ngữ — đánh dấu chủ ngữ ngữ pháp"
+  formation: "[Danh từ] + が + [Động từ / Tính từ]"
+  level: "N5"
+  chapter: 4
+  tags: ["particle", "basic"]
+  examples:
+    - jp: "猫がいます。"
+      romaji: "Neko ga imasu."
+      vi: "Có con mèo."
+    - jp: "日本語が分かります。"
+      romaji: "Nihongo ga wakarimasu."
+      vi: "Hiểu tiếng Nhật."
+
+- id: "de-location"
+  pattern: "〜で"
+  meaning: "Trợ từ địa điểm hành động / phương tiện"
+  formation: "[Nơi/Phương tiện] + で + [Động từ]"
+  level: "N5"
+  chapter: 4
+  tags: ["particle", "basic"]
+  examples:
+    - jp: "学校で勉強します。"
+      romaji: "Gakkou de benkyou shimasu."
+      vi: "Học ở trường."
+    - jp: "バスで行きます。"
+      romaji: "Basu de ikimasu."
+      vi: "Đi bằng xe buýt."
+
+- id: "ni-destination"
+  pattern: "〜に"
+  meaning: "Trợ từ điểm đến / thời gian cụ thể"
+  formation: "[Nơi/Thời gian] + に"
+  level: "N5"
+  chapter: 4
+  tags: ["particle", "basic"]
+  examples:
+    - jp: "東京に行きます。"
+      romaji: "Toukyou ni ikimasu."
+      vi: "Đi đến Tokyo."
+    - jp: "7時に起きます。"
+      romaji: "Shichi-ji ni okimasu."
+      vi: "Dậy lúc 7 giờ."
+
+- id: "mo-also"
+  pattern: "〜も"
+  meaning: "Trợ từ 'cũng' — thay thế は/が/を"
+  formation: "[Danh từ] + も"
+  level: "N5"
+  chapter: 4
+  tags: ["particle", "basic"]
+  examples:
+    - jp: "私も学生です。"
+      romaji: "Watashi mo gakusei desu."
+      vi: "Tôi cũng là sinh viên."
+    - jp: "コーヒーも飲みます。"
+      romaji: "Koohii mo nomimasu."
+      vi: "Cà phê cũng uống."
+
+- id: "ka-question"
+  pattern: "〜か"
+  meaning: "Trợ từ nghi vấn — biến câu thành câu hỏi"
+  formation: "[Câu] + か"
+  level: "N5"
+  chapter: 4
+  tags: ["particle", "basic"]
+  examples:
+    - jp: "学生ですか。"
+      romaji: "Gakusei desu ka."
+      vi: "Là sinh viên phải không?"
+    - jp: "これはいくらですか。"
+      romaji: "Kore wa ikura desu ka."
+      vi: "Cái này bao nhiêu?"
+
+# ── Chapter 5: Verb Forms ──
+- id: "desu-copula"
+  pattern: "〜です"
+  meaning: "Khẳng định lịch sự — 'là', 'thì'"
+  formation: "[Danh từ / Tính từ-na] + です"
+  level: "N5"
+  chapter: 5
+  tags: ["copula", "polite"]
+  examples:
+    - jp: "学生です。"
+      romaji: "Gakusei desu."
+      vi: "Là sinh viên."
+    - jp: "きれいです。"
+      romaji: "Kirei desu."
+      vi: "Đẹp."
+
+- id: "masu-form"
+  pattern: "〜ます"
+  meaning: "Thể lịch sự khẳng định của động từ"
+  formation: "[Động từ stem] + ます"
+  level: "N5"
+  chapter: 5
+  tags: ["verb", "polite"]
+  examples:
+    - jp: "食べます。"
+      romaji: "Tabemasu."
+      vi: "Ăn."
+    - jp: "行きます。"
+      romaji: "Ikimasu."
+      vi: "Đi."
+
+- id: "masen-negative"
+  pattern: "〜ません"
+  meaning: "Thể lịch sự phủ định — 'không...'"
+  formation: "[Động từ stem] + ません"
+  level: "N5"
+  chapter: 5
+  tags: ["verb", "polite", "negative"]
+  examples:
+    - jp: "食べません。"
+      romaji: "Tabemasen."
+      vi: "Không ăn."
+    - jp: "分かりません。"
+      romaji: "Wakarimasen."
+      vi: "Không hiểu."
+
+- id: "mashita-past"
+  pattern: "〜ました"
+  meaning: "Thể lịch sự quá khứ — 'đã...'"
+  formation: "[Động từ stem] + ました"
+  level: "N5"
+  chapter: 5
+  tags: ["verb", "polite", "past"]
+  examples:
+    - jp: "食べました。"
+      romaji: "Tabemashita."
+      vi: "Đã ăn."
+    - jp: "行きました。"
+      romaji: "Ikimashita."
+      vi: "Đã đi."
+
+- id: "masendeshita-past-neg"
+  pattern: "〜ませんでした"
+  meaning: "Thể lịch sự quá khứ phủ định — 'đã không...'"
+  formation: "[Động từ stem] + ませんでした"
+  level: "N5"
+  chapter: 5
+  tags: ["verb", "polite", "past", "negative"]
+  examples:
+    - jp: "食べませんでした。"
+      romaji: "Tabemasendeshita."
+      vi: "Đã không ăn."
+
+- id: "tai-want"
+  pattern: "〜たい"
+  meaning: "Muốn (làm gì) — 'want to...'"
+  formation: "[Động từ stem] + たいです"
+  level: "N5"
+  chapter: 5
+  tags: ["verb", "desire"]
+  examples:
+    - jp: "日本に行きたいです。"
+      romaji: "Nihon ni ikitai desu."
+      vi: "Muốn đi Nhật."
+    - jp: "寿司を食べたいです。"
+      romaji: "Sushi wo tabetai desu."
+      vi: "Muốn ăn sushi."
+
+- id: "te-kudasai"
+  pattern: "〜てください"
+  meaning: "Yêu cầu lịch sự — 'xin hãy...'"
+  formation: "[Động từ te-form] + ください"
+  level: "N5"
+  chapter: 5
+  tags: ["verb", "request"]
+  examples:
+    - jp: "見てください。"
+      romaji: "Mite kudasai."
+      vi: "Xin hãy nhìn."
+    - jp: "ここに書いてください。"
+      romaji: "Koko ni kaite kudasai."
+      vi: "Xin hãy viết ở đây."
+
+- id: "arimasu-exist"
+  pattern: "〜があります"
+  meaning: "Có (đồ vật) — tồn tại vô tri"
+  formation: "[Danh từ (vật)] + があります"
+  level: "N5"
+  chapter: 5
+  tags: ["existence", "basic"]
+  examples:
+    - jp: "机の上に本があります。"
+      romaji: "Tsukue no ue ni hon ga arimasu."
+      vi: "Có sách trên bàn."
+
+- id: "imasu-exist"
+  pattern: "〜がいます"
+  meaning: "Có (người/động vật) — tồn tại hữu tri"
+  formation: "[Danh từ (người/sinh vật)] + がいます"
+  level: "N5"
+  chapter: 5
+  tags: ["existence", "basic"]
+  examples:
+    - jp: "部屋に猫がいます。"
+      romaji: "Heya ni neko ga imasu."
+      vi: "Có con mèo trong phòng."
+
+- id: "janai-neg-copula"
+  pattern: "〜じゃないです"
+  meaning: "Phủ định của です — 'không phải là'"
+  formation: "[Danh từ] + じゃないです / ではありません"
+  level: "N5"
+  chapter: 5
+  tags: ["copula", "negative"]
+  examples:
+    - jp: "学生じゃないです。"
+      romaji: "Gakusei janai desu."
+      vi: "Không phải sinh viên."
+
+- id: "no-possessive"
+  pattern: "〜の"
+  meaning: "Sở hữu / liên kết danh từ — 'của'"
+  formation: "[Danh từ A] + の + [Danh từ B]"
+  level: "N5"
+  chapter: 5
+  tags: ["particle", "possessive"]
+  examples:
+    - jp: "私の本"
+      romaji: "Watashi no hon"
+      vi: "Sách của tôi"
+    - jp: "日本の食べ物"
+      romaji: "Nihon no tabemono"
+      vi: "Đồ ăn Nhật Bản"

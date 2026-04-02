@@ -12,12 +12,13 @@ permalink: /flashcards/katakana/
 </nav>
 
 <h1>Flashcards Katakana</h1>
-<p>Nhấn vào thẻ để lật. Nhấn đúp để đánh dấu "đã biết".</p>
+<p>Nhấn vào thẻ để lật. Nhấn đúp để đánh dấu "đã biết". Nhấn 🔊 để nghe phát âm.</p>
 
 <div class="flashcard-controls">
   <button class="btn btn-secondary" onclick="LJFlashcard.shuffle('kata-deck')">Trộn bài</button>
   <button class="btn btn-secondary" onclick="LJFlashcard.flipAll('kata-deck')">Lật tất cả</button>
   <button class="btn btn-secondary" onclick="LJFlashcard.resetAll('kata-deck')">Reset</button>
+  <button class="btn srs-review-btn" onclick="LJSRS.startReview('kata-deck')">Ôn tập SRS <span class="srs-due-count" id="srs-due-kata-deck"></span></button>
 </div>
 
 <div class="flashcard-score">
@@ -31,6 +32,7 @@ permalink: /flashcards/katakana/
     <div class="flashcard-inner">
       <div class="flashcard-front">
         <span class="flashcard-char">{{ kana.char }}</span>
+        <button class="tts-btn" onclick="event.stopPropagation(); LJFlashcard.speak('{{ kana.char }}')" title="Nghe phát âm">🔊</button>
       </div>
       <div class="flashcard-back">
         <span class="flashcard-text">{{ kana.romaji }}</span>
@@ -42,3 +44,11 @@ permalink: /flashcards/katakana/
   </div>
 {% endfor %}
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var stats = LJSRS.getDeckStats('kata-deck');
+  var badge = document.getElementById('srs-due-kata-deck');
+  if (badge && stats.due > 0) badge.textContent = stats.due;
+});
+</script>

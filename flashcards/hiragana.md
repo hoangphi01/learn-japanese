@@ -12,12 +12,13 @@ permalink: /flashcards/hiragana/
 </nav>
 
 <h1>Flashcards Hiragana</h1>
-<p>Nhấn vào thẻ để lật. Nhấn đúp để đánh dấu "đã biết".</p>
+<p>Nhấn vào thẻ để lật. Nhấn đúp để đánh dấu "đã biết". Nhấn 🔊 để nghe phát âm.</p>
 
 <div class="flashcard-controls">
   <button class="btn btn-secondary" onclick="LJFlashcard.shuffle('hira-deck')">Trộn bài</button>
   <button class="btn btn-secondary" onclick="LJFlashcard.flipAll('hira-deck')">Lật tất cả</button>
   <button class="btn btn-secondary" onclick="LJFlashcard.resetAll('hira-deck')">Reset</button>
+  <button class="btn srs-review-btn" onclick="LJSRS.startReview('hira-deck')">Ôn tập SRS <span class="srs-due-count" id="srs-due-hira-deck"></span></button>
 </div>
 
 <div class="flashcard-score">
@@ -31,6 +32,7 @@ permalink: /flashcards/hiragana/
     <div class="flashcard-inner">
       <div class="flashcard-front">
         <span class="flashcard-char">{{ kana.char }}</span>
+        <button class="tts-btn" onclick="event.stopPropagation(); LJFlashcard.speak('{{ kana.char }}')" title="Nghe phát âm">🔊</button>
       </div>
       <div class="flashcard-back">
         <span class="flashcard-text">{{ kana.romaji }}</span>
@@ -39,3 +41,11 @@ permalink: /flashcards/hiragana/
   </div>
 {% endfor %}
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var stats = LJSRS.getDeckStats('hira-deck');
+  var badge = document.getElementById('srs-due-hira-deck');
+  if (badge && stats.due > 0) badge.textContent = stats.due;
+});
+</script>

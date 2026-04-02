@@ -35,12 +35,23 @@
   <link rel="stylesheet" href="{{ '/assets/css/boxes.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/flashcard.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/quiz.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/srs.css' | relative_url }}">
+  {% if page.url contains 'mock-test' %}<link rel="stylesheet" href="{{ '/assets/css/mock-test.css' | relative_url }}">{% endif %}
+  {% if page.url contains 'grammar' %}<link rel="stylesheet" href="{{ '/assets/css/grammar.css' | relative_url }}">{% endif %}
   {% if page.url == '/' %}<link rel="stylesheet" href="{{ '/assets/css/welcome.css' | relative_url }}">{% endif %}
   {% seo %}
 </head>
 <body>
   {% if page.url == '/' %}{% include welcome-modal.html %}{% endif %}
   {% include nav.html %}
+
+  <div class="review-reminder" id="review-reminder" style="display:none;">
+    <div class="reminder-content">
+      <span class="reminder-icon">&#128218;</span>
+      <span class="reminder-text" id="reminder-text"></span>
+      <button class="reminder-close" onclick="LJReminder.dismiss()">&times;</button>
+    </div>
+  </div>
 
   <div class="mobile-progress-bar" id="mobile-progress-bar">
     <div class="mobile-progress-track">
@@ -66,6 +77,50 @@
   <script src="{{ '/assets/js/progress.js' | relative_url }}"></script>
   <script src="{{ '/assets/js/quiz.js' | relative_url }}"></script>
   <script src="{{ '/assets/js/flashcard.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/srs.js' | relative_url }}"></script>
+  <script>
+  var LJReminder = (function () {
+    var KEY = 'lj_last_visit';
+    var DISMISS_KEY = 'lj_reminder_dismissed';
+
+    function init() {
+      var now = Date.now();
+      var last = parseInt(localStorage.getItem(KEY) || '0', 10);
+      var dismissed = localStorage.getItem(DISMISS_KEY);
+
+      // Update last visit
+      localStorage.setItem(KEY, now.toString());
+
+      // Don't show if dismissed today
+      if (dismissed && (now - parseInt(dismissed, 10)) < 86400000) return;
+
+      if (last > 0) {
+        var days = Math.floor((now - last) / 86400000);
+        if (days >= 2) {
+          var el = document.getElementById('review-reminder');
+          var text = document.getElementById('reminder-text');
+          if (el && text) {
+            if (days >= 7) text.textContent = days + ' ngày chưa học! Quay lại ôn tập nhé.';
+            else text.textContent = days + ' ngày rồi chưa ôn tập. Cùng học tiếp nào!';
+            el.style.display = 'block';
+          }
+        }
+      }
+    }
+
+    function dismiss() {
+      var el = document.getElementById('review-reminder');
+      if (el) el.style.display = 'none';
+      localStorage.setItem(DISMISS_KEY, Date.now().toString());
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else { init(); }
+
+    return { dismiss: dismiss };
+  })();
+  </script>
   {% if page.url == '/' %}<script src="{{ '/assets/js/welcome.js' | relative_url }}"></script>{% endif %}
 </body>
 </html>

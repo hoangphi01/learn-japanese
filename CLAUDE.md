@@ -16,7 +16,7 @@ bundle exec jekyll build    # Production build → _site/
 
 ```
 _config.yml          # Jekyll config (baseurl: /learn-japanese)
-_data/               # YAML data files (curriculum, kana, vocabulary, rules)
+_data/               # YAML data files (curriculum, kana, vocabulary, rules, grammar, mock tests, reading)
 _includes/           # Reusable HTML components (boxes, nav, sidebar, quiz, flashcard)
 _layouts/            # Page templates (default → lesson, chapter, quiz, flashcard)
 _lessons/            # Lesson content (Markdown + includes)
@@ -27,12 +27,12 @@ _lessons/            # Lesson content (Markdown + includes)
   ch05/              # Phase 2: Verbs & Nouns (4 lessons)
   ch06/              # Phase 2: Hán-Việt Decoder (3 lessons)
 assets/
-  css/               # 5 CSS files (style, boxes, flashcard, quiz, welcome)
-  js/                # 6 JS modules (theme, nav, progress, quiz, flashcard, welcome)
+  css/               # 8 CSS files (style, boxes, flashcard, quiz, srs, mock-test, grammar, welcome)
+  js/                # 9 JS modules (theme, nav, progress, quiz, flashcard, srs, mock-test, hv-decoder, welcome)
   font/              # Bookerly + Minecraft Unicode (do NOT modify)
   images/            # preview.png (OG meta), icons, logos
 flashcards/          # Flashcard hub + deck pages (index, katakana, hiragana, 6 vocab decks)
-pages/               # Static pages (about, hv-decoder, roadmap)
+pages/               # Static pages (about, hv-decoder, roadmap, mock-test, grammar, reading, travel-phrasebook)
 index.md             # Homepage
 ```
 
@@ -69,6 +69,11 @@ level: N5
 | `hv_rules.yml` | 15 Hán-Việt → On'yomi mapping rules with examples |
 | `vocabulary.yml` | Loanwords (jp, romaji, en, vi) and numbers (num, jp, romaji) |
 | `flashcard_decks.yml` | 6 vocabulary flashcard decks (loanwords, numbers, particles, verbs, nouns, hanviet) |
+| `grammar.yml` | 20 N5 grammar patterns with examples, formation, tags |
+| `mock_test_n5.yml` | 37 mock test questions (vocabulary, grammar, reading) |
+| `reading_practice.yml` | 5 reading texts with furigana + vocabulary |
+| `n5_vocabulary.yml` | Extended N5 vocabulary list |
+| `travel_phrases.yml` | Travel/survival phrases |
 
 ### Content Boxes (Includes)
 
@@ -151,10 +156,13 @@ All use IIFE pattern. No frameworks.
 | `theme.js` | — | Theme toggle (side-effect only) |
 | `nav.js` | — | Sidebar, chapter expand/collapse, level filter |
 | `progress.js` | `LJProgress` | Lesson completion & quiz score tracking |
-| `quiz.js` | `LJQuiz` | Quiz answer checking & scoring |
-| `flashcard.js` | `LJFlashcard` | Deck shuffle, flip, known-marking |
+| `quiz.js` | `LJQuiz` | Quiz answer checking & scoring (3 types: MC, matching, fill-blank) |
+| `flashcard.js` | `LJFlashcard` | Deck shuffle, flip, known-marking, TTS (Web Speech API) |
+| `srs.js` | `LJSRS` | Spaced repetition — Leitner 5-box system, review mode |
+| `mock-test.js` | `LJMockTest` | N5 mock test engine — timed, randomized, section scoring |
 | `hv-decoder.js` | `LJHVDecoder` | HV→On'yomi dictionary lookup + rule prediction |
 | `welcome.js` | `LJWelcome` | Onboarding modal & level selection |
+| `phrasebook.js` | — | Travel phrasebook TTS + category filter |
 
 ### localStorage Keys
 
@@ -165,21 +173,60 @@ All use IIFE pattern. No frameworks.
 | `lj_selected_level` | `'N5'`, `'N4'`, etc. | nav.js, welcome.js |
 | `lj_sidebar` | `'collapsed'` or `'open'` | nav.js |
 | `lj_welcome_dismissed` | `'true'` or absent | welcome.js |
+| `lj_srs` | JSON `{ deckId: { cardIndex: { box, next, last } } }` | srs.js |
+| `lj_last_visit` | timestamp string | daily reminder (default.html) |
+| `lj_reminder_dismissed` | timestamp string | daily reminder (default.html) |
 
-## 3 Pillars Architecture
+## 6 Pillars Architecture
 
-NihonGo! has 3 core interactive pillars:
+NihonGo! has 6 core interactive pillars:
 
 | Pillar | Path | Purpose |
 |--------|------|---------|
 | **Lessons** | `_lessons/ch{NN}/` | Structured curriculum (Markdown + includes) |
-| **HV Decoder** | `pages/hv-decoder/` | Interactive Hán-Việt → On'yomi lookup tool |
-| **Flashcards** | `flashcards/` | Practice decks — kana (from `kana.yml`) + vocabulary (from `flashcard_decks.yml`) |
+| **Flashcards + SRS** | `flashcards/` | Practice decks with Leitner spaced repetition |
+| **Mock Test** | `pages/mock-test.md` | Timed N5 mock exam (23 randomized questions from 37-question bank) |
+| **Grammar Hub** | `pages/grammar.md` | Searchable/filterable grammar reference (20 patterns) |
+| **Reading Practice** | `pages/reading.md` | Short texts with furigana + translation + vocab |
+| **HV Decoder** | `pages/hv-decoder.md` | Interactive Hán-Việt → On'yomi lookup tool |
 
-Flashcard decks:
+Supporting tools:
+- **Travel Phrasebook** (`pages/travel-phrasebook.md`) — 120+ phrases with TTS
+- **Daily Review Reminder** — localStorage-based "days since last visit" banner
+
+### Flashcard System
+
 - **Kana decks** (katakana, hiragana): use `layout: default`, read from `kana.yml` directly
 - **Vocabulary decks** (6 decks): use `layout: flashcard`, read from `flashcard_decks.yml` via `page.deck_id`
 - **Index page** (`flashcards/index.md`): hub listing all 8 decks grouped by phase
+- **SRS Review**: Each deck has "Ôn tập SRS" button → single-card review mode with Leitner scheduling
+- **TTS**: All flashcards have 🔊 button using Web Speech API (Japanese voice)
+
+### SRS (Spaced Repetition) System
+
+Leitner 5-box algorithm in `srs.js`:
+- Box 0 (Mới): review immediately
+- Box 1: review after 1 day
+- Box 2: review after 3 days
+- Box 3: review after 7 days
+- Box 4: review after 14 days (mastered)
+- Correct → advance one box. Wrong → back to box 0.
+- Data stored in `lj_srs` localStorage key per deck.
+
+### Mock Test System
+
+`mock-test.js` engine:
+- Question bank in `_data/mock_test_n5.yml` (3 sections: vocabulary, grammar, reading)
+- Randomly selects 23 questions per test (10 vocab + 8 grammar + 5 reading)
+- 30-minute countdown timer
+- Section-by-section scoring
+- Score saved to `lj_progress.quizScores['mock-test-n5']`
+
+### Sidebar Navigation
+
+Sidebar (`_includes/sidebar.html`) has two sections:
+1. **Chapter navigation** — expandable chapter list with lesson links
+2. **Tools section** — links to Flashcards, Grammar, Mock Test, Reading, HV Decoder, Travel Phrasebook
 
 ## Do NOT
 

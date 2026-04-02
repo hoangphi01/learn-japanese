@@ -1,0 +1,226 @@
+/* ============================================================
+   GRAMMAR REFERENCE STYLES
+   ============================================================ */
+
+.grammar-filter {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.grammar-filter-btn {
+  font-size: 0.85rem;
+  padding: 0.3rem 0.75rem;
+}
+
+.grammar-filter-btn.active {
+  background: var(--navy-blue);
+  color: white;
+  border-color: var(--navy-blue);
+}
+
+.grammar-search {
+  margin: 1rem 0 1.5rem;
+}
+
+.grammar-search input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.6rem 1rem;
+  border: 3px solid var(--navy-blue);
+  background: white;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+}
+
+.grammar-search input:focus {
+  border-color: var(--gold-accent);
+}
+
+/* ─── Grammar cards ──────────────────────────────── */
+
+.grammar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.grammar-card {
+  background: white;
+  border: 3px solid var(--navy-blue);
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+.grammar-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  gap: 1rem;
+}
+
+.grammar-card-header:hover {
+  background: #f9fafb;
+}
+
+.grammar-card-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.grammar-pattern {
+  font-family: var(--font-jp);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--navy-blue);
+}
+
+.grammar-meaning {
+  font-size: 0.9rem;
+  color: var(--med-gray);
+}
+
+.grammar-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.grammar-badge {
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.1rem 0.4rem;
+  background: var(--navy-blue);
+  color: white;
+}
+
+.grammar-badge-level {
+  background: var(--gold-accent);
+}
+
+.grammar-expand-icon {
+  font-size: 0.7rem;
+  color: var(--med-gray);
+  transition: transform 0.2s ease;
+}
+
+.grammar-card.expanded .grammar-expand-icon {
+  transform: rotate(180deg);
+}
+
+/* ─── Card body (expanded) ───────────────────────── */
+
+.grammar-card-body {
+  display: none;
+  padding: 0 1.25rem 1.25rem;
+  border-top: 2px solid #e5e7eb;
+}
+
+.grammar-card.expanded .grammar-card-body {
+  display: block;
+}
+
+.grammar-formation {
+  margin: 1rem 0;
+  padding: 0.5rem 0.75rem;
+  background: var(--light-blue);
+  border-left: 4px solid var(--navy-blue);
+  font-size: 0.95rem;
+}
+
+.grammar-examples {
+  margin: 1rem 0;
+}
+
+.grammar-example {
+  margin: 0.75rem 0;
+  padding: 0.5rem 0.75rem;
+  border-left: 3px solid var(--gold-accent);
+}
+
+.grammar-ex-jp {
+  font-family: var(--font-jp);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.grammar-ex-romaji {
+  font-size: 0.85rem;
+  color: var(--med-gray);
+  font-style: italic;
+}
+
+.grammar-ex-vi {
+  font-size: 0.9rem;
+  color: var(--navy-blue);
+}
+
+.grammar-link {
+  margin-top: 0.75rem;
+}
+
+.grammar-link a {
+  font-size: 0.85rem;
+  color: var(--gold-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.grammar-link a:hover {
+  text-decoration: underline;
+}
+
+/* ─── MODERN THEME ───────────────────────────────── */
+
+[data-theme="modern"] .grammar-card {
+  border-radius: var(--radius);
+  border-width: 1px;
+  box-shadow: var(--shadow);
+}
+
+[data-theme="modern"] .grammar-search input {
+  border-radius: var(--radius);
+  border-width: 1px;
+  transition: border-color 0.2s ease;
+}
+
+[data-theme="modern"] .grammar-badge {
+  border-radius: 4px;
+}
+
+[data-theme="modern"] .grammar-formation {
+  border-radius: var(--radius-sm);
+}
+
+[data-theme="modern"] .grammar-example {
+  border-radius: var(--radius-sm);
+}
+
+[data-theme="modern"] .grammar-filter-btn.active {
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 768px) {
+  .grammar-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .grammar-card-meta {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .grammar-pattern {
+    font-size: 1.2rem;
+  }
+}

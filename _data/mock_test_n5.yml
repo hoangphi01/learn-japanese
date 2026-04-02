@@ -1,0 +1,200 @@
+# ============================================================
+# N5 MOCK TEST — Question Bank
+# Categories: vocabulary, grammar, reading
+# Each question: q (question), options (A-D), answer, explanation
+# ============================================================
+
+vocabulary:
+  # ── Katakana / Loanwords ──
+  - q: "「コーヒー」はベトナム語で何ですか？"
+    options: ["bia", "cà phê", "trà", "nước"]
+    answer: 1
+    explanation: "コーヒー (koohii) = cà phê, từ mượn tiếng Hà Lan 'koffie'."
+
+  - q: "「レストラン」の読み方は？"
+    options: ["resutoran", "resutaran", "resutoren", "restoran"]
+    answer: 0
+    explanation: "レストラン = resutoran (nhà hàng), từ tiếng Pháp 'restaurant'."
+
+  - q: "「タクシー」はベトナム語で何ですか？"
+    options: ["xe buýt", "tàu điện", "taxi", "xe đạp"]
+    answer: 2
+    explanation: "タクシー (takushii) = taxi."
+
+  - q: "「スーパー」の意味は？"
+    options: ["siêu nhân", "siêu thị", "nhà hàng", "bệnh viện"]
+    answer: 1
+    explanation: "スーパー (suupaa) = siêu thị (supermarket)."
+
+  - q: "「エレベーター」は何ですか？"
+    options: ["thang máy", "cầu thang", "thang cuốn", "lối ra"]
+    answer: 0
+    explanation: "エレベーター (erebeetaa) = thang máy (elevator)."
+
+  # ── Numbers ──
+  - q: "「七」の読み方は？"
+    options: ["roku", "nana / shichi", "hachi", "go"]
+    answer: 1
+    explanation: "七 = nana hoặc shichi (7). Hai cách đọc đều đúng."
+
+  - q: "「百」はいくつですか？"
+    options: ["10", "100", "1000", "1"]
+    answer: 1
+    explanation: "百 (hyaku) = 100 (trăm)."
+
+  - q: "「三十五」はいくつですか？"
+    options: ["53", "35", "305", "3500"]
+    answer: 1
+    explanation: "三十五 = san-juu-go = 3×10 + 5 = 35."
+
+  # ── Nouns ──
+  - q: "「駅」の読み方と意味は？"
+    options: ["eki — ga tàu", "machi — thành phố", "michi — đường", "uchi — nhà"]
+    answer: 0
+    explanation: "駅 (eki) = ga tàu. Hán-Việt: 'dịch' (trạm)."
+
+  - q: "「水」の読み方は？"
+    options: ["hi", "mizu", "ame", "kaze"]
+    answer: 1
+    explanation: "水 (mizu) = nước. Hán-Việt: 'thủy'."
+
+  - q: "「電車」はベトナム語で何ですか？"
+    options: ["xe buýt", "tàu điện", "ô tô", "xe đạp"]
+    answer: 1
+    explanation: "電車 (densha) = điện xa = tàu điện."
+
+  - q: "「病院」の意味は？"
+    options: ["trường học", "bệnh viện", "ngân hàng", "nhà thuốc"]
+    answer: 1
+    explanation: "病院 (byouin) = bệnh viện. Hán-Việt: 'bệnh viện'."
+
+  # ── Verbs ──
+  - q: "「食べます」の意味は？"
+    options: ["đi", "ăn", "uống", "ngủ"]
+    answer: 1
+    explanation: "食べます (tabemasu) = ăn. Động từ Ichidan."
+
+  - q: "「行きます」の辞書形は？"
+    options: ["行る", "行く", "行す", "行つ"]
+    answer: 1
+    explanation: "行きます → 行く (iku) = đi. Động từ Godan."
+
+  - q: "「飲みます」はベトナム語で何ですか？"
+    options: ["ăn", "mua", "uống", "nói"]
+    answer: 2
+    explanation: "飲みます (nomimasu) = uống. Kanji 飲 — Hán-Việt: 'ẩm'."
+
+  - q: "「見ます」の意味は？"
+    options: ["nghe", "nhìn / xem", "nói", "viết"]
+    answer: 1
+    explanation: "見ます (mimasu) = nhìn, xem. Động từ Ichidan."
+
+  # ── Hán-Việt ──
+  - q: "「大学」のベトナム語 Hán-Việt は？"
+    options: ["trung học", "đại học", "tiểu học", "học viện"]
+    answer: 1
+    explanation: "大学 (daigaku) = đại học. 大=đại, 学=học."
+
+  - q: "「先生」は Hán-Việt で？"
+    options: ["học sinh", "sinh viên", "tiên sinh", "giáo viên"]
+    answer: 2
+    explanation: "先生 (sensei) = tiên sinh (thầy/cô). 先=tiên, 生=sinh."
+
+  - q: "「電話」の Hán-Việt は？"
+    options: ["điện thoại", "điện xa", "điện tử", "điện lực"]
+    answer: 0
+    explanation: "電話 (denwa) = điện thoại. 電=điện, 話=thoại."
+
+  - q: "「時間」のベトナム語 Hán-Việt は？"
+    options: ["không gian", "thời gian", "nhân gian", "khoảng cách"]
+    answer: 1
+    explanation: "時間 (jikan) = thời gian. 時=thời, 間=gian."
+
+grammar:
+  # ── Particles ──
+  - q: "「私___学生です。」正しい助詞は？"
+    options: ["を", "は", "で", "に"]
+    answer: 1
+    explanation: "は (wa) = trợ từ chủ đề. 'Tôi là sinh viên.'"
+
+  - q: "「学校___勉強します。」正しい助詞は？"
+    options: ["は", "を", "で", "に"]
+    answer: 2
+    explanation: "で (de) = địa điểm hành động. 'Học ở trường.'"
+
+  - q: "「パン___食べます。」正しい助詞は？"
+    options: ["は", "を", "で", "に"]
+    answer: 1
+    explanation: "を (wo) = tân ngữ trực tiếp. 'Ăn bánh mì.'"
+
+  - q: "「東京___行きます。」正しい助詞は？"
+    options: ["は", "を", "で", "に"]
+    answer: 3
+    explanation: "に (ni) = điểm đến. 'Đi đến Tokyo.'"
+
+  - q: "「コーヒー___お茶___飲みます。」2 trợ từ đúng là？"
+    options: ["は / を", "を / も", "か / を", "は / は"]
+    answer: 2
+    explanation: "か = hoặc. コーヒーかお茶を飲みます = Uống cà phê hoặc trà."
+
+  - q: "「私___日本人です。」Chọn trợ từ:"
+    options: ["を", "も", "で", "が"]
+    answer: 1
+    explanation: "も (mo) = cũng. 'Tôi cũng là người Nhật.'"
+
+  # ── Sentence patterns ──
+  - q: "「これは何ですか。」の意味は？"
+    options: ["Cái này bao nhiêu tiền?", "Cái này là gì?", "Cái này ở đâu?", "Cái này của ai?"]
+    answer: 1
+    explanation: "これは何ですか = Cái này là gì? 何 (nani) = cái gì."
+
+  - q: "「すみません、トイレはどこですか。」の意味は？"
+    options: ["Xin lỗi, nhà vệ sinh ở đâu?", "Xin lỗi, nhà hàng ở đâu?", "Xin lỗi, ga tàu ở đâu?", "Xin chào, tạm biệt."]
+    answer: 0
+    explanation: "トイレはどこですか = Nhà vệ sinh ở đâu? どこ = ở đâu."
+
+  - q: "「毎日日本語を勉強します。」の意味は？"
+    options: ["Hôm nay học tiếng Nhật.", "Mỗi ngày học tiếng Nhật.", "Ngày mai học tiếng Nhật.", "Đã học tiếng Nhật."]
+    answer: 1
+    explanation: "毎日 (mainichi) = mỗi ngày. 日本語を勉強します = học tiếng Nhật."
+
+  - q: "「いくらですか。」はどんな時に使いますか？"
+    options: ["Hỏi đường", "Hỏi giá", "Hỏi tên", "Hỏi giờ"]
+    answer: 1
+    explanation: "いくらですか = Bao nhiêu tiền? Dùng khi hỏi giá."
+
+  - q: "Chọn câu đúng ngữ pháp:"
+    options: ["私は水飲みます。", "私は水を飲みます。", "私を水は飲みます。", "私に水が飲みます。"]
+    answer: 1
+    explanation: "私は水を飲みます = Tôi uống nước. は=chủ đề, を=tân ngữ."
+
+  - q: "「日本語が分かりますか。」の意味は？"
+    options: ["Bạn nói tiếng Nhật à?", "Bạn hiểu tiếng Nhật không?", "Bạn thích tiếng Nhật không?", "Bạn học tiếng Nhật à?"]
+    answer: 1
+    explanation: "分かります (wakarimasu) = hiểu. が marks the object of understanding."
+
+reading:
+  - q: "「田中さんは毎日バスで学校に行きます。」— 田中 đi bằng gì？"
+    options: ["電車", "タクシー", "バス", "自転車"]
+    answer: 2
+    explanation: "バスで = bằng xe buýt. で chỉ phương tiện."
+
+  - q: "「山田さんは午前7時に起きます。朝ごはんを食べます。8時に学校に行きます。」— 山田 dậy lúc mấy giờ？"
+    options: ["6時", "7時", "8時", "9時"]
+    answer: 1
+    explanation: "午前7時に起きます = Dậy lúc 7 giờ sáng."
+
+  - q: "「私はベトナム人です。日本語を勉強しています。」— Người này là người nước nào？"
+    options: ["日本", "中国", "ベトナム", "アメリカ"]
+    answer: 2
+    explanation: "ベトナム人です = Là người Việt Nam."
+
+  - q: "「駅の前にコンビニがあります。コンビニの隣に銀行があります。」— Ngân hàng ở đâu？"
+    options: ["Trước ga", "Cạnh cửa hàng tiện lợi", "Trong ga", "Sau ga"]
+    answer: 1
+    explanation: "コンビニの隣に = cạnh cửa hàng tiện lợi. 隣 (tonari) = bên cạnh."
+
+  - q: "「日本の天気は今日暑いです。明日は涼しいです。」— Thời tiết ngày mai thế nào？"
+    options: ["暑い (nóng)", "寒い (lạnh)", "涼しい (mát mẻ)", "暖かい (ấm)"]
+    answer: 2
+    explanation: "明日は涼しいです = Ngày mai mát mẻ. 涼しい (suzushii) = mát."

@@ -73,6 +73,30 @@ var LJFlashcard = (function () {
     }
   }
 
+  // ─── Text-to-Speech ─────────────────────────────────
+  function speak(text) {
+    if (!('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
+    var utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'ja-JP';
+    utterance.rate = 0.85;
+
+    // Try to use a Japanese voice
+    var voices = window.speechSynthesis.getVoices();
+    var jpVoice = voices.find(function (v) { return v.lang.indexOf('ja') === 0; });
+    if (jpVoice) utterance.voice = jpVoice;
+
+    window.speechSynthesis.speak(utterance);
+  }
+
+  // Preload voices
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.getVoices();
+    window.speechSynthesis.onvoiceschanged = function () {
+      window.speechSynthesis.getVoices();
+    };
+  }
+
   // Double-click to mark as known
   document.addEventListener('dblclick', function (e) {
     var card = e.target.closest('.flashcard');
@@ -85,6 +109,7 @@ var LJFlashcard = (function () {
     shuffle: shuffle,
     flipAll: flipAll,
     resetAll: resetAll,
-    toggleKnown: toggleKnown
+    toggleKnown: toggleKnown,
+    speak: speak
   };
 })();

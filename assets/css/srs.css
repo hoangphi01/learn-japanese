@@ -1,0 +1,342 @@
+/* ============================================================
+   SRS REVIEW MODE STYLES
+   ============================================================ */
+
+.srs-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.srs-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.srs-progress-bar {
+  flex: 1;
+  height: 8px;
+  background: #e5e7eb;
+  border: 2px solid var(--navy-blue);
+  overflow: hidden;
+}
+
+.srs-progress-fill {
+  height: 100%;
+  background: var(--hira-color);
+  transition: width 0.3s ease;
+}
+
+.srs-progress-text {
+  font-family: var(--font-pixel);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+/* ─── Box stats ──────────────────────────────────── */
+
+.srs-stats {
+  margin-bottom: 1.5rem;
+}
+
+.srs-box-row {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.srs-box-item {
+  text-align: center;
+  padding: 0.4rem 0.6rem;
+  border: 2px solid #e5e7eb;
+  background: white;
+  min-width: 50px;
+}
+
+.srs-box-count {
+  display: block;
+  font-family: var(--font-pixel);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--navy-blue);
+}
+
+.srs-box-label {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--med-gray);
+}
+
+.srs-box-new {
+  border-color: var(--japan-red);
+}
+.srs-box-new .srs-box-count { color: var(--japan-red); }
+
+.srs-box-mastered {
+  border-color: var(--hira-color);
+}
+.srs-box-mastered .srs-box-count { color: var(--hira-color); }
+
+/* ─── Single card display ────────────────────────── */
+
+.srs-card-area {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.srs-single-card {
+  width: 280px;
+  height: 200px;
+  perspective: 600px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.srs-single-card .flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.srs-single-card.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.srs-single-card .flashcard-front,
+.srs-single-card .flashcard-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  border: 3px solid var(--navy-blue);
+  background: white;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.15);
+}
+
+.srs-single-card .flashcard-back {
+  transform: rotateY(180deg);
+  background: var(--navy-blue);
+  color: white;
+  border-color: var(--navy-blue);
+}
+
+.srs-single-card .flashcard-char {
+  font-family: var(--font-jp);
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--navy-blue);
+}
+
+.srs-single-card .flashcard-text {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.srs-single-card .flashcard-note {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 0.3rem;
+}
+
+.srs-single-card .flashcard-kanji {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-top: 0.2rem;
+}
+
+.srs-single-card.vocab .flashcard-front { border-color: var(--gold-accent); }
+.srs-single-card.vocab .flashcard-char { color: var(--gold-accent); }
+.srs-single-card.vocab .flashcard-back { background: var(--gold-accent); border-color: var(--gold-accent); }
+
+.srs-single-card.kata .flashcard-front { border-color: var(--kata-color); }
+.srs-single-card.kata .flashcard-char { color: var(--kata-color); }
+.srs-single-card.kata .flashcard-back { background: var(--kata-color); border-color: var(--kata-color); }
+
+.srs-single-card.hira .flashcard-front { border-color: var(--hira-color); }
+.srs-single-card.hira .flashcard-char { color: var(--hira-color); }
+.srs-single-card.hira .flashcard-back { background: var(--hira-color); border-color: var(--hira-color); }
+
+.srs-flip-hint {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--med-gray);
+  margin-top: 0.75rem;
+}
+
+/* ─── Rating buttons ─────────────────────────────── */
+
+.srs-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.srs-btn {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: inherit;
+  border: 3px solid;
+  cursor: pointer;
+  min-width: 130px;
+}
+
+.srs-btn-wrong {
+  border-color: var(--japan-red);
+  background: var(--light-red);
+  color: var(--japan-red);
+}
+
+.srs-btn-wrong:hover {
+  background: var(--japan-red);
+  color: white;
+}
+
+.srs-btn-right {
+  border-color: var(--hira-color);
+  background: var(--light-green);
+  color: var(--hira-color);
+}
+
+.srs-btn-right:hover {
+  background: var(--hira-color);
+  color: white;
+}
+
+/* ─── Complete / No cards ────────────────────────── */
+
+.srs-complete, .srs-no-cards {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border: 3px solid var(--gold-accent);
+  box-shadow: 4px 4px 0 var(--gold-accent);
+  margin: 1rem 0;
+}
+
+.srs-complete-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.srs-complete h3, .srs-no-cards h3 {
+  margin-bottom: 0.5rem;
+}
+
+.srs-complete p, .srs-no-cards p {
+  color: var(--med-gray);
+  margin-bottom: 1rem;
+}
+
+.srs-box-summary {
+  margin: 1rem 0;
+}
+
+.srs-exit {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/* ─── Due badge on flashcard hub ─────────────────── */
+
+.deck-due-badge {
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  background: var(--japan-red);
+  color: white;
+  margin-top: 0.25rem;
+}
+
+/* ─── SRS button in controls ─────────────────────── */
+
+.srs-review-btn {
+  background: var(--hira-color) !important;
+  color: white !important;
+  border-color: var(--hira-color) !important;
+}
+
+.srs-review-btn:hover {
+  opacity: 0.9;
+}
+
+.srs-due-count {
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  background: var(--japan-red);
+  color: white;
+  padding: 0 0.4rem;
+  margin-left: 0.3rem;
+}
+
+/* ─── MODERN THEME ───────────────────────────────── */
+
+[data-theme="modern"] .srs-progress-bar {
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+[data-theme="modern"] .srs-progress-fill {
+  border-radius: 3px;
+}
+
+[data-theme="modern"] .srs-box-item {
+  border-radius: var(--radius-sm);
+  border-width: 1px;
+}
+
+[data-theme="modern"] .srs-single-card .flashcard-front,
+[data-theme="modern"] .srs-single-card .flashcard-back {
+  border-radius: var(--radius);
+  border-width: 1px;
+  box-shadow: var(--shadow-lg);
+}
+
+[data-theme="modern"] .srs-btn {
+  border-radius: var(--radius);
+  border-width: 1px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+[data-theme="modern"] .srs-complete,
+[data-theme="modern"] .srs-no-cards {
+  border-radius: var(--radius);
+  border-width: 1px;
+  box-shadow: var(--shadow-lg);
+}
+
+[data-theme="modern"] .deck-due-badge {
+  border-radius: 4px;
+}
+
+[data-theme="modern"] .srs-due-count {
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .srs-single-card {
+    width: 240px;
+    height: 180px;
+  }
+
+  .srs-single-card .flashcard-char {
+    font-size: 2.5rem;
+  }
+
+  .srs-btn {
+    padding: 0.6rem 1.5rem;
+    min-width: 100px;
+  }
+}

@@ -56,6 +56,16 @@
     {% endfor %}
   </nav>
 
+  <div class="sidebar-tools">
+    <h4 class="sidebar-tools-title">Công cụ</h4>
+    <a href="{{ '/flashcards/' | relative_url }}" class="sidebar-tool-link {% if page.url contains 'flashcards' %}current{% endif %}">Flashcards</a>
+    <a href="{{ '/grammar/' | relative_url }}" class="sidebar-tool-link {% if page.url contains 'grammar' %}current{% endif %}">Ngữ Pháp N5</a>
+    <a href="{{ '/mock-test/' | relative_url }}" class="sidebar-tool-link {% if page.url contains 'mock-test' %}current{% endif %}">Thi Thử N5</a>
+    <a href="{{ '/reading/' | relative_url }}" class="sidebar-tool-link {% if page.url contains 'reading' %}current{% endif %}">Luyện Đọc</a>
+    <a href="{{ '/hv-decoder/' | relative_url }}" class="sidebar-tool-link {% if page.url contains 'hv-decoder' %}current{% endif %}">HV Decoder</a>
+    <a href="{{ '/travel-phrasebook/' | relative_url }}" class="sidebar-tool-link {% if page.url contains 'travel-phrasebook' %}current{% endif %}">Sổ Tay Du Lịch</a>
+  </div>
+
   <div class="sidebar-logo">
     <img src="{{ '/assets/images/collab-logo.png' | relative_url }}" alt="hoangphi01 x Claude">
   </div>

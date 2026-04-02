@@ -11,7 +11,7 @@ layout: default
 </nav>
 
 <h1>{{ page.title }}</h1>
-<p>Nhấn vào thẻ để lật. Nhấn đúp để đánh dấu "đã biết".</p>
+<p>Nhấn vào thẻ để lật. Nhấn đúp để đánh dấu "đã biết". Nhấn 🔊 để nghe phát âm.</p>
 
 {% if content != '' %}
 <div class="flashcard-intro">
@@ -23,6 +23,7 @@ layout: default
   <button class="btn btn-secondary" onclick="LJFlashcard.shuffle('{{ page.deck_id }}')">Trộn bài</button>
   <button class="btn btn-secondary" onclick="LJFlashcard.flipAll('{{ page.deck_id }}')">Lật tất cả</button>
   <button class="btn btn-secondary" onclick="LJFlashcard.resetAll('{{ page.deck_id }}')">Reset</button>
+  <button class="btn srs-review-btn" onclick="LJSRS.startReview('{{ page.deck_id }}')">Ôn tập SRS <span class="srs-due-count" id="srs-due-{{ page.deck_id }}"></span></button>
 </div>
 
 <div class="flashcard-score">
@@ -36,6 +37,7 @@ layout: default
     <div class="flashcard-inner">
       <div class="flashcard-front">
         <span class="flashcard-char">{{ card.front }}</span>
+        <button class="tts-btn" onclick="event.stopPropagation(); LJFlashcard.speak('{{ card.front }}')" title="Nghe phát âm">🔊</button>
       </div>
       <div class="flashcard-back">
         <span class="flashcard-text">{{ card.back }}</span>
@@ -46,3 +48,15 @@ layout: default
   </div>
 {% endfor %}
 </div>
+
+<script>
+// Show SRS due count on page load
+document.addEventListener('DOMContentLoaded', function () {
+  var deckId = '{{ page.deck_id }}';
+  var stats = LJSRS.getDeckStats(deckId);
+  var badge = document.getElementById('srs-due-' + deckId);
+  if (badge && stats.due > 0) {
+    badge.textContent = stats.due;
+  }
+});
+</script>
