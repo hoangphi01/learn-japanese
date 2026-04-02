@@ -79,6 +79,14 @@
   text-align: center;
 }
 
+.flashcard-kanji {
+  font-family: var(--font-jp);
+  font-size: 0.85rem;
+  opacity: 0.85;
+  margin-top: 0.2rem;
+  text-align: center;
+}
+
 .flashcard-note {
   font-size: 0.75rem;
   opacity: 0.7;

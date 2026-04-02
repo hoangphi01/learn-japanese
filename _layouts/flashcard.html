@@ -39,6 +39,7 @@ layout: default
       </div>
       <div class="flashcard-back">
         <span class="flashcard-text">{{ card.back }}</span>
+        {% if card.kanji %}<span class="flashcard-kanji">{{ card.kanji }}</span>{% endif %}
         {% if card.note %}<span class="flashcard-note">{{ card.note }}</span>{% endif %}
       </div>
     </div>

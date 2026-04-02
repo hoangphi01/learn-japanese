@@ -1,0 +1,141 @@
+# ============================================================
+# N5 VOCABULARY REGISTRY
+# Chapter-indexed source of truth for all vocabulary
+# Schema: word, kana, romaji, vi, type, chapter, tags[]
+# ============================================================
+
+# ── Ch1-2: Từ Mượn Katakana (Loanwords) ──
+- { word: "コーヒー", kana: "コーヒー", romaji: "koohii", vi: "cà phê", type: "noun-katakana", chapter: 1, tags: [loanword, food] }
+- { word: "バス", kana: "バス", romaji: "basu", vi: "xe buýt", type: "noun-katakana", chapter: 1, tags: [loanword, transport] }
+- { word: "テニス", kana: "テニス", romaji: "tenisu", vi: "tennis", type: "noun-katakana", chapter: 1, tags: [loanword, sport] }
+- { word: "アイス", kana: "アイス", romaji: "aisu", vi: "kem", type: "noun-katakana", chapter: 1, tags: [loanword, food] }
+- { word: "タコス", kana: "タコス", romaji: "takosu", vi: "tacos", type: "noun-katakana", chapter: 1, tags: [loanword, food] }
+- { word: "ネット", kana: "ネット", romaji: "netto", vi: "internet", type: "noun-katakana", chapter: 1, tags: [loanword, tech] }
+- { word: "カカオ", kana: "カカオ", romaji: "kakao", vi: "cacao", type: "noun-katakana", chapter: 1, tags: [loanword, food] }
+- { word: "ホテル", kana: "ホテル", romaji: "hoteru", vi: "khách sạn", type: "noun-katakana", chapter: 1, tags: [loanword, place] }
+- { word: "レストラン", kana: "レストラン", romaji: "resutoran", vi: "nhà hàng", type: "noun-katakana", chapter: 1, tags: [loanword, place] }
+- { word: "タクシー", kana: "タクシー", romaji: "takushii", vi: "taxi", type: "noun-katakana", chapter: 1, tags: [loanword, transport] }
+- { word: "スーパー", kana: "スーパー", romaji: "suupaa", vi: "siêu thị", type: "noun-katakana", chapter: 1, tags: [loanword, place] }
+- { word: "ビール", kana: "ビール", romaji: "biiru", vi: "bia", type: "noun-katakana", chapter: 1, tags: [loanword, food] }
+- { word: "メニュー", kana: "メニュー", romaji: "menyuu", vi: "thực đơn", type: "noun-katakana", chapter: 1, tags: [loanword, food] }
+- { word: "トイレ", kana: "トイレ", romaji: "toire", vi: "nhà vệ sinh", type: "noun-katakana", chapter: 1, tags: [loanword, place] }
+- { word: "エレベーター", kana: "エレベーター", romaji: "erebeetaa", vi: "thang máy", type: "noun-katakana", chapter: 1, tags: [loanword, place] }
+- { word: "コンビニ", kana: "コンビニ", romaji: "konbini", vi: "cửa hàng tiện lợi", type: "noun-katakana", chapter: 1, tags: [loanword, place] }
+- { word: "アメリカ", kana: "アメリカ", romaji: "amerika", vi: "Mỹ", type: "noun-katakana", chapter: 1, tags: [loanword, country] }
+- { word: "ベトナム", kana: "ベトナム", romaji: "betonamu", vi: "Việt Nam", type: "noun-katakana", chapter: 1, tags: [loanword, country] }
+- { word: "チケット", kana: "チケット", romaji: "chiketto", vi: "vé", type: "noun-katakana", chapter: 1, tags: [loanword, travel] }
+- { word: "カメラ", kana: "カメラ", romaji: "kamera", vi: "máy ảnh", type: "noun-katakana", chapter: 1, tags: [loanword, tech] }
+
+# ── Ch2: Số Đếm ──
+- { word: "零", kana: "ゼロ/れい", romaji: "zero / rei", vi: "số 0", type: "number", chapter: 2, tags: [number] }
+- { word: "一", kana: "いち", romaji: "ichi", vi: "số 1", type: "number", chapter: 2, tags: [number] }
+- { word: "二", kana: "に", romaji: "ni", vi: "số 2", type: "number", chapter: 2, tags: [number] }
+- { word: "三", kana: "さん", romaji: "san", vi: "số 3", type: "number", chapter: 2, tags: [number] }
+- { word: "四", kana: "し/よん", romaji: "shi / yon", vi: "số 4", type: "number", chapter: 2, tags: [number] }
+- { word: "五", kana: "ご", romaji: "go", vi: "số 5", type: "number", chapter: 2, tags: [number] }
+- { word: "六", kana: "ろく", romaji: "roku", vi: "số 6", type: "number", chapter: 2, tags: [number] }
+- { word: "七", kana: "しち/なな", romaji: "shichi / nana", vi: "số 7", type: "number", chapter: 2, tags: [number] }
+- { word: "八", kana: "はち", romaji: "hachi", vi: "số 8", type: "number", chapter: 2, tags: [number] }
+- { word: "九", kana: "く/きゅう", romaji: "ku / kyuu", vi: "số 9", type: "number", chapter: 2, tags: [number] }
+- { word: "十", kana: "じゅう", romaji: "juu", vi: "số 10", type: "number", chapter: 2, tags: [number] }
+- { word: "百", kana: "ひゃく", romaji: "hyaku", vi: "số 100", type: "number", chapter: 2, tags: [number] }
+- { word: "千", kana: "せん", romaji: "sen", vi: "số 1000", type: "number", chapter: 2, tags: [number] }
+
+# ── Ch4: Trợ Từ & Cụm Sinh Tồn ──
+- { word: "は", kana: "は", romaji: "wa", vi: "chủ đề câu (topic)", type: "particle", chapter: 4, tags: [particle] }
+- { word: "を", kana: "を", romaji: "wo", vi: "tân ngữ trực tiếp", type: "particle", chapter: 4, tags: [particle] }
+- { word: "が", kana: "が", romaji: "ga", vi: "chủ ngữ ngữ pháp", type: "particle", chapter: 4, tags: [particle] }
+- { word: "で", kana: "で", romaji: "de", vi: "địa điểm hành động", type: "particle", chapter: 4, tags: [particle] }
+- { word: "に", kana: "に", romaji: "ni", vi: "điểm đến / thời gian", type: "particle", chapter: 4, tags: [particle] }
+- { word: "も", kana: "も", romaji: "mo", vi: "cũng (also / too)", type: "particle", chapter: 4, tags: [particle] }
+- { word: "か", kana: "か", romaji: "ka", vi: "dấu hỏi cuối câu", type: "particle", chapter: 4, tags: [particle] }
+
+# ── Ch5: 15 Động Từ Cốt Lõi ──
+- { word: "行く", kana: "いく", romaji: "iku", vi: "đi", type: "verb-godan", chapter: 5, tags: [masu-form, daily-life] }
+- { word: "来る", kana: "くる", romaji: "kuru", vi: "đến", type: "verb-irregular", chapter: 5, tags: [masu-form, daily-life] }
+- { word: "食べる", kana: "たべる", romaji: "taberu", vi: "ăn", type: "verb-ichidan", chapter: 5, tags: [masu-form, daily-life] }
+- { word: "飲む", kana: "のむ", romaji: "nomu", vi: "uống", type: "verb-godan", chapter: 5, tags: [masu-form, daily-life] }
+- { word: "買う", kana: "かう", romaji: "kau", vi: "mua", type: "verb-godan", chapter: 5, tags: [masu-form, shopping] }
+- { word: "見る", kana: "みる", romaji: "miru", vi: "nhìn, xem", type: "verb-ichidan", chapter: 5, tags: [masu-form, daily-life] }
+- { word: "話す", kana: "はなす", romaji: "hanasu", vi: "nói", type: "verb-godan", chapter: 5, tags: [masu-form, daily-life] }
+- { word: "聞く", kana: "きく", romaji: "kiku", vi: "nghe, hỏi", type: "verb-godan", chapter: 5, tags: [masu-form, daily-life] }
+- { word: "分かる", kana: "わかる", romaji: "wakaru", vi: "hiểu", type: "verb-godan", chapter: 5, tags: [masu-form, daily-life] }
+- { word: "ある", kana: "ある", romaji: "aru", vi: "có (đồ vật)", type: "verb-godan", chapter: 5, tags: [masu-form, existence] }
+- { word: "いる", kana: "いる", romaji: "iru", vi: "có (người/sinh vật)", type: "verb-ichidan", chapter: 5, tags: [masu-form, existence] }
+- { word: "する", kana: "する", romaji: "suru", vi: "làm", type: "verb-irregular", chapter: 5, tags: [masu-form, daily-life] }
+- { word: "乗る", kana: "のる", romaji: "noru", vi: "lên xe/tàu", type: "verb-godan", chapter: 5, tags: [masu-form, transport] }
+- { word: "降りる", kana: "おりる", romaji: "oriru", vi: "xuống", type: "verb-ichidan", chapter: 5, tags: [masu-form, transport] }
+- { word: "見せる", kana: "みせる", romaji: "miseru", vi: "cho xem", type: "verb-ichidan", chapter: 5, tags: [masu-form, daily-life] }
+
+# ── Ch5: 50 Danh Từ Cốt Lõi ──
+# Nhóm 1: Chỉ Định
+- { word: "これ", kana: "これ", romaji: "kore", vi: "cái này", type: "pronoun", chapter: 5, tags: [demonstrative] }
+- { word: "それ", kana: "それ", romaji: "sore", vi: "cái đó", type: "pronoun", chapter: 5, tags: [demonstrative] }
+- { word: "あれ", kana: "あれ", romaji: "are", vi: "cái kia", type: "pronoun", chapter: 5, tags: [demonstrative] }
+- { word: "どれ", kana: "どれ", romaji: "dore", vi: "cái nào?", type: "pronoun", chapter: 5, tags: [demonstrative, question] }
+- { word: "ここ", kana: "ここ", romaji: "koko", vi: "nơi này", type: "pronoun", chapter: 5, tags: [demonstrative, place] }
+- { word: "そこ", kana: "そこ", romaji: "soko", vi: "nơi đó", type: "pronoun", chapter: 5, tags: [demonstrative, place] }
+- { word: "あそこ", kana: "あそこ", romaji: "asoko", vi: "nơi kia", type: "pronoun", chapter: 5, tags: [demonstrative, place] }
+- { word: "どこ", kana: "どこ", romaji: "doko", vi: "ở đâu?", type: "pronoun", chapter: 5, tags: [demonstrative, question, place] }
+- { word: "何", kana: "なに", romaji: "nani", vi: "cái gì?", type: "pronoun", chapter: 5, tags: [question] }
+- { word: "いつ", kana: "いつ", romaji: "itsu", vi: "khi nào?", type: "pronoun", chapter: 5, tags: [question, time] }
+# Nhóm 2: Địa Điểm
+- { word: "駅", kana: "えき", romaji: "eki", vi: "ga tàu", type: "noun", chapter: 5, tags: [place, transport] }
+- { word: "空港", kana: "くうこう", romaji: "kuukou", vi: "sân bay", type: "noun", chapter: 5, tags: [place, transport] }
+- { word: "病院", kana: "びょういん", romaji: "byouin", vi: "bệnh viện", type: "noun", chapter: 5, tags: [place, hanviet] }
+- { word: "薬局", kana: "やっきょく", romaji: "yakkyoku", vi: "nhà thuốc", type: "noun", chapter: 5, tags: [place] }
+- { word: "銀行", kana: "ぎんこう", romaji: "ginkou", vi: "ngân hàng", type: "noun", chapter: 5, tags: [place, hanviet] }
+- { word: "出口", kana: "でぐち", romaji: "deguchi", vi: "lối ra", type: "noun", chapter: 5, tags: [place] }
+- { word: "入口", kana: "いりぐち", romaji: "iriguchi", vi: "lối vào", type: "noun", chapter: 5, tags: [place] }
+# Nhóm 3: Thức Ăn & Đồ Uống
+- { word: "水", kana: "みず", romaji: "mizu", vi: "nước", type: "noun", chapter: 5, tags: [food] }
+- { word: "お茶", kana: "おちゃ", romaji: "ocha", vi: "trà", type: "noun", chapter: 5, tags: [food] }
+- { word: "ラーメン", kana: "ラーメン", romaji: "raamen", vi: "mì ramen", type: "noun-katakana", chapter: 5, tags: [food, loanword] }
+- { word: "寿司", kana: "すし", romaji: "sushi", vi: "sushi", type: "noun", chapter: 5, tags: [food] }
+- { word: "天ぷら", kana: "てんぷら", romaji: "tenpura", vi: "tempura", type: "noun", chapter: 5, tags: [food] }
+- { word: "弁当", kana: "べんとう", romaji: "bentou", vi: "cơm hộp", type: "noun", chapter: 5, tags: [food] }
+- { word: "お菓子", kana: "おかし", romaji: "okashi", vi: "bánh kẹo", type: "noun", chapter: 5, tags: [food] }
+- { word: "魚", kana: "さかな", romaji: "sakana", vi: "cá", type: "noun", chapter: 5, tags: [food] }
+# Nhóm 4: Giao Thông
+- { word: "電車", kana: "でんしゃ", romaji: "densha", vi: "tàu điện", type: "noun", chapter: 5, tags: [transport, hanviet] }
+- { word: "地下鉄", kana: "ちかてつ", romaji: "chikatetsu", vi: "tàu ngầm", type: "noun", chapter: 5, tags: [transport] }
+- { word: "切符", kana: "きっぷ", romaji: "kippu", vi: "vé", type: "noun", chapter: 5, tags: [transport] }
+- { word: "新幹線", kana: "しんかんせん", romaji: "shinkansen", vi: "Shinkansen", type: "noun", chapter: 5, tags: [transport] }
+- { word: "道", kana: "みち", romaji: "michi", vi: "đường", type: "noun", chapter: 5, tags: [transport, place] }
+- { word: "地図", kana: "ちず", romaji: "chizu", vi: "bản đồ", type: "noun", chapter: 5, tags: [transport] }
+- { word: "右", kana: "みぎ", romaji: "migi", vi: "bên phải", type: "noun", chapter: 5, tags: [direction] }
+- { word: "左", kana: "ひだり", romaji: "hidari", vi: "bên trái", type: "noun", chapter: 5, tags: [direction] }
+# Nhóm 5: Mua Sắm
+- { word: "値段", kana: "ねだん", romaji: "nedan", vi: "giá tiền", type: "noun", chapter: 5, tags: [shopping] }
+- { word: "お金", kana: "おかね", romaji: "okane", vi: "tiền", type: "noun", chapter: 5, tags: [shopping] }
+- { word: "袋", kana: "ふくろ", romaji: "fukuro", vi: "túi", type: "noun", chapter: 5, tags: [shopping] }
+- { word: "色", kana: "いろ", romaji: "iro", vi: "màu sắc", type: "noun", chapter: 5, tags: [shopping] }
+- { word: "試着", kana: "しちゃく", romaji: "shichaku", vi: "thử đồ", type: "noun", chapter: 5, tags: [shopping] }
+- { word: "返品", kana: "へんぴん", romaji: "henpin", vi: "đổi/trả", type: "noun", chapter: 5, tags: [shopping] }
+
+# ── Ch6: Từ Ghép Hán-Việt ──
+- { word: "大学", kana: "だいがく", romaji: "daigaku", vi: "đại học", type: "noun", chapter: 6, tags: [hanviet, education] }
+- { word: "学生", kana: "がくせい", romaji: "gakusei", vi: "học sinh", type: "noun", chapter: 6, tags: [hanviet, education] }
+- { word: "先生", kana: "せんせい", romaji: "sensei", vi: "tiên sinh (thầy/cô)", type: "noun", chapter: 6, tags: [hanviet, education] }
+- { word: "学校", kana: "がっこう", romaji: "gakkou", vi: "học hiệu (trường)", type: "noun", chapter: 6, tags: [hanviet, education] }
+- { word: "教室", kana: "きょうしつ", romaji: "kyoushitsu", vi: "giáo thất (phòng học)", type: "noun", chapter: 6, tags: [hanviet, education] }
+- { word: "日本", kana: "にほん", romaji: "nihon", vi: "nhật bản", type: "noun", chapter: 6, tags: [hanviet, country] }
+- { word: "日本語", kana: "にほんご", romaji: "nihongo", vi: "nhật bản ngữ (tiếng Nhật)", type: "noun", chapter: 6, tags: [hanviet, language] }
+- { word: "中国", kana: "ちゅうごく", romaji: "chuugoku", vi: "trung quốc", type: "noun", chapter: 6, tags: [hanviet, country] }
+- { word: "外国人", kana: "がいこくじん", romaji: "gaikokujin", vi: "ngoại quốc nhân", type: "noun", chapter: 6, tags: [hanviet, people] }
+- { word: "電話", kana: "でんわ", romaji: "denwa", vi: "điện thoại", type: "noun", chapter: 6, tags: [hanviet, tech] }
+- { word: "電車", kana: "でんしゃ", romaji: "densha", vi: "điện xa (tàu điện)", type: "noun", chapter: 6, tags: [hanviet, transport] }
+- { word: "自動車", kana: "じどうしゃ", romaji: "jidousha", vi: "tự động xa (ô tô)", type: "noun", chapter: 6, tags: [hanviet, transport] }
+- { word: "銀行", kana: "ぎんこう", romaji: "ginkou", vi: "ngân hàng", type: "noun", chapter: 6, tags: [hanviet, place] }
+- { word: "会社", kana: "かいしゃ", romaji: "kaisha", vi: "hội xã (công ty)", type: "noun", chapter: 6, tags: [hanviet, work] }
+- { word: "会社員", kana: "かいしゃいん", romaji: "kaishain", vi: "hội xã viên (nhân viên)", type: "noun", chapter: 6, tags: [hanviet, work] }
+- { word: "病院", kana: "びょういん", romaji: "byouin", vi: "bệnh viện", type: "noun", chapter: 6, tags: [hanviet, place] }
+- { word: "図書館", kana: "としょかん", romaji: "toshokan", vi: "đồ thư quán (thư viện)", type: "noun", chapter: 6, tags: [hanviet, place] }
+- { word: "大使館", kana: "たいしかん", romaji: "taishikan", vi: "đại sứ quán", type: "noun", chapter: 6, tags: [hanviet, place] }
+- { word: "時間", kana: "じかん", romaji: "jikan", vi: "thời gian", type: "noun", chapter: 6, tags: [hanviet, time] }
+- { word: "毎日", kana: "まいにち", romaji: "mainichi", vi: "mỗi nhật (mỗi ngày)", type: "noun", chapter: 6, tags: [hanviet, time] }
+- { word: "天気", kana: "てんき", romaji: "tenki", vi: "thiên khí (thời tiết)", type: "noun", chapter: 6, tags: [hanviet, nature] }
+- { word: "旅行", kana: "りょこう", romaji: "ryokou", vi: "lữ hành (du lịch)", type: "noun", chapter: 6, tags: [hanviet, travel] }
+- { word: "料理", kana: "りょうり", romaji: "ryouri", vi: "liệu lý (nấu ăn)", type: "noun", chapter: 6, tags: [hanviet, food] }
+- { word: "新聞", kana: "しんぶん", romaji: "shinbun", vi: "tân văn (báo)", type: "noun", chapter: 6, tags: [hanviet, media] }
+- { word: "音楽", kana: "おんがく", romaji: "ongaku", vi: "âm nhạc", type: "noun", chapter: 6, tags: [hanviet, culture] }
