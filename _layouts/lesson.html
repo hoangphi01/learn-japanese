@@ -11,9 +11,12 @@ layout: default
   </nav>
   {% endif %}
 
+  {% assign ch_index = page.chapter | minus: 1 %}
+  {% assign ch = site.data.chapters[ch_index] %}
+
   <header class="lesson-header">
     <div class="lesson-meta">
-      <span class="lesson-badge">Chương {{ page.chapter }} · Bài {{ page.lesson }}/{{ page.total_lessons_in_chapter }}</span>
+      <span class="lesson-badge">Chương {{ page.chapter }}{% if ch %}: {{ ch.title }}{% endif %} · Bài {{ page.lesson }}/{{ page.total_lessons_in_chapter }}</span>
       <span class="lesson-time">{{ page.estimated_time }}</span>
     </div>
     <h1>{{ page.title }}</h1>
@@ -26,8 +29,6 @@ layout: default
     {% endif %}
   </header>
 
-  {% assign ch_index = page.chapter | minus: 1 %}
-  {% assign ch = site.data.chapters[ch_index] %}
   {% if ch %}
   {% include progress-bar.html
      week=ch.week

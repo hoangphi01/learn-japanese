@@ -42,7 +42,7 @@ title: "NihonGo! — Giải mã Tiếng Nhật theo phương pháp Logic"
       <span class="chapter-card-title">{{ ch.title }}</span>
     </div>
     <div class="chapter-card-meta">
-      {{ ch.week }} · {{ ch.lessons }} bài học
+      Chương {{ ch.id }} · {{ ch.week }} · {{ ch.lessons }} bài học
     </div>
     <div class="chapter-card-progress">
       <div class="chapter-card-progress-fill" style="width: 0%"></div>
