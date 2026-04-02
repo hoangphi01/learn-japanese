@@ -614,6 +614,48 @@ strong { font-weight: 600; }
 .lesson-page[data-chapter="6"] .lesson-badge { background: var(--gold-accent); }
 .lesson-page[data-chapter="6"] .lesson-header { border-left: 4px solid var(--gold-accent); padding-left: 1rem; }
 
+.lesson-page[data-chapter="7"] .lesson-badge { background: var(--hira-color); }
+.lesson-page[data-chapter="7"] .lesson-header { border-left: 4px solid var(--hira-color); padding-left: 1rem; }
+
+.lesson-page[data-chapter="8"] .lesson-badge { background: var(--japan-red); }
+.lesson-page[data-chapter="8"] .lesson-header { border-left: 4px solid var(--japan-red); padding-left: 1rem; }
+
+.lesson-page[data-chapter="9"] .lesson-badge { background: var(--navy-blue); }
+.lesson-page[data-chapter="9"] .lesson-header { border-left: 4px solid var(--navy-blue); padding-left: 1rem; }
+
+.lesson-page[data-chapter="10"] .lesson-badge { background: var(--gold-accent); }
+.lesson-page[data-chapter="10"] .lesson-header { border-left: 4px solid var(--gold-accent); padding-left: 1rem; }
+
+.lesson-page[data-chapter="11"] .lesson-badge { background: var(--hira-color); }
+.lesson-page[data-chapter="11"] .lesson-header { border-left: 4px solid var(--hira-color); padding-left: 1rem; }
+
+.lesson-page[data-chapter="12"] .lesson-badge { background: var(--navy-blue); }
+.lesson-page[data-chapter="12"] .lesson-header { border-left: 4px solid var(--navy-blue); padding-left: 1rem; }
+
+.lesson-page[data-chapter="13"] .lesson-badge { background: var(--japan-red); }
+.lesson-page[data-chapter="13"] .lesson-header { border-left: 4px solid var(--japan-red); padding-left: 1rem; }
+
+.lesson-page[data-chapter="14"] .lesson-badge { background: var(--gold-accent); }
+.lesson-page[data-chapter="14"] .lesson-header { border-left: 4px solid var(--gold-accent); padding-left: 1rem; }
+
+.lesson-page[data-chapter="15"] .lesson-badge { background: var(--hira-color); }
+.lesson-page[data-chapter="15"] .lesson-header { border-left: 4px solid var(--hira-color); padding-left: 1rem; }
+
+.lesson-page[data-chapter="16"] .lesson-badge { background: var(--navy-blue); }
+.lesson-page[data-chapter="16"] .lesson-header { border-left: 4px solid var(--navy-blue); padding-left: 1rem; }
+
+.lesson-page[data-chapter="17"] .lesson-badge { background: var(--japan-red); }
+.lesson-page[data-chapter="17"] .lesson-header { border-left: 4px solid var(--japan-red); padding-left: 1rem; }
+
+.lesson-page[data-chapter="18"] .lesson-badge { background: var(--gold-accent); }
+.lesson-page[data-chapter="18"] .lesson-header { border-left: 4px solid var(--gold-accent); padding-left: 1rem; }
+
+.lesson-page[data-chapter="19"] .lesson-badge { background: var(--hira-color); }
+.lesson-page[data-chapter="19"] .lesson-header { border-left: 4px solid var(--hira-color); padding-left: 1rem; }
+
+.lesson-page[data-chapter="20"] .lesson-badge { background: var(--japan-red); }
+.lesson-page[data-chapter="20"] .lesson-header { border-left: 4px solid var(--japan-red); padding-left: 1rem; }
+
 .lesson-tags {
   display: flex;
   gap: 0.4rem;

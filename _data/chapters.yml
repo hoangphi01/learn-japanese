@@ -107,3 +107,113 @@
   n5_pct: 82
   milestone: "4 dạng chia tính từ, 50 tính từ N5"
   lessons: 5
+
+- id: 11
+  title: "Te-Form: Bộ Nối Vạn Năng"
+  short_title: "Te-Form"
+  level: N5
+  phase: 4
+  week: "Tuần 11"
+  eight_week_pct: 100
+  n5_pct: 85
+  milestone: "Chia te-form cho 3 nhóm động từ, 5 mẫu câu với te-form"
+  lessons: 4
+
+- id: 12
+  title: "Nai-Form: Toán Tử Phủ Định"
+  short_title: "Nai-Form"
+  level: N5
+  phase: 4
+  week: "Tuần 12"
+  eight_week_pct: 100
+  n5_pct: 87
+  milestone: "Chia nai-form, 4 mẫu câu phủ định"
+  lessons: 3
+
+- id: 13
+  title: "Ta-Form & Trải Nghiệm"
+  short_title: "Ta-Form"
+  level: N5
+  phase: 4
+  week: "Tuần 13"
+  eight_week_pct: 100
+  n5_pct: 89
+  milestone: "Chia ta-form, mẫu câu kinh nghiệm và liệt kê"
+  lessons: 3
+
+- id: 14
+  title: "Dictionary Form & Khả Năng"
+  short_title: "Dict-Form"
+  level: N5
+  phase: 4
+  week: "Tuần 14"
+  eight_week_pct: 100
+  n5_pct: 91
+  milestone: "Dictionary form, khả năng và sở thích"
+  lessons: 3
+
+- id: 15
+  title: "Plain Form & Speech Register"
+  short_title: "Plain Form"
+  level: N5
+  phase: 5
+  week: "Tuần 15"
+  eight_week_pct: 100
+  n5_pct: 93
+  milestone: "Plain form đầy đủ, と思います/と言います"
+  lessons: 3
+
+- id: 16
+  title: "Tồn Tại & Vị Trí"
+  short_title: "あります/います"
+  level: N5
+  phase: 5
+  week: "Tuần 16"
+  eight_week_pct: 100
+  n5_pct: 95
+  milestone: "あります vs います, 8 danh từ vị trí"
+  lessons: 3
+
+- id: 17
+  title: "Trợ Từ Đếm & So Sánh"
+  short_title: "Counters"
+  level: N5
+  phase: 5
+  week: "Tuần 17"
+  eight_week_pct: 100
+  n5_pct: 97
+  milestone: "15 counter, biến âm, より/一番"
+  lessons: 4
+
+- id: 18
+  title: "Mong Muốn & Cho-Nhận"
+  short_title: "たい/あげる"
+  level: N5
+  phase: 5
+  week: "Tuần 18"
+  eight_week_pct: 100
+  n5_pct: 98
+  milestone: "欲しい, V-たい, あげる/もらう/くれる"
+  lessons: 3
+
+- id: 19
+  title: "Điều Kiện & Mệnh Đề Quan Hệ"
+  short_title: "Conditionals"
+  level: N5
+  phase: 5
+  week: "Tuần 19"
+  eight_week_pct: 100
+  n5_pct: 99
+  milestone: "4 loại điều kiện, relative clauses"
+  lessons: 4
+
+- id: 20
+  title: "Tổng Ôn N5 — Grand Review"
+  short_title: "Grand Review"
+  level: N5
+  phase: 6
+  week: "Tuần 20"
+  eight_week_pct: 100
+  n5_pct: 100
+  milestone: "103 Kanji, bảng chia 6 dạng, mock test tổng kết"
+  lessons: 3

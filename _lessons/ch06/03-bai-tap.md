@@ -8,7 +8,7 @@ phase: 2
 week: 5
 estimated_time: "15 phút"
 prev_lesson: ch06/02-8-quy-tac
-next_lesson:
+next_lesson: ch07/01-kich-ban-mua-sam
 tags: [han-viet, kanji, phase-2]
 level: N5
 ---
