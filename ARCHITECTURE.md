@@ -17,11 +17,17 @@ NihonGo! is a **Jekyll 4.3 static site** for learning Japanese, targeting Vietna
 learn_japanese/
 ├── _config.yml                     # Jekyll config (baseurl, url, collections, defaults, OG image)
 ├── _data/
-│   ├── chapters.yml                # 10 chapters: id, title, level, phase, week, milestone
+│   ├── chapters.yml                # 20 chapters: id, title, level, phase, week, milestone
 │   ├── levels.yml                  # JLPT N5–N1: id, title, description, active
 │   ├── kana.yml                    # Katakana & Hiragana: char, romaji, row, strokes
-│   ├── hv_rules.yml                # 8 Hán-Việt → On'yomi rules with examples
-│   └── vocabulary.yml              # Loanwords (jp/romaji/en/vi), numbers (num/jp/romaji)
+│   ├── hv_rules.yml                # 15 Hán-Việt → On'yomi rules with examples
+│   ├── vocabulary.yml              # Loanwords (jp/romaji/en/vi), numbers (num/jp/romaji)
+│   ├── flashcard_decks.yml         # 6 vocabulary flashcard decks
+│   ├── grammar.yml                 # 20 N5 grammar patterns
+│   ├── mock_test_n5.yml            # 37 mock test questions
+│   ├── reading_practice.yml        # 5 reading texts with furigana
+│   ├── n5_vocabulary.yml           # Extended N5 vocabulary list
+│   └── travel_phrases.yml          # Travel/survival phrases
 │
 ├── _layouts/
 │   ├── default.html                # Base: <head>, nav, sidebar, all CSS/JS loading
@@ -42,36 +48,27 @@ learn_japanese/
 │   ├── culture-box.html            # Red-themed cultural note box
 │   └── formula-box.html            # Navy-bordered formula box
 │
-├── _lessons/
-│   ├── ch01/                       # Chapter 1: Katakana & Sound System
-│   │   ├── 01-he-thong-am-thanh.md
-│   │   ├── 02-katakana-hang-1-3.md
-│   │   ├── 03-katakana-hang-4-5.md
-│   │   └── 04-bai-tap.md
-│   ├── ch02/                       # Chapter 2: Dakuten, Combos, Numbers
-│   │   ├── 01-katakana-dakuten.md
-│   │   ├── 02-am-ket-hop.md
-│   │   ├── 03-so-dem.md
-│   │   └── 04-bai-tap.md
-│   ├── ch03/                       # Chapter 3: Hiragana
-│   │   ├── 01-hiragana-la-gi.md
-│   │   ├── 02-bang-hiragana.md
-│   │   ├── 03-hiragana-dakuten.md
-│   │   └── 04-bai-tap.md
-│   ├── ch04/                       # Chapter 4: Particles (Trợ Từ)
-│   │   ├── 01-cau-truc-sov.md
-│   │   ├── 02-7-toan-tu.md
-│   │   ├── 03-5-ham-giao-tiep.md
-│   │   └── 04-bai-tap.md
-│   ├── ch05/                       # Chapter 5: Verbs & Nouns
-│   │   ├── 01-masu-form.md
-│   │   ├── 02-15-dong-tu.md
-│   │   ├── 03-50-danh-tu.md
-│   │   └── 04-bai-tap.md
-│   └── ch06/                       # Chapter 6: Hán-Việt Decoder
-│       ├── 01-dinh-ly-han-viet.md
-│       ├── 02-8-quy-tac.md
-│       └── 03-bai-tap.md
+├── _lessons/                       # 71 lessons across 20 chapters (100% N5)
+│   ├── ch01/                       # Phase 1: Katakana & Sound System (4 lessons)
+│   ├── ch02/                       # Phase 1: Dakuten, Combos, Numbers (4 lessons)
+│   ├── ch03/                       # Phase 1: Hiragana (4 lessons)
+│   ├── ch04/                       # Phase 2: Particles / Trợ Từ (4 lessons)
+│   ├── ch05/                       # Phase 2: Verbs & Nouns (4 lessons)
+│   ├── ch06/                       # Phase 2: Hán-Việt Decoder (3 lessons)
+│   ├── ch07/                       # Phase 3: 3 Kịch Bản (4 lessons)
+│   ├── ch08/                       # Phase 3: Simulation Drills (3 lessons)
+│   ├── ch09/                       # Phase 3: Ôn Tập & Nghe Hiểu (3 lessons)
+│   ├── ch10/                       # Phase 4: Tính Từ い/な (5 lessons)
+│   ├── ch11/                       # Phase 4: Te-Form (4 lessons)
+│   ├── ch12/                       # Phase 4: Nai-Form (3 lessons)
+│   ├── ch13/                       # Phase 4: Ta-Form & Trải Nghiệm (3 lessons)
+│   ├── ch14/                       # Phase 4: Dictionary Form (3 lessons)
+│   ├── ch15/                       # Phase 5: Plain Form (3 lessons)
+│   ├── ch16/                       # Phase 5: Tồn Tại & Vị Trí (3 lessons)
+│   ├── ch17/                       # Phase 5: Counters & So Sánh (4 lessons)
+│   ├── ch18/                       # Phase 5: Mong Muốn & Cho-Nhận (3 lessons)
+│   ├── ch19/                       # Phase 5: Điều Kiện & Mệnh Đề QH (4 lessons)
+│   └── ch20/                       # Phase 6: Tổng Ôn N5 (3 lessons)
 │
 ├── assets/
 │   ├── css/
@@ -79,13 +76,20 @@ learn_japanese/
 │   │   ├── boxes.css               # Content box components (tcolorbox port)
 │   │   ├── flashcard.css           # Flashcard grid, 3D flip, known state
 │   │   ├── quiz.css                # Quiz questions, options, results, matching
+│   │   ├── srs.css                 # SRS review mode styles
+│   │   ├── mock-test.css           # Mock test timer, sections, scoring
+│   │   ├── grammar.css             # Grammar hub filter/search styles
 │   │   └── welcome.css             # Welcome modal, level cards, blur backdrop
 │   ├── js/
 │   │   ├── theme.js                # Theme toggle (IIFE, side-effect)
 │   │   ├── nav.js                  # Sidebar, chapter toggle, level filter (IIFE)
 │   │   ├── progress.js             # LJProgress: lesson completion, quiz scores
-│   │   ├── quiz.js                 # LJQuiz: answer checking, scoring
-│   │   ├── flashcard.js            # LJFlashcard: shuffle, flip, known-marking
+│   │   ├── quiz.js                 # LJQuiz: answer checking, scoring (MC, matching, fill-blank)
+│   │   ├── flashcard.js            # LJFlashcard: shuffle, flip, known-marking, TTS
+│   │   ├── srs.js                  # LJSRS: Leitner 5-box spaced repetition
+│   │   ├── mock-test.js            # LJMockTest: timed N5 mock exam engine
+│   │   ├── hv-decoder.js           # LJHVDecoder: HV→On'yomi lookup + prediction
+│   │   ├── phrasebook.js           # Travel phrasebook TTS + category filter
 │   │   └── welcome.js              # LJWelcome: onboarding modal
 │   ├── font/
 │   │   ├── bookerly/               # Serif font family (4 weights)
@@ -94,13 +98,24 @@ learn_japanese/
 │       └── preview.png             # OG meta preview image for social sharing
 │
 ├── flashcards/
-│   ├── katakana.md                 # Katakana flashcard deck page
-│   └── hiragana.md                 # Hiragana flashcard deck page
+│   ├── index.md                    # Flashcard hub — all 8 decks
+│   ├── katakana.md                 # Katakana flashcard deck
+│   ├── hiragana.md                 # Hiragana flashcard deck
+│   ├── loanwords.md                # Loanwords deck
+│   ├── numbers.md                  # Numbers deck
+│   ├── particles.md                # Particles deck
+│   ├── verbs.md                    # Verbs deck
+│   ├── nouns.md                    # Nouns deck
+│   └── hanviet.md                  # Hán-Việt deck
 │
 ├── pages/
 │   ├── about.md                    # About page
 │   ├── hv-decoder.md               # Hán-Việt decoder interactive tool
-│   └── roadmap.md                  # Learning roadmap
+│   ├── roadmap.md                  # Learning roadmap
+│   ├── mock-test.md                # Timed N5 mock exam
+│   ├── grammar.md                  # Searchable grammar hub (20 patterns)
+│   ├── reading.md                  # Reading practice with furigana
+│   └── travel-phrasebook.md        # 120+ travel phrases with TTS
 │
 ├── index.md                        # Homepage
 ├── manifest.json                   # PWA manifest
@@ -135,7 +150,7 @@ levels.yml          chapters.yml              _lessons/ch{NN}/*.md
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `id` | number | Chapter number (1–10+) |
+| `id` | number | Chapter number (1–20) |
 | `title` | string | Full Vietnamese title |
 | `short_title` | string | Abbreviated title |
 | `level` | string | JLPT level (N5, N4, ...) |
@@ -155,7 +170,7 @@ levels.yml          chapters.yml              _lessons/ch{NN}/*.md
 | `chapter` | number | yes | Chapter number |
 | `lesson` | number | yes | Lesson number within chapter |
 | `total_lessons_in_chapter` | number | yes | Total lessons in chapter |
-| `phase` | number | yes | Learning phase (1–4) |
+| `phase` | number | yes | Learning phase (1–6) |
 | `week` | number | yes | Week number |
 | `estimated_time` | string | yes | Duration (e.g., "20 phút") |
 | `prev_lesson` | string | yes | Previous lesson slug or empty |
@@ -257,6 +272,20 @@ Each chapter can have a unique accent color applied to its lesson badge and head
 | 4 | `--navy-blue` | Blue badge + left border |
 | 5 | `--japan-red` | Red badge + left border |
 | 6 | `--gold-accent` | Gold badge + left border |
+| 7 | `--hira-color` | Green badge + left border |
+| 8 | `--japan-red` | Red badge + left border |
+| 9 | `--navy-blue` | Blue badge + left border |
+| 10 | `--gold-accent` | Gold badge + left border |
+| 11 | `--hira-color` | Green badge + left border |
+| 12 | `--navy-blue` | Blue badge + left border |
+| 13 | `--japan-red` | Red badge + left border |
+| 14 | `--gold-accent` | Gold badge + left border |
+| 15 | `--hira-color` | Green badge + left border |
+| 16 | `--navy-blue` | Blue badge + left border |
+| 17 | `--japan-red` | Red badge + left border |
+| 18 | `--gold-accent` | Gold badge + left border |
+| 19 | `--hira-color` | Green badge + left border |
+| 20 | `--japan-red` | Red badge + left border |
 
 Selector pattern: `.lesson-page[data-chapter="N"] .lesson-badge / .lesson-header`
 

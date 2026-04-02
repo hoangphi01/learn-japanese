@@ -19,13 +19,27 @@ _config.yml          # Jekyll config (baseurl: /learn-japanese)
 _data/               # YAML data files (curriculum, kana, vocabulary, rules, grammar, mock tests, reading)
 _includes/           # Reusable HTML components (boxes, nav, sidebar, quiz, flashcard)
 _layouts/            # Page templates (default → lesson, chapter, quiz, flashcard)
-_lessons/            # Lesson content (Markdown + includes)
+_lessons/            # Lesson content (Markdown + includes) — 71 lessons total
   ch01/              # Phase 1: Katakana & Sound System (4 lessons)
   ch02/              # Phase 1: Dakuten, Combos, Numbers (4 lessons)
   ch03/              # Phase 1: Hiragana (4 lessons)
   ch04/              # Phase 2: Particles / Trợ Từ (4 lessons)
   ch05/              # Phase 2: Verbs & Nouns (4 lessons)
   ch06/              # Phase 2: Hán-Việt Decoder (3 lessons)
+  ch07/              # Phase 3: 3 Kịch Bản (4 lessons)
+  ch08/              # Phase 3: Simulation Drills (3 lessons)
+  ch09/              # Phase 3: Ôn Tập & Nghe Hiểu (3 lessons)
+  ch10/              # Phase 4: Tính Từ い/な (5 lessons)
+  ch11/              # Phase 4: Te-Form (4 lessons)
+  ch12/              # Phase 4: Nai-Form (3 lessons)
+  ch13/              # Phase 4: Ta-Form & Trải Nghiệm (3 lessons)
+  ch14/              # Phase 4: Dictionary Form & Khả Năng (3 lessons)
+  ch15/              # Phase 5: Plain Form & Speech Register (3 lessons)
+  ch16/              # Phase 5: Tồn Tại & Vị Trí (3 lessons)
+  ch17/              # Phase 5: Counters & So Sánh (4 lessons)
+  ch18/              # Phase 5: Mong Muốn & Cho-Nhận (3 lessons)
+  ch19/              # Phase 5: Điều Kiện & Mệnh Đề Quan Hệ (4 lessons)
+  ch20/              # Phase 6: Tổng Ôn N5 — Grand Review (3 lessons)
 assets/
   css/               # 8 CSS files (style, boxes, flashcard, quiz, srs, mock-test, grammar, welcome)
   js/                # 9 JS modules (theme, nav, progress, quiz, flashcard, srs, mock-test, hv-decoder, welcome)
@@ -50,7 +64,7 @@ title: "Vietnamese title"
 chapter: 1                          # Chapter number
 lesson: 2                           # Lesson number within chapter
 total_lessons_in_chapter: 4
-phase: 1                            # Learning phase (1–4)
+phase: 1                            # Learning phase (1–6)
 week: 1                             # Week number
 estimated_time: "20 phút"
 prev_lesson: ch01/01-slug           # Empty string if first

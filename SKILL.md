@@ -192,7 +192,7 @@ PDF textbook (e.g., Minna no Nihongo) with grammar points, vocabulary lists, and
    | Sentence patterns | Fill-in-the-Blank |
    | Concept understanding | Multiple Choice |
 
-5. **Group into chapters** — Follow the chapter structure in `_data/chapters.yml`. Each chapter = 3–4 lessons, each lesson = 15–25 minutes.
+5. **Group into chapters** — Follow the chapter structure in `_data/chapters.yml`. Each chapter = 3–5 lessons, each lesson = 15–25 minutes. Currently 20 chapters (71 lessons) covering 100% N5.
 
 ### Output
 
