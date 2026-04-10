@@ -22,7 +22,7 @@
 .flashcard {
   perspective: 600px;
   cursor: pointer;
-  height: 140px;
+  aspect-ratio: 1 / 1;
 }
 
 .flashcard-inner {
@@ -178,7 +178,7 @@
   }
 
   .flashcard {
-    height: 120px;
+    aspect-ratio: 1 / 1;
   }
 
   .flashcard-char {
@@ -195,7 +195,7 @@
 }
 
 .flashcard.vocab {
-  height: 160px;
+  aspect-ratio: 1 / 1;
 }
 
 .flashcard.vocab .flashcard-char {
@@ -291,7 +291,7 @@
   }
 
   .flashcard.vocab {
-    height: 140px;
+    aspect-ratio: 1 / 1;
   }
 
   .flashcard.vocab .flashcard-char {
