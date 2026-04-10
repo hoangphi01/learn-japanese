@@ -11,7 +11,7 @@ layout: default
 </nav>
 
 <h1>{{ page.title }}</h1>
-<p>Nhấn vào thẻ để lật. Nhấn đúp để đánh dấu "đã biết". Nhấn 🔊 để nghe phát âm.</p>
+<p>Nhấn vào thẻ để lật. Nhấn đúp để đánh dấu "đã biết". Nhấn <img src="{{ site.baseurl }}/assets/symbols/speaker.svg" alt="Nghe" class="tts-icon"> để nghe phát âm.</p>
 
 {% if content != '' %}
 <div class="flashcard-intro">
@@ -37,7 +37,7 @@ layout: default
     <div class="flashcard-inner">
       <div class="flashcard-front">
         <span class="flashcard-char">{{ card.front }}</span>
-        <button class="tts-btn" onclick="event.stopPropagation(); LJFlashcard.speak('{{ card.front }}')" title="Nghe phát âm">🔊</button>
+        <button class="tts-btn" onclick="event.stopPropagation(); LJFlashcard.speak('{{ card.front }}')" title="Nghe phát âm"><img src="{{ site.baseurl }}/assets/symbols/speaker.svg" alt="Nghe" class="tts-icon"></button>
       </div>
       <div class="flashcard-back">
         <span class="flashcard-text">{{ card.back }}</span>

@@ -109,7 +109,7 @@ var LJPhrasebook = (function () {
       }
       html += '<div class="phrase-card-actions">';
       html += '<button class="btn btn-sm phrase-copy-btn" data-text="' + escapeHtml(p.jp) + '" title="Copy">&#128203; Copy</button>';
-      html += '<button class="btn btn-sm phrase-tts-btn" data-text="' + escapeHtml(p.jp) + '" title="Nghe phát âm">&#128264; Nghe</button>';
+      html += '<button class="btn btn-sm phrase-tts-btn" data-text="' + escapeHtml(p.jp) + '" title="Nghe phát âm"><img src="/assets/symbols/speaker.svg" alt="Nghe" class="tts-icon"> Nghe</button>';
       html += '</div>';
       html += '</div>';
     }

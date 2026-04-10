@@ -12,7 +12,7 @@ permalink: /flashcards/hiragana/
 </nav>
 
 <h1>Flashcards Hiragana</h1>
-<p>Nhấn vào thẻ để lật. Nhấn đúp để đánh dấu "đã biết". Nhấn 🔊 để nghe phát âm.</p>
+<p>Nhấn vào thẻ để lật. Nhấn đúp để đánh dấu "đã biết". Nhấn <img src="{{ site.baseurl }}/assets/symbols/speaker.svg" alt="Nghe" class="tts-icon"> để nghe phát âm.</p>
 
 <div class="flashcard-controls">
   <button class="btn btn-secondary" onclick="LJFlashcard.shuffle('hira-deck')">Trộn bài</button>
@@ -32,7 +32,7 @@ permalink: /flashcards/hiragana/
     <div class="flashcard-inner">
       <div class="flashcard-front">
         <span class="flashcard-char">{{ kana.char }}</span>
-        <button class="tts-btn" onclick="event.stopPropagation(); LJFlashcard.speak('{{ kana.char }}')" title="Nghe phát âm">🔊</button>
+        <button class="tts-btn" onclick="event.stopPropagation(); LJFlashcard.speak('{{ kana.char }}')" title="Nghe phát âm"><img src="{{ site.baseurl }}/assets/symbols/speaker.svg" alt="Nghe" class="tts-icon"></button>
       </div>
       <div class="flashcard-back">
         <span class="flashcard-text">{{ kana.romaji }}</span>

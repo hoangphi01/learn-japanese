@@ -127,8 +127,20 @@
   opacity: 1;
 }
 
-.flashcard-front {
-  position: relative;
+.tts-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  filter: invert(1);
+}
+
+.flashcard-front .tts-icon {
+  filter: none;
+  opacity: 0.6;
+}
+
+.flashcard-back .tts-icon {
+  filter: invert(1);
 }
 
 /* Known state */

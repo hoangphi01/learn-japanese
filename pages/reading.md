@@ -24,7 +24,7 @@ permalink: /reading/
       Xem bản dịch
     </button>
     <button class="btn btn-secondary" onclick="LJReading.speakText(this)" data-text="{{ text.text_html | strip_html }}">
-      🔊 Nghe
+      <img src="{{ site.baseurl }}/assets/symbols/speaker.svg" alt="Nghe" class="tts-icon"> Nghe
     </button>
   </div>
 
