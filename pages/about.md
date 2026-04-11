@@ -4,6 +4,8 @@ title: "Giới thiệu phương pháp"
 permalink: /pages/about/
 ---
 
+<img src="{{ '/assets/images/preview_default.png' | relative_url }}" alt="NihonGo! — Tiếng Nhật theo tư duy toán học" style="width:100%;border-radius:var(--radius,0);margin-bottom:1.5rem;">
+
 # Giới thiệu: NihonGo!
 
 ## Triết lý cốt lõi
@@ -89,6 +91,23 @@ Cuốn sách này **không** dạy bạn học tiếng Nhật theo cách truyề
 
 ---
 
+## Biểu tượng trong bài học
+
+NihonGo! sử dụng bộ icon SVG thống nhất thay vì emoji, giúp hiển thị sắc nét trên mọi thiết bị và đồng bộ với giao diện.
+
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:0.75rem;margin:1.5rem 0;">
+{% assign icons = "star,Đã nhớ|correct,Đúng|wrong,Sai|speaker,Phát âm|timer,Thời gian" | split: "|" %}
+{% for item in icons %}
+{% assign parts = item | split: "," %}
+<div style="text-align:center;padding:0.75rem;background:var(--light-gold);border:2px solid var(--gold-accent);border-radius:var(--radius-sm,0);">
+<img src="{{ '/assets/symbols/' | append: parts[0] | append: '.svg' | relative_url }}" alt="{{ parts[1] }}" style="width:28px;height:28px;filter:brightness(0) saturate(100%) invert(15%) sepia(60%) saturate(800%) hue-rotate(200deg) brightness(90%);">
+<div style="font-size:0.8rem;font-weight:600;margin-top:0.3rem;color:var(--navy-blue);">{{ parts[1] }}</div>
+</div>
+{% endfor %}
+</div>
+
+---
+
 ## Nhật ký cập nhật
 
 <table class="kana-table">
@@ -96,6 +115,10 @@ Cuốn sách này **không** dạy bạn học tiếng Nhật theo cách truyề
 <tr><th>Ngày</th><th>Cập nhật</th></tr>
 </thead>
 <tbody>
+<tr><td>11/04/2026</td><td>Kiểm Tra Từ Vựng — hệ thống test immersive với 2 chế độ (KT nghĩa / KT từ), lọc theo chương, đánh dấu từ đã nhớ, bộ icon SVG (star, correct, wrong, timer, speaker)</td></tr>
+<tr><td>09/04/2026</td><td>Mở rộng N5 toàn diện — Ch7–20 (71 bài học, 20 chương), SRS Leitner 5 hộp, Mock Test N5 (37 câu), Grammar Hub (20 mẫu), Reading Practice, Sổ Tay phrasebook TTS</td></tr>
+<tr><td>04/04/2026</td><td>Kiến trúc dữ liệu — n5_vocabulary.yml (119 từ), flashcard_decks.yml (6 bộ), grammar.yml (20 mẫu), mock_test_n5.yml, reading_practice.yml</td></tr>
+<tr><td>01/04/2026</td><td>HV Decoder nâng cấp — từ điển mở rộng, 15 quy tắc ánh xạ, tìm kiếm + phân trang. Sổ Tay du lịch 120+ cụm từ</td></tr>
 <tr><td>31/03/2026</td><td>Ra mắt NihonGo! — 18 bài học (Ch1–6), Flashcard Katakana &amp; Hiragana, HV Decoder với từ điển ~120 mục, Welcome screen, PWA, Modern theme, Google Analytics, Sidebar với bộ lọc cấp độ</td></tr>
 </tbody>
 </table>
