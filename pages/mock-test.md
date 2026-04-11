@@ -53,18 +53,20 @@ window.mockTestData = {
   </div>
 </div>
 
-<div id="mock-test-area" style="display:none;">
-  <div class="mock-test-toolbar" id="mock-test-toolbar">
-    <div class="mock-toolbar-left">
-      <span class="mock-toolbar-label">Thi Thử N5</span>
-      <span class="mock-test-answered" id="mock-test-count">0 / 23</span>
+<!-- ─── Immersive Test Navbar ────────────────────────── -->
+<div class="test-navbar mock-navbar" id="mock-test-navbar" style="display:none;">
+  <button class="tn-exit" onclick="LJMockTest.confirmExit()" title="Thoát"><img src="{{ '/assets/symbols/wrong.svg' | relative_url }}" alt="Thoát" class="test-icon"></button>
+  <div class="tn-progress">
+    <div class="tn-progress-bar">
+      <div class="tn-progress-fill" id="mn-progress-fill"></div>
     </div>
-    <div class="mock-toolbar-right">
-      <span class="mock-test-timer" id="mock-test-timer">30:00</span>
-      <button class="btn btn-secondary mock-submit-btn" id="mock-test-submit" onclick="LJMockTest.submitTest()">Nộp bài</button>
-    </div>
+    <span class="tn-progress-text" id="mn-progress-text">0/23 câu</span>
   </div>
+  <span class="tn-timer" id="mn-timer">30:00</span>
+  <button class="btn btn-secondary mock-nav-submit" id="mn-submit" onclick="LJMockTest.submitTest()">Nộp bài</button>
+</div>
 
+<div id="mock-test-area" style="display:none;">
   <div id="mock-test-questions"></div>
 
   <div class="mock-submit-area">

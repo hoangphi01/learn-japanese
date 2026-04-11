@@ -31,6 +31,47 @@ var LJMockTest = (function () {
     return a;
   }
 
+  // ─── Immersive Test Mode ───────────────────────────
+  function enterTestMode() {
+    document.body.classList.add('test-mode');
+    var navbar = document.getElementById('mock-test-navbar');
+    if (navbar) navbar.style.display = '';
+  }
+
+  function exitTestMode() {
+    document.body.classList.remove('test-mode');
+    var navbar = document.getElementById('mock-test-navbar');
+    if (navbar) navbar.style.display = 'none';
+  }
+
+  function confirmExit() {
+    if (confirm('Bạn có chắc muốn thoát bài thi?')) {
+      exitTestMode();
+      stopTimer();
+      state.isActive = false;
+      var startScreen = document.getElementById('mock-test-start');
+      var testArea = document.getElementById('mock-test-area');
+      var resultsEl = document.getElementById('mock-test-results');
+      if (startScreen) startScreen.style.display = 'block';
+      if (testArea) testArea.style.display = 'none';
+      if (resultsEl) { resultsEl.style.display = 'none'; resultsEl.innerHTML = ''; }
+    }
+  }
+
+  function updateNavbar() {
+    var answered = Object.keys(state.answers).length;
+    var total = state.questions.length;
+    var pct = total > 0 ? (answered / total) * 100 : 0;
+
+    var fillEl = document.getElementById('mn-progress-fill');
+    var textEl = document.getElementById('mn-progress-text');
+    var correctEl = document.getElementById('mn-answered');
+
+    if (fillEl) fillEl.style.width = pct + '%';
+    if (textEl) textEl.textContent = answered + '/' + total + ' câu';
+    if (correctEl) correctEl.textContent = answered + '/' + total;
+  }
+
   // ─── Start test ────────────────────────────────────
   function start() {
     var startScreen = document.getElementById('mock-test-start');
@@ -63,22 +104,31 @@ var LJMockTest = (function () {
     state.elapsed = 0;
 
     renderQuestions();
+    enterTestMode();
+    updateNavbar();
     startTimer();
   }
 
   // ─── Timer ─────────────────────────────────────────
   function startTimer() {
     var timerEl = document.getElementById('mock-test-timer');
+    var navTimerEl = document.getElementById('mn-timer');
     state.timer = setInterval(function () {
       state.elapsed = Math.floor((Date.now() - state.startTime) / 1000);
       var remaining = Math.max(0, TOTAL_TIME - state.elapsed);
       var min = Math.floor(remaining / 60);
       var sec = remaining % 60;
+      var timeStr = pad(min) + ':' + pad(sec);
 
       if (timerEl) {
-        timerEl.textContent = pad(min) + ':' + pad(sec);
+        timerEl.textContent = timeStr;
         if (remaining <= 300) timerEl.classList.add('timer-warning');
         if (remaining <= 60) timerEl.classList.add('timer-danger');
+      }
+      if (navTimerEl) {
+        navTimerEl.textContent = timeStr;
+        if (remaining <= 300) navTimerEl.classList.add('timer-warning');
+        if (remaining <= 60) navTimerEl.classList.add('timer-danger');
       }
 
       if (remaining <= 0) {
@@ -157,16 +207,24 @@ var LJMockTest = (function () {
     var countEl = document.getElementById('mock-test-count');
     if (countEl) countEl.textContent = answered + ' / ' + state.questions.length;
 
+    // Update immersive navbar
+    updateNavbar();
+
     // Show submit button if all answered
     var submitBtn = document.getElementById('mock-test-submit');
+    var navSubmitBtn = document.getElementById('mn-submit');
     if (submitBtn && answered === state.questions.length) {
       submitBtn.classList.add('ready');
+    }
+    if (navSubmitBtn && answered === state.questions.length) {
+      navSubmitBtn.classList.add('ready');
     }
   }
 
   // ─── Submit test ───────────────────────────────────
   function submitTest() {
     stopTimer();
+    exitTestMode();
     state.isActive = false;
 
     var correct = 0;
@@ -262,6 +320,8 @@ var LJMockTest = (function () {
     if (timerBar) timerBar.classList.remove('test-done');
     var timerEl = document.getElementById('mock-test-timer');
     if (timerEl) { timerEl.classList.remove('timer-warning', 'timer-danger'); }
+    var navTimerEl = document.getElementById('mn-timer');
+    if (navTimerEl) { navTimerEl.classList.remove('timer-warning', 'timer-danger'); }
     start();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -276,6 +336,7 @@ var LJMockTest = (function () {
     selectAnswer: selectAnswer,
     submitTest: submitTest,
     restart: restart,
-    scrollToFirst: scrollToFirst
+    scrollToFirst: scrollToFirst,
+    confirmExit: confirmExit
   };
 })();
