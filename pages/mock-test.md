@@ -62,6 +62,24 @@ window.LJ_SYMBOLS = {
       <p>Chọn chương &middot; KT nghĩa / KT từ<br><small>119 từ &middot; Đánh dấu từ đã nhớ</small></p>
       <span class="btn btn-primary" style="margin-top:auto;">Cấu hình &rarr;</span>
     </div>
+
+    <!-- Card 3: Ngữ Pháp N5 -->
+    <a href="{{ '/grammar/' | relative_url }}" class="test-hub-card" style="text-decoration:none;color:inherit;">
+      <div class="test-hub-badge">N5</div>
+      <div class="test-hub-icon"><img src="{{ '/assets/symbols/correct.svg' | relative_url }}" alt="" class="test-icon" style="width:36px;height:36px;filter:brightness(0) saturate(100%) invert(45%) sepia(70%) saturate(500%) hue-rotate(110deg) brightness(95%);"></div>
+      <h3>Ngữ Pháp N5</h3>
+      <p>Tra cứu &middot; Lọc theo tag<br><small>20 mẫu ngữ pháp N5</small></p>
+      <span class="btn btn-primary" style="margin-top:auto;">Mở &rarr;</span>
+    </a>
+
+    <!-- Card 4: Luyện Đọc -->
+    <a href="{{ '/reading/' | relative_url }}" class="test-hub-card" style="text-decoration:none;color:inherit;">
+      <div class="test-hub-badge">N5</div>
+      <div class="test-hub-icon"><img src="{{ '/assets/symbols/speaker.svg' | relative_url }}" alt="" class="test-icon" style="width:36px;height:36px;filter:brightness(0) saturate(100%) invert(15%) sepia(40%) saturate(800%) hue-rotate(200deg) brightness(90%);"></div>
+      <h3>Luyện Đọc</h3>
+      <p>Đọc hiểu &middot; Furigana &middot; Từ vựng<br><small>5 bài đọc N5</small></p>
+      <span class="btn btn-primary" style="margin-top:auto;">Mở &rarr;</span>
+    </a>
   </div>
 </div>
 
