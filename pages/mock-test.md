@@ -129,7 +129,7 @@ function backToHub() {
     </div>
     <div class="config-actions">
       <button class="btn btn-secondary" onclick="backToHub()">&larr; Quay lại</button>
-      <button class="btn btn-primary mock-start-btn" onclick="LJMockTest.start()">Bắt đầu thi &rarr;</button>
+      <button class="btn btn-primary" onclick="LJMockTest.start()">Bắt đầu thi &rarr;</button>
     </div>
   </div>
 </div>
